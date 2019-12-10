@@ -4,7 +4,7 @@ import './Visualizer.scss';
 
 class Visualizer extends React.Component {
     componentDidMount() {
-        const canvas = document.getElementById("visualizer") as HTMLCanvasElement;
+        const canvas = this.canvas as HTMLCanvasElement;
         const engine = new BABYLON.Engine(canvas, true);
         
         // createScene function that creates and return the scene
@@ -48,7 +48,7 @@ class Visualizer extends React.Component {
     }
 
     render () {
-        return <canvas id="visualizer"/>;
+        return <canvas ref={ (n) => this.canvas = n } />;
     }
 }
 
