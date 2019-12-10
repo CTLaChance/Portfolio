@@ -26,11 +26,11 @@ $text-color: #ba1f33;
 
     @keyframes pageloadTranslate {
         0% {
-            transform: translate(0%, -50%);
+            transform: translate(-50%, 0%);
         }
 
         100% {
-            transform: translate(-110%, -50%);
+            transform: translate(-50%, -45vh);
         }
     }
 
