@@ -1,6 +1,7 @@
 import React from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
+import { Color4 } from 'babylonjs';
 
 class Visualizer extends React.Component {
     componentDidMount() {
@@ -9,29 +10,19 @@ class Visualizer extends React.Component {
         
         // createScene function that creates and return the scene
         var createScene = function () {
-            // create a basic BJS Scene object
+            // Scene Properties
             var scene = new BABYLON.Scene(engine);
+            scene.clearColor = new Color4(0,0,0,1);
 
-            // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
-            var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5, -10), scene);
-
-            // target the camera to scene origin
+            // Camera Properties
+            var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 0, -10), scene);
             camera.setTarget(BABYLON.Vector3.Zero());
 
-            // attach the camera to the canvas
-            camera.attachControl(canvas, false);
+            // Lighting Properties
+            var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 0, 1), scene);
+            light.diffuse = light.specular = light.groundColor = new BABYLON.Color3(0.929,0.122,0.012);
 
-            // create a basic light, aiming 0,1,0 - meaning, to the sky
-            var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 1, 0), scene);
-
-            // create a built-in "sphere" shape; its constructor takes 6 params: name, segment, diameter, scene, updatable, sideOrientation 
-            var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
-
-            // move the sphere upward 1/2 of its height
-            sphere.position.y = 1;
-
-            // create a built-in "ground" shape;
-            var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+            var sphere = BABYLON.Mesh.CreateSphere('sphere1', 1, 1, scene);
 
             // return the created scene
             return scene;
@@ -43,6 +34,10 @@ class Visualizer extends React.Component {
         // run the render loop
         engine.runRenderLoop(function () {
             scene.render();
+        });
+
+        window.addEventListener("resize", function() {
+            engine.resize();
         });
     }
 
