@@ -1,8 +1,12 @@
 //Variables//
 $text-color: #ba1f33;
 
-#title {
+// BabylonJS scene view layering fix.
+#scene-explorer-host {
+    z-index: 1;
+}
 
+#title {
     color: $text-color;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;

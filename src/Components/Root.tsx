@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import './Root.scss'
+import './Root.scss';
 import Visualizer from './Visualizer';
 
 const Root: React.FC = () => {
