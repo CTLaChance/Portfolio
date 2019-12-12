@@ -28,7 +28,7 @@ class Visualizer extends React.Component {
             particleSystem.emitter = new BABYLON.Vector3(0,0, -11);
             particleSystem.particleTexture = new BABYLON.Texture('/assets/pixel.png', scene);
             particleSystem.particleEmitterType = particleSystem.createBoxEmitter(new BABYLON.Vector3(0, 2, 10),
-                                                                                 new BABYLON.Vector3(0, 2, 10), 
+                                                                                 new BABYLON.Vector3(0, 2, 10),
                                                                                  new BABYLON.Vector3(-3, -3, -1),
                                                                                  new BABYLON.Vector3(3, 3, 1));
             

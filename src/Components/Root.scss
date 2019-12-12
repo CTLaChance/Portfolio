@@ -1,6 +1,5 @@
 //Variables//
 $text-color: #ba1f33;
-
 // BabylonJS scene view layering fix.
 #scene-explorer-host {
     z-index: 1;
@@ -13,35 +12,33 @@ $text-color: #ba1f33;
     font-size: 3vw;
     text-align: center;
     user-select: none;
-
     margin: 0px;
     position: fixed;
     top: 50%;
     left: 50%;
-
-    animation: .5s linear 0s 1 pageloadOpacity,
-    1.5s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 pageloadTranslate;
-
+    animation: .5s linear 0s 1 pageloadOpacity, 1.5s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 pageloadTranslate;
     animation-fill-mode: both;
-
+    //Keyframes//
     @keyframes pageloadTranslate {
         0% {
             transform: translate(-50%, 0%);
         }
-
         100% {
             transform: translate(-50%, -45vh);
         }
     }
-
     @keyframes pageloadOpacity {
-        0%, 30%, 60%, 90%{
-            opacity: 0%;
+        0%,
+        30%,
+        60%,
+        90% {
+            opacity: 0;
             text-shadow: none;
         }
-        
-        31%, 61%, 100%{
-            opacity: 100%;
+        31%,
+        61%,
+        100% {
+            opacity: 1;
             text-shadow: 0px 0px 5px $text-color;
         }
     }
@@ -51,7 +48,6 @@ $text-color: #ba1f33;
     display: none;
     color: #ba1f33;
     font-family: 'Open Sans', sans-serif;
-
     a {
         color: $text-color;
         text-decoration: none;
