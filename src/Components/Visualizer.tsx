@@ -1,7 +1,6 @@
 import React from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
-import { Vector3 } from 'babylonjs';
 
 class Visualizer extends React.Component {
     private canvas : HTMLCanvasElement;
