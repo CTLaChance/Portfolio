@@ -15,7 +15,6 @@ class Visualizer extends React.Component {
             // Scene Properties
             let scene = new BABYLON.Scene(engine);
             scene.clearColor = new BABYLON.Color4(0,0,0,1);
-
             
             // Camera Properties
             let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 0, -10), scene);
