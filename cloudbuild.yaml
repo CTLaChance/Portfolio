@@ -4,4 +4,4 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['run', 'build']
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r', './build/*', 'gs://ctlachance.com']
+  args: ['cp', '-r', './build/*', 'gs://www.ctlachance.com']
