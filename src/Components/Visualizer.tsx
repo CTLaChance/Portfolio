@@ -1,3 +1,5 @@
+/// <reference path="../babylon.module.d.ts" />
+
 import React from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
@@ -20,8 +22,40 @@ class Visualizer extends React.Component {
             let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 0, -10), scene);
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.minZ = 0;
+
+            // Lights
+            var light0 = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(-2, -5, 2), scene);
             
-            // Particle System
+            // Audio
+            let music = new BABYLON.Sound("ADriftingUp", "/assets/jh-adriftingup.mp3", scene, null, {loop: false, autoplay: true});
+            let analyser = new BABYLON.Analyser(scene);
+            BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
+            analyser.FFT_SIZE = 32;
+            analyser.SMOOTHING = 0.9;
+
+            var spatialBoxArray: { scaling: { y: number; }; }[] = [];
+            var spatialBox;
+            var color;
+
+            for (var index = 0; index < analyser.FFT_SIZE / 2; index++) {
+                spatialBox = BABYLON.Mesh.CreateBox("sb" + index, 2, scene);
+                spatialBox.position = new BABYLON.Vector3(index * 2, 0, 10);
+                spatialBox.material = new BABYLON.StandardMaterial("sbm" + index, scene);
+                color = new BABYLON.Color4(0.929, 0.122, 0.012, 0);
+                spatialBox.material.diffuseColor = new BABYLON.Color3(color.r, color.g, color.b);
+                spatialBoxArray.push(spatialBox);
+            }
+
+            scene.registerBeforeRender(function () {
+                var workingArray = analyser.getByteFrequencyData();
+
+                for (var i = 0; i < analyser.getFrequencyBinCount(); i++) {
+                    spatialBoxArray[i].scaling.y = workingArray[i] / 32;
+                }
+            });
+
+
+            // Star System Particle System //
             let particleSystem = new BABYLON.ParticleSystem("particles", 1000, scene);
             particleSystem.emitter = new BABYLON.Vector3(0,0, -11);
             particleSystem.particleTexture = new BABYLON.Texture('/assets/pixel.png', scene);
@@ -31,8 +65,6 @@ class Visualizer extends React.Component {
                                                                                  new BABYLON.Vector3(3, 3, 1));
             
             particleSystem.emitRate = 200;
-
-            // particleSystem.gravity = new BABYLON.Vector3(0, 0, 10);
 
             particleSystem.minSize = 0.005;
             particleSystem.maxSize = 0.01;
@@ -55,7 +87,7 @@ class Visualizer extends React.Component {
         // call the createScene function
         let scene = createScene();
         // scene.debugLayer.show();
-        
+
         // run the render loop
         engine.runRenderLoop(function () {
             scene.render();
@@ -67,8 +99,7 @@ class Visualizer extends React.Component {
     }
 
     render () {
-        return <canvas className="visualizer" ref={(element : HTMLCanvasElement) => this.canvas = element}/>;
-        // return <canvas id="visualizer"/>;
+        return <canvas id="visualizer" ref={(element : HTMLCanvasElement) => this.canvas = element}/>;
     }
 }
 
