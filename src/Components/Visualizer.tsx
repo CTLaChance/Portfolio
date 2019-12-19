@@ -3,6 +3,7 @@
 import React, { forwardRef } from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
+import { MeshBuilder } from 'babylonjs';
 
 class Visualizer extends React.Component {
     private canvas : HTMLCanvasElement;
@@ -19,63 +20,43 @@ class Visualizer extends React.Component {
             scene.clearColor = new BABYLON.Color4(0,0,0,1);
             
             // Camera Properties
-            let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 0, -10), scene);
+            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.minZ = 0;
 
             // Lights
-            var light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
+            let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
+            light.intensity = 2;
             
             // Audio
-            let music = new BABYLON.Sound("ADriftingUp", "/assets/fp-lesalpx.mp3", scene, null, {loop: false, autoplay: true});
+            // https://youtu.be/3RWpLWEetYg
+            let music = new BABYLON.Sound("music", "/assets/fp-lesalpx.mp3", scene, null, {loop: false, autoplay: true});
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
-            analyser.SMOOTHING = 0.9;
+            analyser.SMOOTHING = 0.95;
 
-            var reactivePixelArray = [];
-            var reactivePixel = BABYLON.Mesh.CreateBox("pixel", 0.05, scene);
-            reactivePixel.position = new BABYLON.Vector3(0, 0, 0);
-            reactivePixel.material = new BABYLON.StandardMaterial("sbm", scene);
+            // Add mesh.
+            let mesh = MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 10 }, scene);
+            mesh.material = new BABYLON.StandardMaterial("mat", scene);
+            mesh.position = new BABYLON.Vector3(0, 0, 0);
+            mesh.material.pointsCloud = true;
+            mesh.material.pointSize = 5;
 
             scene.registerBeforeRender(function () {
                 let frequencyArray = analyser.getByteFrequencyData();
-                let maxSize = 25;
-                let minSize = 0;
-                let freqMin = 200;
+                let freqMin = 150;
                 let freqMax = 230;
 
                 // Affine transformation of frequency range to scale range.
-                reactivePixel.scaling.y = reactivePixel.scaling.x = (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((maxSize - minSize)/(freqMax - freqMin)) + minSize;
+                // (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((maxRotation - minRotation) / (freqMax - freqMin)) + minRotation;
+                mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((1 - 0) / (freqMax - freqMin)) + 0;
+                mesh.rotation.x += frequencyArray[6] / 50000;
+                mesh.rotation.y += frequencyArray[8] / 50000;
+                mesh.rotation.z += frequencyArray[10] / 50000;
             });
 
-
-            // Star System Particle System //
-            let particleSystem = new BABYLON.ParticleSystem("particles", 1000, scene);
-            particleSystem.emitter = new BABYLON.Vector3(0,0, -11);
-            particleSystem.particleTexture = new BABYLON.Texture('/assets/pixel.png', scene);
-            particleSystem.particleEmitterType = particleSystem.createBoxEmitter(new BABYLON.Vector3(0, 0, 10),
-                                                                                 new BABYLON.Vector3(0, 0, 10),
-                                                                                 new BABYLON.Vector3(-3, -3, -1),
-                                                                                 new BABYLON.Vector3(3, 3, 1));
-            
-            particleSystem.emitRate = 200;
-
-            particleSystem.minSize = 0.005;
-            particleSystem.maxSize = 0.01;
-            
-            particleSystem.preWarmCycles = 100;
-            particleSystem.preWarmStepOffset = 10;
-
-            particleSystem.minLifeTime = 3.5;
-            particleSystem.maxLifeTime = 5;
-
-            particleSystem.color1 = new BABYLON.Color4(1,1,1,1);
-            particleSystem.color2 = new BABYLON.Color4(1,1,1,1);
-            
-            particleSystem.start();
-            
-            // return the created scene
+            // Return the created scene.
             return scene;
         }
         
