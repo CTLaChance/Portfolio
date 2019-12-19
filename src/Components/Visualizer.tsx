@@ -1,6 +1,6 @@
 /// <reference path="../babylon.module.d.ts" />
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
 
@@ -24,34 +24,30 @@ class Visualizer extends React.Component {
             camera.minZ = 0;
 
             // Lights
-            var light0 = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(-2, -5, 2), scene);
+            var light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
             
             // Audio
-            let music = new BABYLON.Sound("ADriftingUp", "/assets/jh-adriftingup.mp3", scene, null, {loop: false, autoplay: true});
+            let music = new BABYLON.Sound("ADriftingUp", "/assets/fp-lesalpx.mp3", scene, null, {loop: false, autoplay: true});
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
             analyser.SMOOTHING = 0.9;
 
-            var spatialBoxArray: { scaling: { y: number; }; }[] = [];
-            var spatialBox;
-            var color;
-
-            for (var index = 0; index < analyser.FFT_SIZE / 2; index++) {
-                spatialBox = BABYLON.Mesh.CreateBox("sb" + index, 2, scene);
-                spatialBox.position = new BABYLON.Vector3(index * 2, 0, 10);
-                spatialBox.material = new BABYLON.StandardMaterial("sbm" + index, scene);
-                color = new BABYLON.Color4(0.929, 0.122, 0.012, 0);
-                spatialBox.material.diffuseColor = new BABYLON.Color3(color.r, color.g, color.b);
-                spatialBoxArray.push(spatialBox);
-            }
+            var reactivePixelArray: { scaling: { y: number; }; }[] = [];
+            var reactivePixel = BABYLON.Mesh.CreateBox("pixel", 0.05, scene);
+            reactivePixel.position = new BABYLON.Vector3(0, 0, 0);
+            reactivePixel.material = new BABYLON.StandardMaterial("sbm", scene);
 
             scene.registerBeforeRender(function () {
-                var workingArray = analyser.getByteFrequencyData();
+                let frequencyArray = analyser.getByteFrequencyData();
+                let maxSize = 25;
+                let minSize = 0;
+                let rangeMin = 200;
+                let rangeMax = 230;
+                console.log(frequencyArray[1]);
 
-                for (var i = 0; i < analyser.getFrequencyBinCount(); i++) {
-                    spatialBoxArray[i].scaling.y = workingArray[i] / 32;
-                }
+                // Affine transformation of frequency range to scale range.
+                reactivePixel.scaling.y = reactivePixel.scaling.x = (frequencyArray[1] - rangeMin) * ((maxSize - minSize)/(rangeMax - rangeMin)) + minSize;
             });
 
 
@@ -59,8 +55,8 @@ class Visualizer extends React.Component {
             let particleSystem = new BABYLON.ParticleSystem("particles", 1000, scene);
             particleSystem.emitter = new BABYLON.Vector3(0,0, -11);
             particleSystem.particleTexture = new BABYLON.Texture('/assets/pixel.png', scene);
-            particleSystem.particleEmitterType = particleSystem.createBoxEmitter(new BABYLON.Vector3(0, 2, 10),
-                                                                                 new BABYLON.Vector3(0, 2, 10),
+            particleSystem.particleEmitterType = particleSystem.createBoxEmitter(new BABYLON.Vector3(0, 0, 10),
+                                                                                 new BABYLON.Vector3(0, 0, 10),
                                                                                  new BABYLON.Vector3(-3, -3, -1),
                                                                                  new BABYLON.Vector3(3, 3, 1));
             
@@ -75,8 +71,8 @@ class Visualizer extends React.Component {
             particleSystem.minLifeTime = 3.5;
             particleSystem.maxLifeTime = 5;
 
-            particleSystem.color1 = new BABYLON.Color4(0.929, 0.122, 0.012, 0);
-            particleSystem.color2 = new BABYLON.Color4(0.929, 0.122, 0.012, 1);
+            particleSystem.color1 = new BABYLON.Color4(1,1,1,1);
+            particleSystem.color2 = new BABYLON.Color4(1,1,1,1);
             
             particleSystem.start();
             
