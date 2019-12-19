@@ -33,7 +33,7 @@ class Visualizer extends React.Component {
             analyser.FFT_SIZE = 32;
             analyser.SMOOTHING = 0.9;
 
-            var reactivePixelArray: { scaling: { y: number; }; }[] = [];
+            var reactivePixelArray = [];
             var reactivePixel = BABYLON.Mesh.CreateBox("pixel", 0.05, scene);
             reactivePixel.position = new BABYLON.Vector3(0, 0, 0);
             reactivePixel.material = new BABYLON.StandardMaterial("sbm", scene);
@@ -42,12 +42,11 @@ class Visualizer extends React.Component {
                 let frequencyArray = analyser.getByteFrequencyData();
                 let maxSize = 25;
                 let minSize = 0;
-                let rangeMin = 200;
-                let rangeMax = 230;
-                console.log(frequencyArray[1]);
+                let freqMin = 200;
+                let freqMax = 230;
 
                 // Affine transformation of frequency range to scale range.
-                reactivePixel.scaling.y = reactivePixel.scaling.x = (frequencyArray[1] - rangeMin) * ((maxSize - minSize)/(rangeMax - rangeMin)) + minSize;
+                reactivePixel.scaling.y = reactivePixel.scaling.x = (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((maxSize - minSize)/(freqMax - freqMin)) + minSize;
             });
 
 
