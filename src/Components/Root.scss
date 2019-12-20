@@ -21,7 +21,7 @@ $text-color: #ba1f33;
     //Keyframes//
     @keyframes pageloadTranslate {
         0% {
-            transform: translate(-50%, 0%);
+            transform: translate(-50%, -50%);
         }
         100% {
             // transform: translate(-50%, -45vh);

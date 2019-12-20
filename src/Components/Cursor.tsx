@@ -7,6 +7,9 @@ class Cursor extends React.Component {
     componentDidMount() {
         const cursor = this.cursor;
 
+        document.addEventListener('mousedown', event => {
+            BABYLON.Engine.audioEngine.unlock();
+        });
 
         // Hide the cursor when leaving.
         document.addEventListener('mouseleave', event => {
