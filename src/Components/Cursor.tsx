@@ -7,7 +7,6 @@ class Cursor extends React.Component {
     componentDidMount() {
         const cursor = this.cursor;
 
-
         // Hide the cursor when leaving.
         document.addEventListener('mouseleave', event => {
             cursor.hidden = true;
