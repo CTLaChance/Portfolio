@@ -33,12 +33,15 @@ $cursor-color: #ba1f33;
 }
 
 #cursor{
+    // Prevents the cursor from being interactable.
+    pointer-events: none;
+
     // Dot //
     height: 2px;
     width: 2px;
     position: absolute;
     background-color: $cursor-color;
-    
+
     // Outer Box //
     &::before {
         content: "";

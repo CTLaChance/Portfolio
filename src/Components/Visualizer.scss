@@ -11,7 +11,6 @@ $text-color: #ba1f33;
 }
 
 #media-buttons {
-    z-index: 15;
     display: flex;
     flex-direction: row-reverse;
     position: fixed;
@@ -20,10 +19,9 @@ $text-color: #ba1f33;
     transform: translate(-50%, -50%);
     
     // Remove the blue border on button focus.
-    button:focus {outline: 0;}
+    button:focus {outline: 0; user-select: none;}
 
     #play {
-        z-index: 15;
         cursor: none;
 
         font-size: 20px;
@@ -49,7 +47,6 @@ $text-color: #ba1f33;
     }
 
     #pause {
-        z-index: 15;
         cursor: none;
 
         font-size: 20px;

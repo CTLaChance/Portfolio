@@ -9,29 +9,27 @@ class Visualizer extends React.Component {
     private music : BABYLON.Sound;
 
     componentDidMount() {
-        // const canvas = document.getElementById("visualizer") as HTMLCanvasElement;
         const canvas = this.canvas;
         const engine = new BABYLON.Engine(canvas, true);
         BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
 
-        // createScene function that creates and return the scene
         let createScene = () => {
-            // Scene Properties
+            // Scene Properties //
             let scene = new BABYLON.Scene(engine);
             scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
-            // Camera Properties
+            // Camera Properties //
             let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
             camera.setTarget(BABYLON.Vector3.Zero());
             camera.minZ = 0;
 
-            // Lights
+            // Light Properties //
             // let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
             let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
             light.intensity = 2;
 
-            // Audio
-            this.music = new BABYLON.Sound("music", "/assets/fp-lesalpx.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
+            // Audio Properties //
+            this.music = new BABYLON.Sound("music", "/assets/noisia-thehole.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
@@ -47,11 +45,11 @@ class Visualizer extends React.Component {
             scene.registerBeforeRender(() => {
                 let frequencyArray = analyser.getByteFrequencyData();
                 let freqMin = 180;
-                let freqMax = 220;
+                let freqMax = 235;
 
                 // Affine transformation of frequency range to scale range.
                 // (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((maxRotation - minRotation) / (freqMax - freqMin)) + minRotation;
-                if (this.music.isPlaying) {
+                if (this.music.isPlaying && !this.music.isPaused) {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((1 - 0) / (freqMax - freqMin)) + 0;
                     mesh.rotation.x += frequencyArray[6] > 140 ? 0.005 : 0;
                     mesh.rotation.y += frequencyArray[8] > 140 ? 0.005 : 0;
@@ -68,11 +66,9 @@ class Visualizer extends React.Component {
             return scene;
         }
 
-        // call the createScene function
         let scene = createScene();
         // scene.debugLayer.show();
 
-        // run the render loop
         engine.runRenderLoop(function () {
             scene.render();
         });
@@ -83,7 +79,6 @@ class Visualizer extends React.Component {
     }
 
     private playMusic = () => {
-        console.log("PLAY BUTTON");
         BABYLON.Engine.audioEngine.unlock();
         this.music.play();
     }
