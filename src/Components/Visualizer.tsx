@@ -87,13 +87,20 @@ class Visualizer extends React.Component {
         });
     }
 
-    private playMusic = () => {
-        BABYLON.Engine.audioEngine.unlock();
-        this.music.play();
-    }
+    private toggleMusic = () => {
+        if (this.music.isPlaying && !this.music.isPaused) {
+            this.music.pause();
+            
+            document.getElementById("playButtonSVG")?.setAttribute("style", "opacity: 1");
+            document.getElementById("pauseButtonSVG")?.setAttribute("style", "opacity: 0");
+        }
+        else {
+            BABYLON.Engine.audioEngine.unlock();
+            this.music.play();
 
-    private pauseMusic = () => {
-        this.music.pause();
+            document.getElementById("playButtonSVG")?.setAttribute("style", "opacity: 0");
+            document.getElementById("pauseButtonSVG")?.setAttribute("style", "opacity: 1");
+        }
     }
 
     render() {
@@ -101,8 +108,20 @@ class Visualizer extends React.Component {
             <React.Fragment>
                 <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
                 <div id="media-buttons">
-                    <button id="play" onClick={this.playMusic}>PLAY</button>
-                    <button id="pause" onClick={this.pauseMusic}>PAUSE</button>
+                    <div id="info">Jon Hopkins - Breathe This Air - Immunity</div>
+                    <svg id="toggleMusic" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        {/* Play Button */}
+                        <g id="playButtonSVG">
+                            <path fill="none" d="M0 0h24v24H0V0z" />
+                            <path d="M8 5v14l11-7L8 5z" />
+                        </g>
+
+                        {/* Pause Button */}
+                        <g id="pauseButtonSVG" style={{opacity: 0}}>
+                            <path fill="none" d="M0 0h24v24H0V0z" />
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </g>
+                    </svg>
                 </div>
             </React.Fragment>
         );
