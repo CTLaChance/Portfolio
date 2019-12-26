@@ -5,17 +5,18 @@ import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
 
 class Visualizer extends React.Component {
+    private engine: BABYLON.Engine;
     private canvas: HTMLCanvasElement;
     private music: BABYLON.Sound;
 
     componentDidMount() {
         const canvas = this.canvas;
-        const engine = new BABYLON.Engine(canvas, true);
+        this.engine = new BABYLON.Engine(canvas, true);
         BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
 
         let createScene = () => {
             // Scene Properties //
-            let scene = new BABYLON.Scene(engine);
+            let scene = new BABYLON.Scene(this.engine);
             scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
             // Camera Properties //
@@ -77,13 +78,21 @@ class Visualizer extends React.Component {
         let scene = createScene();
         // scene.debugLayer.show();
 
-        engine.runRenderLoop(function () {
+        this.engine.runRenderLoop(function () {
             scene.render();
         });
 
-        window.addEventListener("resize", function () {
-            engine.resize();
-        });
+        window.addEventListener("resize", this.onResizeWindow);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.onResizeWindow);
+    }
+
+    onResizeWindow = () => {
+        if (this.engine) {
+            this.engine.resize();
+        }
     }
 
     private toggleMusic = () => {
