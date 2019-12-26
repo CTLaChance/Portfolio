@@ -3,10 +3,11 @@
 import React from 'react';
 import * as BABYLON from 'babylonjs';
 import './Visualizer.scss';
+import { int } from 'babylonjs';
 
 class Visualizer extends React.Component {
-    private canvas : HTMLCanvasElement;
-    private music : BABYLON.Sound;
+    private canvas: HTMLCanvasElement;
+    private music: BABYLON.Sound;
 
     componentDidMount() {
         const canvas = this.canvas;
@@ -29,11 +30,14 @@ class Visualizer extends React.Component {
             light.intensity = 2;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/noisia-thehole.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/jh-breathethisair.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
-            analyser.FFT_SIZE = 32;
-            analyser.SMOOTHING = 0.95;
+            analyser.FFT_SIZE = 512;
+            analyser.SMOOTHING = 0.85;
+            // analyser.DEBUGCANVASPOS = { x: 0, y: 0 };
+            // analyser.DEBUGCANVASSIZE = { width: 300, height: 600 };
+            // analyser.drawDebugCanvas();
 
             // Add mesh.
             let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 15 }, scene);
@@ -44,16 +48,21 @@ class Visualizer extends React.Component {
 
             scene.registerBeforeRender(() => {
                 let frequencyArray = analyser.getByteFrequencyData();
-                let freqMin = 180;
-                let freqMax = 235;
+                let freqMin = 140, freqMax = 235;
+                let scaleMin = 0, scaleMax = 1;
+
+                let bassValue = Math.trunc((frequencyArray[0] + frequencyArray[1] + frequencyArray[2]) / 3);
+                // console.log(bassValue);
 
                 // Affine transformation of frequency range to scale range.
-                // (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((maxRotation - minRotation) / (freqMax - freqMin)) + minRotation;
                 if (this.music.isPlaying && !this.music.isPaused) {
-                    mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(frequencyArray[1], freqMin), freqMax) - freqMin) * ((1 - 0) / (freqMax - freqMin)) + 0;
-                    mesh.rotation.x += frequencyArray[6] > 140 ? 0.005 : 0;
-                    mesh.rotation.y += frequencyArray[8] > 140 ? 0.005 : 0;
-                    mesh.rotation.z += frequencyArray[10] > 130 ? 0.005 : 0;
+                    mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(bassValue, freqMin), freqMax) - freqMin) * ((scaleMax - scaleMin) / (freqMax - freqMin)) + scaleMin;
+                    // mesh.rotation.x += frequencyArray[6] > 150 ? 0.001 : 0;
+                    // mesh.rotation.y += frequencyArray[8] > 150 ? 0.001 : 0;
+                    // mesh.rotation.z += frequencyArray[10] > 150 ? 0.001 : 0;
+
+                    mesh.rotation.x -= 0.0005;
+                    mesh.rotation.y -= 0.0005;
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = 1;
@@ -90,11 +99,11 @@ class Visualizer extends React.Component {
     render() {
         return (
             <React.Fragment>
-            <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
-            <div id="media-buttons">
-                <button id="play" onClick={this.playMusic}>PLAY</button>
-                <button id="pause" onClick={this.pauseMusic}>PAUSE</button>
-            </div>
+                <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
+                <div id="media-buttons">
+                    <button id="play" onClick={this.playMusic}>PLAY</button>
+                    <button id="pause" onClick={this.pauseMusic}>PAUSE</button>
+                </div>
             </React.Fragment>
         );
     }
