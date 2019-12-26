@@ -11,66 +11,42 @@ $text-color: #ba1f33;
 }
 
 #media-buttons {
-    z-index: 15;
+    cursor: none;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
     position: fixed;
     left: 50%;
     bottom: 0%;
     transform: translate(-50%, -50%);
     
-    // Remove the blue border on button focus.
-    button:focus {outline: 0;}
-
-    #play {
-        z-index: 15;
-        cursor: none;
-
-        font-size: 20px;
+    outline: 0;
+    user-select: none;
+    
+    // Song information. 
+    #info {
         color: $text-color;
-        background-color: transparent;
-        border:none;
-        text-shadow: 0px 0px 1px $text-color,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black;
-
-        padding: 0px 10px;
-
-        transition: ease-in-out;
-        transition-duration: .25s;
-
-        &:hover {
-            color: white;
-        }
+        font-family: sans-serif;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
     }
 
-    #pause {
-        z-index: 15;
-        cursor: none;
+    #toggleMusic {
 
-        font-size: 20px;
-        color: $text-color;
+        fill: $text-color;
         background-color: transparent;
-        border:none;
-        text-shadow: 0px 0px 1px $text-color,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black,
-                         0px 0px 5px black;
 
-        padding: 0px 10px;
+        width: 30%;
+        height: 50px;
 
         transition: ease-in-out;
         transition-duration: .25s;
 
         &:hover {
-            color: white;
+            fill: white;
         }
     }
 }
