@@ -6,7 +6,7 @@ $text-color: #ba1f33;
 }
 
 #root {
-    animation: .30s linear .75s 1 pageloadOpacity;
+    animation: .30s linear .5s 1 pageloadOpacity;
     animation-fill-mode: both;
     @keyframes pageloadOpacity {
         0%,
