@@ -1,6 +1,6 @@
 https://ctlachance.com
 
-I decided to create a portfolio site as a way to practice my front-end development skills, particularly React and JS/Typescript. The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site. (This is so damn cool. :D)
+I decided to create a portfolio site as a way to practice my front-end development skills, particularly React and JS/Typescript. The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.
 
 This site will remain in flux as a testbed for learning new web-tech. Let me know if you want to hire me. I'm always learning new stuff.
 
