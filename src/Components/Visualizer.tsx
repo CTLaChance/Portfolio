@@ -25,21 +25,22 @@ class Visualizer extends React.Component {
             camera.minZ = 0;
 
             // Light Properties //
-            // let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
             let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
             light.intensity = 2;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/jh-breathethisair.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/jh-breathethisair.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 512;
             analyser.SMOOTHING = 0.85;
-            // analyser.DEBUGCANVASPOS = { x: 0, y: 0 };
-            // analyser.DEBUGCANVASSIZE = { width: 300, height: 600 };
-            // analyser.drawDebugCanvas();
 
-            // Add mesh.
+            let freqMin = 140, freqMax = 235;
+            let scaleMin = 0, scaleMax = 1;
+            let bassValue = 0;
+            let frequencyArray;
+
+            // Mesh Properties //
             let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 15 }, scene);
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
@@ -47,20 +48,13 @@ class Visualizer extends React.Component {
             mesh.material.pointSize = 5;
 
             scene.registerBeforeRender(() => {
-                let frequencyArray = analyser.getByteFrequencyData();
-                let freqMin = 140, freqMax = 235;
-                let scaleMin = 0, scaleMax = 1;
+                frequencyArray = analyser.getByteFrequencyData();
 
-                let bassValue = Math.trunc((frequencyArray[0] + frequencyArray[1] + frequencyArray[2]) / 3);
-                // console.log(bassValue);
+                bassValue = Math.trunc((frequencyArray[0] + frequencyArray[1] + frequencyArray[2]) / 3);
 
-                // Affine transformation of frequency range to scale range.
                 if (this.music.isPlaying && !this.music.isPaused) {
+                    // Affine transformation of frequency range to scale range.
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(bassValue, freqMin), freqMax) - freqMin) * ((scaleMax - scaleMin) / (freqMax - freqMin)) + scaleMin;
-                    // mesh.rotation.x += frequencyArray[6] > 150 ? 0.001 : 0;
-                    // mesh.rotation.y += frequencyArray[8] > 150 ? 0.001 : 0;
-                    // mesh.rotation.z += frequencyArray[10] > 150 ? 0.001 : 0;
-
                     mesh.rotation.x -= 0.0005;
                     mesh.rotation.y -= 0.0005;
                 }
@@ -71,12 +65,10 @@ class Visualizer extends React.Component {
                 }
             });
 
-            // Return the created scene.
             return scene;
         }
 
         let scene = createScene();
-        // scene.debugLayer.show();
 
         this.engine.runRenderLoop(function () {
             scene.render();
@@ -98,7 +90,7 @@ class Visualizer extends React.Component {
     private toggleMusic = () => {
         if (this.music.isPlaying && !this.music.isPaused) {
             this.music.pause();
-            
+
             document.getElementById("playButtonSVG")?.setAttribute("style", "opacity: 1");
             document.getElementById("pauseButtonSVG")?.setAttribute("style", "opacity: 0");
         }
@@ -125,7 +117,7 @@ class Visualizer extends React.Component {
                         </g>
 
                         {/* Pause Button */}
-                        <g id="pauseButtonSVG" style={{opacity: 0}}>
+                        <g id="pauseButtonSVG" style={{ opacity: 0 }}>
                             <path fill="none" d="M0 0h24v24H0V0z" />
                             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                         </g>
