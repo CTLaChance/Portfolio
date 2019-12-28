@@ -41,7 +41,7 @@ class Visualizer extends React.Component {
             let frequencyArray;
 
             // Mesh Properties //
-            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 15 }, scene);
+            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 17 }, scene);
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
             mesh.material.pointsCloud = true;
@@ -55,8 +55,8 @@ class Visualizer extends React.Component {
                 if (this.music.isPlaying && !this.music.isPaused) {
                     // Affine transformation of frequency range to scale range.
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(bassValue, freqMin), freqMax) - freqMin) * ((scaleMax - scaleMin) / (freqMax - freqMin)) + scaleMin;
-                    mesh.rotation.x -= 0.0005;
-                    mesh.rotation.y -= 0.0005;
+                    mesh.rotation.x -= 0.001;
+                    mesh.rotation.y -= 0.001;
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = 1;
@@ -91,15 +91,15 @@ class Visualizer extends React.Component {
         if (this.music.isPlaying && !this.music.isPaused) {
             this.music.pause();
 
-            document.getElementById("playButtonSVG")?.setAttribute("style", "opacity: 1");
-            document.getElementById("pauseButtonSVG")?.setAttribute("style", "opacity: 0");
+            document.getElementById("play-button")?.setAttribute("style", "opacity: 1");
+            document.getElementById("pause-button")?.setAttribute("style", "opacity: 0");
         }
         else {
             BABYLON.Engine.audioEngine.unlock();
             this.music.play();
 
-            document.getElementById("playButtonSVG")?.setAttribute("style", "opacity: 0");
-            document.getElementById("pauseButtonSVG")?.setAttribute("style", "opacity: 1");
+            document.getElementById("play-button")?.setAttribute("style", "opacity: 0");
+            document.getElementById("pause-button")?.setAttribute("style", "opacity: 1");
         }
     }
 
@@ -109,15 +109,13 @@ class Visualizer extends React.Component {
                 <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
                 <div id="media-buttons">
                     <div id="info">Jon Hopkins - Breathe This Air - Immunity</div>
-                    <svg id="toggleMusic" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        {/* Play Button */}
-                        <g id="playButtonSVG">
+                    <svg id="toggle-music" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g id="play-button">
                             <path fill="none" d="M0 0h24v24H0V0z" />
                             <path d="M8 5v14l11-7L8 5z" />
                         </g>
 
-                        {/* Pause Button */}
-                        <g id="pauseButtonSVG" style={{ opacity: 0 }}>
+                        <g id="pause-button" style={{ opacity: 0 }}>
                             <path fill="none" d="M0 0h24v24H0V0z" />
                             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                         </g>
