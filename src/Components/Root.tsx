@@ -6,8 +6,8 @@ import Cursor from './Cursor';
 const Root: React.FC = () => {
   return (
     <React.Fragment>
-      <Visualizer />
       <h1 id="title">CHRISTOPHER LACHANCE</h1>
+      <Visualizer />
       <Cursor />
     </React.Fragment>
   );

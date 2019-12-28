@@ -8,10 +8,10 @@ $text-color: #ba1f33;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 #media-buttons {
-    cursor: none;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -34,8 +34,7 @@ $text-color: #ba1f33;
         padding: 10px;
     }
 
-    #toggleMusic {
-
+    #toggle-music {
         fill: $text-color;
         background-color: transparent;
 
