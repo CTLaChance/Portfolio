@@ -53,7 +53,10 @@ $text-color: #ba1f33;
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
+    // backdrop-filter: brightness(50%) sepia(1) hue-rotate(314deg) saturate(1000%) brightness(57%);
+    backdrop-filter: blur(10px);
 }
 
 #about {

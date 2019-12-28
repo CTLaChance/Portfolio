@@ -41,7 +41,7 @@ class Visualizer extends React.Component {
             let frequencyArray;
 
             // Mesh Properties //
-            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 15 }, scene);
+            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 17 }, scene);
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
             mesh.material.pointsCloud = true;
@@ -55,8 +55,8 @@ class Visualizer extends React.Component {
                 if (this.music.isPlaying && !this.music.isPaused) {
                     // Affine transformation of frequency range to scale range.
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = (Math.min(Math.max(bassValue, freqMin), freqMax) - freqMin) * ((scaleMax - scaleMin) / (freqMax - freqMin)) + scaleMin;
-                    mesh.rotation.x -= 0.0005;
-                    mesh.rotation.y -= 0.0005;
+                    mesh.rotation.x -= 0.001;
+                    mesh.rotation.y -= 0.001;
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = 1;
