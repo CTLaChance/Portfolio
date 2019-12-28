@@ -7,8 +7,8 @@ const Root: React.FC = () => {
   return (
     <React.Fragment>
       <Visualizer />
-      <Cursor />
       <h1 id="title">CHRISTOPHER LACHANCE</h1>
+      <Cursor />
     </React.Fragment>
   );
 }
