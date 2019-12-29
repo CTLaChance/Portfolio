@@ -31,11 +31,6 @@ $text-color: #ba1f33;
     }
 }
 
-// BabylonJS scene view layering fix.
-#scene-explorer-host {
-    z-index: 1;
-}
-
 #root {
     @include staggered-delay;
 }
@@ -44,9 +39,11 @@ $text-color: #ba1f33;
     color: $text-color;
     text-shadow: 0px 0px 5px $text-color,
                 0px 0px 5px black;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Tomorrow', sans-serif;
     font-weight: 100;
     font-size: 70px;
+    letter-spacing: 5px;
+    font-style: italic;
     text-align: center;
     user-select: none;
     margin: 0px;
@@ -57,17 +54,4 @@ $text-color: #ba1f33;
     transform: translate(-50%, -50%);
     // backdrop-filter: brightness(50%) sepia(1) hue-rotate(314deg) saturate(1000%) brightness(57%);
     backdrop-filter: blur(10px);
-}
-
-#about {
-    display: none;
-    color: #ba1f33;
-    font-family: 'Open Sans', sans-serif;
-    a {
-        color: $text-color;
-        text-decoration: none;
-        &:hover {
-            color: white;
-        }
-    }
 }
