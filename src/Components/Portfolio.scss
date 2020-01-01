@@ -4,7 +4,7 @@ $text-color: #ba1f33;
 #name {
     position: fixed;
     width:100%;
-    top: 10%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -18,18 +18,23 @@ $text-color: #ba1f33;
     font-style: italic;
     text-align: center;
     user-select: none;
-    transition-duration: .25s;
+    backdrop-filter: blur(10px);
+    transition: top 1s cubic-bezier(0.8,0,.2,1), color 0.25s linear;
+    
     &:hover {
         color: white;
     }
     
-    backdrop-filter: blur(10px);
-    // backdrop-filter: brightness(50%) sepia(1) hue-rotate(314deg) saturate(1000%) brightness(57%);
+    // Opened Position
+    &.opened {
+        top: 10%;
+    }
 }
 
 .swiper-container
  {
     position: fixed !important;
+    visibility: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -43,25 +48,21 @@ $text-color: #ba1f33;
         justify-content: center;
         align-items: center;
         font-family: 'Tomorrow';
-    }
-}
-
-
-.augmented-card {
-    --aug-tl-width: 50%;
-    --aug-tl-height: 7.5%;
-    --aug-bl-height: 30%;
-    
-    h1 {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        top: 0%;
-        padding-right: 5px;        
+        --aug-tl-width: 50%;
+        --aug-tl-height: 7.5%;
+        --aug-bl-height: 30%;
         
-        color: black;
-        text-align: right;
-        font-size: 2vh;
-        text-transform: uppercase;
+        h1 {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            top: 0%;
+            padding-right: 5px;        
+            
+            color: black;
+            text-align: right;
+            font-size: 2vh;
+            text-transform: uppercase;
+        }
     }
 }
