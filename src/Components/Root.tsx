@@ -6,9 +6,10 @@ import Portfolio from './Portfolio';
 
 const Root: React.FC = () => {
   return (
+    // Stack items from furthest to closest.
     <React.Fragment>
-      <Portfolio />
       <Visualizer />
+      <Portfolio />
       <Cursor />
     </React.Fragment>
   );

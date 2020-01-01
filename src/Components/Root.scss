@@ -18,9 +18,9 @@
     }
 
     // Stagger pageload animations for a more organic feel.
-    @for $i from 0 through 3 {
+    @for $i from 2 through 4 {
         // > selects only direct children. Otherwise nth-child would run recursively.
-        > :nth-child(#{$i}) {
+        > :nth-last-child(#{$i}) {
             animation: .30s linear #{$i * .25}s 1 pageload-opacity;
             animation-fill-mode: both;
         }
