@@ -47,16 +47,21 @@ $text-color: #ba1f33;
 }
 
 
-.augmented-header {
-    background: transparent;
-    color: white;
-    padding: 5px 20px;
-    width: 250px;
-    margin: 5px 20px;
-    --aug-border: 2px;
-    --aug-border-bg: #{$text-color};
-
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.augmented-card {
+    --aug-tl-width: 50%;
+    --aug-tl-height: 7.5%;
+    --aug-bl-height: 30%;
+    
+    h1 {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0%;
+        padding-right: 5px;        
+        
+        color: black;
+        text-align: right;
+        font-size: 2vh;
+        text-transform: uppercase;
+    }
 }

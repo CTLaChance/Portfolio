@@ -8,6 +8,7 @@ class Portfolio extends React.Component {
         let mySwiper = new Swiper('.swiper-container', {
             init: true,
             freeMode: true,
+            initialSlide: 1,
             slidesPerView: 3,
             spaceBetween: 50,
             centeredSlides: true
@@ -20,13 +21,13 @@ class Portfolio extends React.Component {
                 <div id="name">CHRISTOPHER LACHANCE</div>
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide">Card 1</div>
-                        <div className="swiper-slide">Card 2</div>
-                        <div className="swiper-slide">Card 3</div>
-                        <div className="swiper-slide">Card 4</div>
-                        <div className="swiper-slide">Card 5</div>
-                        <div className="swiper-slide">Card 6</div>
-                        <div className="swiper-slide">Card 7</div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 1</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 2</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 3</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 4</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 5</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 6</h1></div>
+                        <div className="swiper-slide augmented-card" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 7</h1></div>
                     </div>
                 </div>
             </React.Fragment>
