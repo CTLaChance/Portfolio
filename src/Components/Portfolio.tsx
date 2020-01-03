@@ -8,6 +8,13 @@ class Portfolio extends React.Component {
         opened: false
     }
 
+    private projects = [
+        {
+            name: "Portfolio",
+            picture: "/assets/projects/portfolio_card.png",
+        },
+    ];
+
     openPortfolio() {
         let name = document.getElementById("name");
         if (!this.state.opened) {
@@ -40,13 +47,9 @@ class Portfolio extends React.Component {
             swiper =
             <div className="swiper-container">
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 1</h1></div>
+                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe" style={{backgroundImage: `url(${this.projects[0].picture})`, backgroundSize: "100% 100%"}}><h1>{this.projects[0].name}</h1></div>
                     <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 2</h1></div>
                     <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 3</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 4</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 5</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 6</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 7</h1></div>
                 </div>
             </div>;
         }

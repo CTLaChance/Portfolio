@@ -89,7 +89,8 @@ $text-color: #ba1f33;
             top: 0%;
             padding-right: 5px;        
             
-            color: black;
+            color: white;
+            mix-blend-mode: difference;
             text-align: right;
             font-size: 2vh;
             text-transform: uppercase;
