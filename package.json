@@ -7,12 +7,14 @@
         "@types/node": "12.12.14",
         "@types/react": "16.9.13",
         "@types/react-dom": "16.9.4",
+        "@types/swiper": "^5.2.0",
         "babylonjs": "^4.0.3",
         "moment": "^2.24.0",
         "node-sass": "^4.13.0",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "react-scripts": "^3.3.0",
+        "swiper": "^5.2.1",
         "typescript": "3.7.2"
     },
     "scripts": {

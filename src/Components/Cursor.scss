@@ -36,6 +36,8 @@ $cursor-color: #ba1f33;
     // Prevents the cursor from being interactable.
     pointer-events: none;
 
+    z-index: 1;
+
     // Dot //
     height: 2px;
     width: 2px;
