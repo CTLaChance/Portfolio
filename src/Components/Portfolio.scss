@@ -1,6 +1,24 @@
 // Variables //
 $text-color: #ba1f33;
 
+// Cyberpunk Flicker Animation //
+@keyframes pageload-opacity {
+    0%,
+    30%,
+    36%,
+    63%,
+    69%,
+    99%{
+        opacity: 0;
+    }
+    33%,
+    66%,
+    100% {
+        opacity: 1;
+
+    }
+}
+
 #name {
     position: fixed;
     width:100%;
@@ -41,6 +59,18 @@ $text-color: #ba1f33;
 
     width: 100%;
     height: 30%;
+
+    animation: none !important; //Prevent the pageload animation from firing.
+
+    .swiper-wrapper {
+        @for $i from 1 through 10 {
+            // > selects only direct children. Otherwise nth-child would run recursively.
+            > :nth-child(#{$i}) {
+                animation: .25s linear #{.5 + ($i * .15)}s 1 pageload-opacity !important;
+                animation-fill-mode: both !important;
+            }
+        }
+    }
 
     .swiper-slide {
         background-color: white;
