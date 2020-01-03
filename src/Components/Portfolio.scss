@@ -81,6 +81,9 @@ $text-color: #ba1f33;
         --aug-tl-width: 50%;
         --aug-tl-height: 7.5%;
         --aug-bl-height: 30%;
+
+        --aug-border: 2px;
+        --aug-border-bg: #{$text-color};
         
         h1 {
             width: 100%;
