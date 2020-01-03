@@ -11,7 +11,11 @@ class Portfolio extends React.Component {
     private projects = [
         {
             name: "Portfolio",
-            picture: "/assets/projects/portfolio_card.png",
+            card: "/assets/projects/portfolio_card.png",
+        },
+        {
+            name: "ARE Website",
+            card: "/assets/projects/arewebsite_card.png"
         },
     ];
 
@@ -47,9 +51,9 @@ class Portfolio extends React.Component {
             swiper =
             <div className="swiper-container">
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe" style={{backgroundImage: `url(${this.projects[0].picture})`, backgroundSize: "100% 100%"}}><h1>{this.projects[0].name}</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 2</h1></div>
-                    <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe"><h1>Card 3</h1></div>
+                    {this.projects.map((element) => {
+                        return <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                    })}
                 </div>
             </div>;
         }

@@ -58,7 +58,7 @@ $text-color: #ba1f33;
     transform: translate(-50%, -50%);
 
     width: 100%;
-    height: 30%;
+    height: 32%;
 
     animation: none !important; //Prevent the pageload animation from firing.
 
@@ -66,7 +66,7 @@ $text-color: #ba1f33;
         @for $i from 1 through 10 {
             // > selects only direct children. Otherwise nth-child would run recursively.
             > :nth-child(#{$i}) {
-                animation: .25s linear #{.5 + ($i * .15)}s 1 pageload-opacity !important;
+                animation: .4s linear #{.25 + ($i * .15)}s 1 pageload-opacity !important;
                 animation-fill-mode: both !important;
             }
         }
@@ -90,10 +90,18 @@ $text-color: #ba1f33;
             height: 100%;
             margin: 0;
             top: 0%;
-            padding-right: 5px;        
+            padding-right: 7px;        
             
             color: white;
-            mix-blend-mode: difference;
+            text-shadow:    0px 0px 4px black, 
+                            0px 0px 4px black,
+                            0px 0px 4px black,
+                            0px 0px 4px black,
+                            0px 0px 4px black,
+                            0px 0px 4px black,
+                            0px 0px 4px black,
+                            0px 0px 4px black;
+            // mix-blend-mode: difference;
             text-align: right;
             font-size: 2vh;
             text-transform: uppercase;
