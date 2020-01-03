@@ -17,6 +17,14 @@ class Portfolio extends React.Component {
             name: "ARE Website",
             card: "/assets/projects/arewebsite_card.png"
         },
+        {
+            name: "Pharaoh Sun",
+            card: "/assets/projects/pharaohsun_card.jpg"
+        },
+        {
+            name: "Wild Tiki",
+            card: "/assets/projects/wildtiki_card.jpg"
+        }
     ];
 
     openPortfolio() {
