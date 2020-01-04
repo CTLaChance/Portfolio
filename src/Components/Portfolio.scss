@@ -2,7 +2,7 @@
 $text-color: #ba1f33;
 
 // Cyberpunk Flicker Animation //
-@keyframes pageload-opacity {
+@keyframes component-load-flicker {
     0%,
     30%,
     36%,
@@ -66,7 +66,7 @@ $text-color: #ba1f33;
         @for $i from 1 through 10 {
             // > selects only direct children. Otherwise nth-child would run recursively.
             > :nth-child(#{$i}) {
-                animation: .4s linear #{.25 + ($i * .2)}s 1 pageload-opacity !important;
+                animation: .4s linear #{.25 + ($i * .2)}s 1 component-load-flicker !important;
                 animation-fill-mode: both !important;
             }
         }
@@ -81,6 +81,8 @@ $text-color: #ba1f33;
         --aug-tl-width: 50%;
         --aug-tl-height: 5%;
         --aug-br-width: 33%;
+        --aug-br-height: 5%;
+        --aug-bl: 30px;
         --aug-border: 2px;
         --aug-border-bg: #{$text-color};
 
@@ -99,8 +101,8 @@ $text-color: #ba1f33;
 
         &:hover {
             transform: scale(1.1, 1.1) translateY(-45%);
-            --aug-tl-width: 5%;
-            --aug-br-width: 5%;
+            --aug-tl-width: 10%;
+            --aug-br-width: 10%;
             --aug-border-bg: white;
         }
 

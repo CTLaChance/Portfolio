@@ -40,6 +40,7 @@ class Portfolio extends React.Component {
     }
 
     componentDidUpdate() {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         let mySwiper = new Swiper('.swiper-container', {
             init: true,
             freeMode: true,
@@ -59,8 +60,8 @@ class Portfolio extends React.Component {
             swiper =
             <div className="swiper-container">
                 <div className="swiper-wrapper">
-                    {this.projects.map((element) => {
-                        return <div className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                    {this.projects.map((element, index) => {
+                        return <div key={index}className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
