@@ -44,7 +44,7 @@ class Portfolio extends React.Component {
             init: true,
             freeMode: true,
             initialSlide: 1,
-            slidesPerView: 3,
+            slidesPerView: "auto",
             spaceBetween: 50,
             centeredSlides: true
         });
