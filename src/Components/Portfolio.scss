@@ -86,7 +86,7 @@ $text-color: #ba1f33;
         --aug-border-bg: #{$text-color};
         
         @media (orientation: portrait) {
-            width: 90% !important;
+            width: 80% !important;
         }
         @media (orientation: landscape) {
             width: 33% !important;
