@@ -58,7 +58,7 @@ $text-color: #ba1f33;
     transform: translate(-50%, -50%);
 
     width: 100%;
-    height: 33%;
+    height: 50%;
 
     animation: none !important; //Prevent the pageload animation from firing.
 
@@ -79,12 +79,15 @@ $text-color: #ba1f33;
         align-items: center;
         font-family: 'Tomorrow';
         --aug-tl-width: 50%;
-        --aug-tl-height: 7.5%;
-        --aug-bl-height: 30%;
-
+        --aug-tl-height: 5%;
+        --aug-br-width: 33%;
         --aug-border: 2px;
         --aug-border-bg: #{$text-color};
-        
+
+        height: 75%;
+        top: 50%;
+        transform: translateY(-50%);
+
         @media (orientation: portrait) {
             width: 80% !important;
         }
@@ -92,6 +95,16 @@ $text-color: #ba1f33;
             width: 33% !important;
         }
 
+        transition: all .15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+        &:hover {
+            transform: scale(1.1, 1.1) translateY(-45%);
+            --aug-tl-width: 5%;
+            --aug-br-width: 5%;
+            --aug-border-bg: white;
+        }
+
+        // Slide title.
         h1 {
             width: 100%;
             height: 100%;

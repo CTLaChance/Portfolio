@@ -46,7 +46,7 @@ class Portfolio extends React.Component {
             initialSlide: 1,
             slidesPerView: "auto",
             spaceBetween: 50,
-            centeredSlides: true
+            centeredSlides: true,
         });
     }
 
@@ -60,7 +60,7 @@ class Portfolio extends React.Component {
             <div className="swiper-container">
                 <div className="swiper-wrapper">
                     {this.projects.map((element) => {
-                        return <div className="swiper-slide" augmented-ui="bl-clip-y tl-clip-x br-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                        return <div className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
