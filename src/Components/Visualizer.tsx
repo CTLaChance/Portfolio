@@ -20,12 +20,17 @@ class Visualizer extends React.Component {
             scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
             // Camera Properties //
-            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
-            camera.setTarget(BABYLON.Vector3.Zero());
+            // let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
+            // camera.setTarget(BABYLON.Vector3.Zero());
+            let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI/2, 10, new BABYLON.Vector3(0, 0, 0), scene);
+            camera.attachControl(this.canvas, true);
+            camera.panningSensibility = 0;  // Disable panning.
+            camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
             camera.minZ = 0;
 
             // Light Properties //
-            let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
+            // let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
+            let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
             light.intensity = 2;
 
             // Audio Properties //
@@ -41,7 +46,7 @@ class Visualizer extends React.Component {
             let frequencyArray;
 
             // Mesh Properties //
-            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 17 }, scene);
+            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 10 }, scene);
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
             mesh.material.pointsCloud = true;
