@@ -48,7 +48,7 @@ class Visualizer extends React.Component {
             light.intensity = 2;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/jh-breathethisair.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/jh-openeyesignallive.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 512;
@@ -167,7 +167,7 @@ class Visualizer extends React.Component {
                 <div id="visualizer-wrapper">
                     <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
                     <div id="media-buttons">
-                        <div id="info">Jon Hopkins - Breathe This Air - Immunity</div>
+                        <div id="info">Jon Hopkins - Open Eye Signal (Villain Live Edit) - Immunity</div>
                         <svg id="toggle-music" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g id="play-button">
                                 <path fill="none" d="M0 0h24v24H0V0z" />
