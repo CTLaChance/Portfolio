@@ -38,16 +38,16 @@ class Visualizer extends React.Component {
             light.intensity = 2;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/jh-openeyesignallive.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/reso-echoloss.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
-            analyser.SMOOTHING = 0.85;
+            analyser.SMOOTHING = 0.90;
 
             let bassFreqMin = 200;
-            let bassFreqMax = 255;
+            let bassFreqMax = 220;
             let midFreqMin = 150;
-            let midFreqMax = 240;
+            let midFreqMax = 230;
             let highFreqMin = 60;
             let highFreqMax = 130;
             let bassValue: number = 0;
@@ -83,18 +83,21 @@ class Visualizer extends React.Component {
                 frequencyArray = analyser.getByteFrequencyData();
 
                 for (let i = 0; i < analyser.getFrequencyBinCount(); i++) {
-                    if (i < Math.floor(analyser.getFrequencyBinCount() / 3)) {
-                        bassValue += frequencyArray[i];
-                    }
-                    else if (i > (analyser.getFrequencyBinCount() - Math.floor(analyser.getFrequencyBinCount() / 3))) {
+                    // if (i < Math.floor(analyser.getFrequencyBinCount() / 3)) {
+                    //     bassValue += frequencyArray[i];
+                    // }
+                    if (i > (analyser.getFrequencyBinCount() - Math.floor(analyser.getFrequencyBinCount() / 3))) {
                         highValue += frequencyArray[i];
                     }
-                    else {
+                    else if (i >= 3) {
                         midValue += frequencyArray[i];
                     }
                 }
-                bassValue /= Math.floor((analyser.getFrequencyBinCount() / 3));
-                midValue /= Math.floor((analyser.getFrequencyBinCount() / 3) + (analyser.getFrequencyBinCount() % 3));
+
+                bassValue = (frequencyArray[0] + frequencyArray[1] + frequencyArray[2]) / 3;
+
+                // bassValue /= Math.floor((analyser.getFrequencyBinCount() / 3));
+                midValue /= Math.floor((analyser.getFrequencyBinCount() / 3) + (analyser.getFrequencyBinCount() % 3) + 2);
                 highValue /= Math.floor((analyser.getFrequencyBinCount() / 3));
 
                 // console.log(`Bass Value: ${bassValue}, Mid Value: ${midValue}, High Value: ${highValue}`);
@@ -181,7 +184,7 @@ class Visualizer extends React.Component {
                 <div id="visualizer-wrapper">
                     <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
                     <div id="media-buttons">
-                        <div id="info">Jon Hopkins - Open Eye Signal (Villain Live Edit) - Immunity</div>
+                        <div id="info">Reso - Echo Loss - Richochet</div>
                         <svg id="toggle-music" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g id="play-button">
                                 <path fill="none" d="M0 0h24v24H0V0z" />
