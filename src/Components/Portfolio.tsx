@@ -39,18 +39,6 @@ class Portfolio extends React.Component {
         }
     }
 
-    componentDidUpdate() {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        let mySwiper = new Swiper('.swiper-container', {
-            init: true,
-            freeMode: true,
-            initialSlide: 1,
-            slidesPerView: "auto",
-            spaceBetween: 50,
-            centeredSlides: true,
-        });
-    }
-
     render() {
 
         let swiper;
@@ -65,6 +53,18 @@ class Portfolio extends React.Component {
                     })}
                 </div>
             </div>;
+
+            setTimeout(function () {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                let mySwiper = new Swiper('.swiper-container', {
+                    init: true,
+                    freeMode: true,
+                    initialSlide: 1,
+                    slidesPerView: "auto",
+                    spaceBetween: 50,
+                    centeredSlides: true,
+                });
+            }, 1);
         }
 
         return (
