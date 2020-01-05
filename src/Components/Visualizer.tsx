@@ -136,6 +136,7 @@ class Visualizer extends React.Component {
                     mesh.rotation.y -= 0.0001;
                     torus.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.LOCAL);
                     torus2.rotate(BABYLON.Vector3.Up(), -0.0001, BABYLON.Space.LOCAL);
+                    torus3.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.LOCAL);
                 }
             });
 
