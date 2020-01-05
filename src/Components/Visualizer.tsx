@@ -25,8 +25,22 @@ class Visualizer extends React.Component {
             let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI/2, 10, new BABYLON.Vector3(0, 0, 0), scene);
             camera.attachControl(this.canvas, true);
             camera.panningSensibility = 0;  // Disable panning.
-            // camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
+            camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
             camera.minZ = 0;
+
+            let pipeline = new BABYLON.DefaultRenderingPipeline("defaultPipeline", true, scene, [camera]);
+            // pipeline.depthOfFieldEnabled = true;
+            // pipeline.depthOfFieldBlurLevel = DepthOfFieldEffectBlurLevel.Medium;
+            // pipeline.depthOfField.focusDistance = 5000; // distance of the current focus point from the camera in millimeters considering 1 scene unit is 1 meter
+            // pipeline.depthOfField.focalLength = 250; // focal length of the camera in millimeters
+            // pipeline.depthOfField.fStop = 3; // aka F number of the camera defined in stops as it would be on a physical device
+
+            // pipeline.chromaticAberrationEnabled = true;
+            // pipeline.chromaticAberration.aberrationAmount = 15;
+
+            // pipeline.bloomEnabled = true;
+
+            pipeline.samples = 4;
 
             // Light Properties //
             // let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
@@ -51,14 +65,17 @@ class Visualizer extends React.Component {
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
             mesh.material.pointsCloud = true;
+            // mesh.material.wireframe = true;
             mesh.material.pointSize = 5;
-
-            let torus = BABYLON.MeshBuilder.CreateTorus("torus", {diameter: 15, thickness: 0.5, tessellation: 32}, scene);
-            torus.material = mesh.material;
+            
+            let torus = BABYLON.MeshBuilder.CreateTorus("torus", {diameter: 12.5, thickness: 0.5, tessellation: 32}, scene);
+            torus.material = new BABYLON.StandardMaterial("torus_mat", scene);
+            torus.material.pointsCloud = true;
+            torus.material.pointSize = 5;
             torus.rotate(BABYLON.Vector3.Right(), 10, BABYLON.Space.WORLD);
 
-            let torus2 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 25, thickness: 0.5, tessellation: 32 }, scene);
-            torus2.material = mesh.material;
+            let torus2 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 0.5, tessellation: 32 }, scene);
+            torus2.material = torus.material;
             torus2.rotate(BABYLON.Vector3.Right(), -10, BABYLON.Space.WORLD);
 
             scene.registerBeforeRender(() => {
@@ -79,14 +96,14 @@ class Visualizer extends React.Component {
                     mesh.rotation.y -= 0.001;
 
                     torus.scaling.x = torus.scaling.y = torus.scaling.z = bassValueScaled + midValueScaled;
-                    torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * midValueScaled), BABYLON.Space.WORLD);
-                    torus.rotate(BABYLON.Vector3.Right(), -0.0001 + (-0.01 * midValueScaled), BABYLON.Space.WORLD);
-                    torus.rotate(BABYLON.Vector3.Forward(), 0.0001 +(0.01 * midValueScaled), BABYLON.Space.WORLD);
+                    torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * midValueScaled), BABYLON.Space.LOCAL);
+                    // torus.rotate(BABYLON.Vector3.Right(), -0.0001 + (-0.01 * midValueScaled), BABYLON.Space.LOCAL);
+                    // torus.rotate(BABYLON.Vector3.Forward(), 0.0001 +(0.01 * midValueScaled), BABYLON.Space.WORLD);
 
                     torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = bassValueScaled + highValueScaled;
-                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * highValueScaled), BABYLON.Space.WORLD);
-                    torus2.rotate(BABYLON.Vector3.Right(), 0.0001 + (-0.01 * highValueScaled), BABYLON.Space.WORLD);
-                    torus2.rotate(BABYLON.Vector3.Forward(), -0.0001 + (0.01 * highValueScaled), BABYLON.Space.WORLD);
+                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
+                    // torus2.rotate(BABYLON.Vector3.Right(), 0.0001 + (-0.01 * highValueScaled), BABYLON.Space.LOCAL);
+                    // torus2.rotate(BABYLON.Vector3.Forward(), -0.0001 + (0.01 * highValueScaled), BABYLON.Space.WORLD);
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
@@ -95,13 +112,13 @@ class Visualizer extends React.Component {
                     mesh.rotation.x -= 0.0001;
                     mesh.rotation.y -= 0.0001;
 
-                    torus.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.WORLD);
-                    torus.rotate(BABYLON.Vector3.Right(), -0.0001, BABYLON.Space.WORLD);
-                    torus.rotate(BABYLON.Vector3.Forward(), 0.0001, BABYLON.Space.WORLD);
+                    torus.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.LOCAL);
+                    // torus.rotate(BABYLON.Vector3.Right(), -0.0001, BABYLON.Space.LOCAL);
+                    // torus.rotate(BABYLON.Vector3.Forward(), 0.0001, BABYLON.Space.WORLD);
 
-                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001, BABYLON.Space.WORLD);
-                    torus2.rotate(BABYLON.Vector3.Right(), 0.0001,BABYLON.Space.WORLD);
-                    torus2.rotate(BABYLON.Vector3.Forward(), -0.0001, BABYLON.Space.WORLD);
+                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001, BABYLON.Space.LOCAL);
+                    // torus2.rotate(BABYLON.Vector3.Right(), 0.0001,BABYLON.Space.LOCAL);
+                    // torus2.rotate(BABYLON.Vector3.Forward(), -0.0001, BABYLON.Space.WORLD);
                 }
             });
 
