@@ -58,7 +58,8 @@ class Visualizer extends React.Component {
             let frequencyArray;
 
             // Mesh Properties //
-            let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 10 }, scene);
+            // let mesh = BABYLON.MeshBuilder.CreateIcoSphere("mesh", { radius: 5, subdivisions: 10 }, scene);
+            let mesh = BABYLON.MeshBuilder.CreatePolyhedron("mesh", { type: 3, size: 5, flat: true}, scene);
             mesh.material = new BABYLON.StandardMaterial("mat", scene);
             mesh.position = new BABYLON.Vector3(0, 0, 0);
             // mesh.material.pointsCloud = true;
@@ -121,10 +122,10 @@ class Visualizer extends React.Component {
                     torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
 
                     // torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = highValueScaled;
-                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * midValueScaled), BABYLON.Space.LOCAL);
+                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (-0.01 * midValueScaled), BABYLON.Space.LOCAL);
 
                     // torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = midValueScaled + highValueScaled;
-                    torus3.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * bassValueScaled), BABYLON.Space.LOCAL);
+                    torus3.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * bassValueScaled), BABYLON.Space.LOCAL);
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
