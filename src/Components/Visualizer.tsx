@@ -22,7 +22,7 @@ class Visualizer extends React.Component {
             // Camera Properties //
             // let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
             // camera.setTarget(BABYLON.Vector3.Zero());
-            let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI/2, 15, new BABYLON.Vector3(0, 0, 0), scene);
+            let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI / 2, 15, new BABYLON.Vector3(0, 0, 0), scene);
             camera.attachControl(this.canvas, true);
             camera.panningSensibility = 0;  // Disable panning.
             // camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
@@ -44,12 +44,12 @@ class Visualizer extends React.Component {
             analyser.FFT_SIZE = 32;
             analyser.SMOOTHING = 0.85;
 
-            let bassFreqMin = 150;
+            let bassFreqMin = 200;
             let bassFreqMax = 255;
             let midFreqMin = 150;
             let midFreqMax = 240;
             let highFreqMin = 60;
-            let highFreqMax = 130;            
+            let highFreqMax = 130;
             let bassValue: number = 0;
             let midValue: number = 0;
             let highValue: number = 0;
@@ -64,36 +64,32 @@ class Visualizer extends React.Component {
             // mesh.material.pointsCloud = true;
             mesh.material.wireframe = true;
             mesh.material.pointSize = 5;
-            
-            let torus = BABYLON.MeshBuilder.CreateTorus("torus", {diameter: 15, thickness: 1, tessellation: 32}, scene);
+
+            let torus = BABYLON.MeshBuilder.CreateTorus("torus", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus.material = new BABYLON.StandardMaterial("torus_mat", scene);
             torus.material.pointsCloud = true;
             torus.material.pointSize = 5;
-            torus.rotate(BABYLON.Vector3.Right(), Math.PI/6, BABYLON.Space.WORLD);
+            torus.rotate(BABYLON.Vector3.Right(), Math.PI / 6, BABYLON.Space.WORLD);
 
             let torus2 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus2.material = torus.material;
-            torus2.rotate(BABYLON.Vector3.Right(), -Math.PI/6, BABYLON.Space.WORLD);
+            torus2.rotate(BABYLON.Vector3.Right(), -Math.PI / 6, BABYLON.Space.WORLD);
 
             let torus3 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus3.material = torus.material;
-            torus3.rotate(BABYLON.Vector3.Right(), Math.PI/2, BABYLON.Space.WORLD);
+            torus3.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
 
             scene.registerBeforeRender(() => {
                 frequencyArray = analyser.getByteFrequencyData();
 
-                for(let i = 0; i < analyser.getFrequencyBinCount(); i++)
-                {
-                    if (i < Math.floor(analyser.getFrequencyBinCount() / 3))
-                    {
+                for (let i = 0; i < analyser.getFrequencyBinCount(); i++) {
+                    if (i < Math.floor(analyser.getFrequencyBinCount() / 3)) {
                         bassValue += frequencyArray[i];
                     }
-                    else if (i > (analyser.getFrequencyBinCount() - Math.floor(analyser.getFrequencyBinCount() / 3)))
-                    {
+                    else if (i > (analyser.getFrequencyBinCount() - Math.floor(analyser.getFrequencyBinCount() / 3))) {
                         highValue += frequencyArray[i];
                     }
-                    else
-                    {
+                    else {
                         midValue += frequencyArray[i];
                     }
                 }
@@ -108,26 +104,30 @@ class Visualizer extends React.Component {
                     bassValueScaled = (Math.min(Math.max(bassValue, bassFreqMin), bassFreqMax) - bassFreqMin) * ((scaleMax - scaleMin) / (bassFreqMax - bassFreqMin)) + scaleMin;
                     midValueScaled = (Math.min(Math.max(midValue, midFreqMin), midFreqMax) - midFreqMin) * ((scaleMax - scaleMin) / (midFreqMax - midFreqMin)) + scaleMin;
                     highValueScaled = (Math.min(Math.max(highValue, highFreqMin), highFreqMax) - highFreqMin) * ((scaleMax - scaleMin) / (highFreqMax - highFreqMin)) + scaleMin;
-                    
+
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z = bassValueScaled;
                     mesh.rotation.x -= 0.005 * bassValueScaled;
                     mesh.rotation.y += 0.005 * midValueScaled;
                     mesh.rotation.z -= 0.005 * highValueScaled;
 
-                    torus.scaling.x = torus.scaling.y = torus.scaling.z = midValueScaled;
-                    torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * midValueScaled), BABYLON.Space.LOCAL);
+                    torus.scaling.x = torus.scaling.y = torus.scaling.z = 1;
+                    torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = 1;
+                    torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
 
-                    torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = highValueScaled;
+                    // torus.scaling.x = torus.scaling.y = torus.scaling.z = midValueScaled;
+                    torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
+
+                    // torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = highValueScaled;
                     torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * midValueScaled), BABYLON.Space.LOCAL);
 
-                    torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = midValueScaled + highValueScaled;
-                    torus3.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
+                    // torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = midValueScaled + highValueScaled;
+                    torus3.rotate(BABYLON.Vector3.Up(), -0.0001 + (0.01 * bassValueScaled), BABYLON.Space.LOCAL);
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
-                    torus.scaling.x = torus.scaling.y = torus.scaling.z =
-                    torus2.scaling.x = torus2.scaling.y = torus2.scaling.z =
-                    torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
+                        torus.scaling.x = torus.scaling.y = torus.scaling.z =
+                        torus2.scaling.x = torus2.scaling.y = torus2.scaling.z =
+                        torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
 
                     mesh.rotation.x -= 0.0001;
                     mesh.rotation.y -= 0.0001;
