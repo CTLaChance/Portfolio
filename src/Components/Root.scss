@@ -1,4 +1,10 @@
 #root {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
     // Cyberpunk Flicker Animation //
     @keyframes pageload-opacity {
         0%,
@@ -13,7 +19,6 @@
         66%,
         100% {
             opacity: 1;
-
         }
     }
 
@@ -25,4 +30,13 @@
             animation-fill-mode: both;
         }
     }
+}
+
+html {
+    cursor: none;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }

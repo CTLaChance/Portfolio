@@ -5,7 +5,8 @@ import 'swiper/swiper.scss'
 
 class Portfolio extends React.Component {
     state = {
-        opened: false
+        opened: false,
+        detailsOpened: true
     }
 
     private projects = [
@@ -42,6 +43,7 @@ class Portfolio extends React.Component {
     render() {
 
         let swiper;
+        let details;
 
         if(this.state.opened)
         {
@@ -67,10 +69,45 @@ class Portfolio extends React.Component {
             }, 1);
         }
 
+        if(this.state.detailsOpened)
+        {
+            details =
+            <div id="details-page">
+                <div id="details-info">
+                    <dl>
+                        <dt>PROJECT NAME:</dt>
+                        <dd>Lorem Ipsum</dd>
+                        
+                        <dt>SERVICES:</dt>
+                        <dd>Engineering, Art Design, Tom Fuckery</dd>
+
+                        <dt>DATE:</dt>
+                        <dd>06JAN2020</dd>
+
+                        <dt>COLLABORATORS:</dt>
+                        <dd>Null</dd>
+
+                        <dt>SUMMARY:</dt>
+                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima at nesciunt omnis a itaque dolores unde ut officia facere soluta aliquid provident tempora, illo assumenda quas ducimus sapiente non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo provident qui magni accusamus aperiam aut, beatae iusto modi repellendus quisquam! Voluptatem, sequi libero quaerat dolores labore unde non consequuntur ex!</dd>
+                    </dl>
+                </div>
+
+                <div id="details-pictures">
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <img src={this.projects[0].card} alt="Project Media"></img>
+                </div>
+            </div>;
+        }
+
         return (
             <React.Fragment>
                 <div id="name" onClick={() => {this.openPortfolio()}}>CHRISTOPHER LACHANCE</div>
                 {swiper}
+                {details}
             </React.Fragment>
         )
     }

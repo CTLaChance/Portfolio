@@ -49,6 +49,49 @@ $text-color: #ba1f33;
     }
 }
 
+#details-page {
+    position: fixed;
+    width: 100%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(25px);
+
+    font-family: 'Tomorrow', sans-serif;
+    color: $text-color;
+    font-weight: 300 !important;
+    
+    display: flex;
+    justify-content: center;
+
+    #details-info {
+        width: 50%;
+        font-size: 1.25vw;
+        
+        dl{
+            height: 100%;
+            padding: 3.2vh 1.8vw;
+            margin: 0;
+        }
+    }
+
+    #details-pictures {
+        padding: 3.2vh 1.8vw;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        img {
+            width: 400px;
+            height: 200px;
+        }
+    }
+}
+
 .swiper-container
  {
     user-select: none;
