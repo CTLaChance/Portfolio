@@ -58,7 +58,7 @@ class Portfolio extends React.Component {
 
             setTimeout(function () {
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                let mySwiper = new Swiper('.swiper-container', {
+                let mySwiper = new Swiper('#project-swiper', {
                     init: true,
                     freeMode: true,
                     initialSlide: 1,
@@ -92,27 +92,41 @@ class Portfolio extends React.Component {
                     </dl>
                 </div>
 
-                <div id="details-pictures">
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                    </div>
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                    </div>
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                    </div>
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                    </div>
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                    </div>
-                    <div className="imgwrap">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
+                <div id="details-pictures" className="swiper-container">
+                    <div className="swiper-wrapper">
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
+                        <div className="imgwrap swiper-slide">
+                            <img src={this.projects[0].card} alt="Project Media"></img>
+                        </div>
                     </div>
                 </div>
             </div>;
+
+            setTimeout(function () {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                let detailsPicturesSwiper = new Swiper('#details-pictures', {
+                    init: true,
+                    freeMode: true,
+                    initialSlide: 1,
+                    slidesPerView: "auto",
+                    spaceBetween: 50,
+                    centeredSlides: true,
+                });
+            }, 1);
         }
 
         return (
