@@ -48,7 +48,7 @@ class Portfolio extends React.Component {
         if(this.state.opened)
         {
             swiper =
-            <div className="swiper-container">
+            <div id="project-swiper" className="swiper-container">
                 <div className="swiper-wrapper">
                     {this.projects.map((element, index) => {
                         return <div key={index}className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
@@ -93,12 +93,24 @@ class Portfolio extends React.Component {
                 </div>
 
                 <div id="details-pictures">
-                    <img src={this.projects[0].card} alt="Project Media"></img>
-                    <img src={this.projects[0].card} alt="Project Media"></img>
-                    <img src={this.projects[0].card} alt="Project Media"></img>
-                    <img src={this.projects[0].card} alt="Project Media"></img>
-                    <img src={this.projects[0].card} alt="Project Media"></img>
-                    <img src={this.projects[0].card} alt="Project Media"></img>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
+                    <div className="imgwrap">
+                        <img src={this.projects[0].card} alt="Project Media"></img>
+                    </div>
                 </div>
             </div>;
         }
