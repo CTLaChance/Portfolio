@@ -78,11 +78,11 @@ class Portfolio extends React.Component {
                         <dt>PROJECT NAME:</dt>
                         <dd>Lorem Ipsum</dd>
                         
-                        <dt>SERVICES:</dt>
-                        <dd>Engineering, Art Design, Tom Fuckery</dd>
-
                         <dt>DATE:</dt>
                         <dd>06JAN2020</dd>
+
+                        <dt>LINK:</dt>
+                        <dd><a href="https://ctlachance.com">https://ctlachance.com</a></dd>
 
                         <dt>COLLABORATORS:</dt>
                         <dd>Null</dd>
@@ -94,22 +94,22 @@ class Portfolio extends React.Component {
 
                 <div id="details-pictures" className="swiper-container">
                     <div className="swiper-wrapper">
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
-                        <div className="imgwrap swiper-slide">
+                        <div className="swiper-slide">
                             <img src={this.projects[0].card} alt="Project Media"></img>
                         </div>
                     </div>
