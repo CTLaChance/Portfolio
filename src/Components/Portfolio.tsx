@@ -8,7 +8,7 @@ import 'swiper/swiper.scss'
 class Portfolio extends React.Component {
     state = {
         opened: false,
-        detailsOpened: true
+        detailsOpened: false
     }
 
     private projects = [
