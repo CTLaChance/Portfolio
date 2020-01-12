@@ -2,7 +2,7 @@
 $text-color: #ba1f33;
 
 // Cyberpunk Flicker Animation //
-@keyframes pageload-opacity {
+@keyframes component-load-flicker {
     0%,
     30%,
     36%,
@@ -49,16 +49,58 @@ $text-color: #ba1f33;
     }
 }
 
-.swiper-container
+#details-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(25px);
+
+    font-family: 'Tomorrow', sans-serif;
+    color: $text-color;
+    font-weight: 300 !important;
+
+    overflow-y: none;
+    
+    #details-info {
+        margin: 0 auto;
+        padding: 1%;
+        width: 75%;
+        font-size: 1.25vw;
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color .25s cubic-bezier(0.8,0,.2,1);
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+
+    #details-pictures {
+        margin: 0 auto;
+        width: 75%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#project-swiper
  {
+    user-select: none;
     position: fixed !important;
-    // visibility: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     width: 100%;
-    height: 32%;
+    height: 50%;
 
     animation: none !important; //Prevent the pageload animation from firing.
 
@@ -66,7 +108,7 @@ $text-color: #ba1f33;
         @for $i from 1 through 10 {
             // > selects only direct children. Otherwise nth-child would run recursively.
             > :nth-child(#{$i}) {
-                animation: .4s linear #{.25 + ($i * .2)}s 1 pageload-opacity !important;
+                animation: .4s linear #{.25 + ($i * .2)}s 1 component-load-flicker !important;
                 animation-fill-mode: both !important;
             }
         }
@@ -79,12 +121,35 @@ $text-color: #ba1f33;
         align-items: center;
         font-family: 'Tomorrow';
         --aug-tl-width: 50%;
-        --aug-tl-height: 7.5%;
-        --aug-bl-height: 30%;
-
+        --aug-tl-height: 5%;
+        --aug-br-width: 33%;
+        --aug-br-height: 5%;
+        --aug-bl: 30px;
         --aug-border: 2px;
         --aug-border-bg: #{$text-color};
-        
+
+        height: 75%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (orientation: portrait) {
+            width: 80% !important;
+        }
+        @media (orientation: landscape) {
+            width: 33% !important;
+        }
+
+        transition: all .15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+        &:hover {
+            transform: scale(1.1, 1.1) translateY(-45%);
+            z-index: 1;
+            --aug-tl-width: 10%;
+            --aug-br-width: 10%;
+            --aug-border-bg: white;
+        }
+
+        // Slide title.
         h1 {
             width: 100%;
             height: 100%;
