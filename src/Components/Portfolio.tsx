@@ -8,24 +8,29 @@ import 'swiper/swiper.scss'
 class Portfolio extends React.Component {
     state = {
         opened: false,
-        detailsOpened: true
+        detailsOpened: true,
+        projectIndex: 0,
     }
 
     private projects = [
         {
             name: "Portfolio",
+            date: "13JAN2020",
             card: "/assets/projects/portfolio_card.png",
         },
         {
             name: "ARE Website",
+            date: "24DEC2016",
             card: "/assets/projects/arewebsite_card.png"
         },
         {
             name: "Pharaoh Sun",
+            date: "00NUL0000",
             card: "/assets/projects/pharaohsun_card.jpg"
         },
         {
             name: "Wild Tiki",
+            date: "00NUL0000",
             card: "/assets/projects/wildtiki_card.jpg"
         }
     ];
@@ -37,18 +42,17 @@ class Portfolio extends React.Component {
             name?.classList.add("opened");
         }
         else {
-            this.setState({ opened: false});
+            this.setState({opened: false});
             name?.classList.remove("opened");
         }
     }
 
-    openDetails(project : string) {
-        this.setState({opened: false, detailsOpened: true });
-        console.log(`PROJECT NAME: ${project}`)
+    openDetails(index : number) {
+        this.setState({opened: false, projectIndex: index, detailsOpened: true});
     }
 
     closeDetails() {
-        this.setState({detailsOpened: false});
+        this.setState({detailsOpened: false, openedProject: -1});
         this.openPortfolio();
     }
 
@@ -63,7 +67,7 @@ class Portfolio extends React.Component {
             <div id="project-swiper" className="swiper-container">
                 <div className="swiper-wrapper">
                     {this.projects.map((element, index) => {
-                        return <div key={index} onClick={() => {this.openDetails(element.name)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                        return <div key={index} onClick={() => {this.openDetails(index)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
@@ -108,28 +112,32 @@ class Portfolio extends React.Component {
                         <path d="M0 0h24v24H0z" fill="none" />
                     </svg>
                     <dl id="details-info">
-                        <dt>PROJECT NAME:</dt>
-                        <dd>Lorem Ipsum</dd>
-                        
-                        <dt>DATE:</dt>
-                        <dd>06JAN2020</dd>
+                        <div>
+                            <dt>PROJECT NAME:</dt>
+                            <dd>{this.projects[this.state.projectIndex].name}</dd>
+                            
+                            <dt>DATE:</dt>
+                            <dd>{this.projects[this.state.projectIndex].date}</dd>
 
-                        <dt>LINK:</dt>
-                        <dd><a href="https://ctlachance.com">https://ctlachance.com</a></dd>
+                            <dt>LINK:</dt>
+                            <dd><a href="https://ctlachance.com">https://ctlachance.com</a></dd>
+                            <dd><a href="https://github.com/CTLaChance/Portfolio">https://github.com/CTLaChance/Portfolio</a></dd>
 
-                        <dt>COLLABORATORS:</dt>
-                        <dd>NULL</dd>
-
-                        <dt>SUMMARY:</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima at nesciunt omnis a itaque dolores unde ut officia facere soluta aliquid provident tempora, illo assumenda quas ducimus sapiente non.</dd>
+                            <dt>COLLABORATORS:</dt>
+                            <dd>NULL</dd>
+                        </div>
+                        <div>
+                            <dt>SUMMARY:</dt>
+                            <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima at nesciunt omnis a itaque dolores unde ut officia facere soluta aliquid provident tempora, illo assumenda quas ducimus sapiente non.</dd>
+                        </div>
                     </dl>
                     <div id="details-pictures">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
                     </div>
                 </div>
             </div>;

@@ -90,6 +90,7 @@ $text-color: #ba1f33;
             color: white;
             text-decoration: none;
             transition: color .25s cubic-bezier(0.8,0,.2,1);
+            cursor: none;
 
             &:hover {
                 color: $text-color;
