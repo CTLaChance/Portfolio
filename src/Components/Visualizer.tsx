@@ -27,7 +27,7 @@ class Visualizer extends React.Component {
             camera.panningSensibility = 0;  // Disable panning.
             // camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
             camera.useAutoRotationBehavior = true;
-            camera.autoRotationBehavior.idleRotationSpeed = 0.1;
+            camera.autoRotationBehavior.idleRotationSpeed = 0.25;
             camera.autoRotationBehavior.idleRotationWaitTime = 5000;
             camera.autoRotationBehavior.idleRotationSpinupTime = 2500;
             camera.lowerRadiusLimit = 0.1;
