@@ -16,21 +16,26 @@ class Portfolio extends React.Component {
         {
             name: "Portfolio",
             date: "13JAN2020",
+            links: ["https://ctlachance.com","https://github.com/CTLaChance/Portfolio"],
+
             card: "/assets/projects/portfolio_card.png",
         },
         {
             name: "ARE Website",
             date: "24DEC2016",
+            links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
             card: "/assets/projects/arewebsite_card.png"
         },
         {
             name: "Pharaoh Sun",
             date: "00NUL0000",
+            links: ["https://playags.com/portfolio/pharaoh-sun/"],
             card: "/assets/projects/pharaohsun_card.jpg"
         },
         {
             name: "Wild Tiki",
             date: "00NUL0000",
+            links: ["https://playags.com/portfolio/wild-tiki/"],
             card: "/assets/projects/wildtiki_card.jpg"
         }
     ];
@@ -120,9 +125,10 @@ class Portfolio extends React.Component {
                             <dd>{this.projects[this.state.projectIndex].date}</dd>
 
                             <dt>LINK:</dt>
-                            <dd><a href="https://ctlachance.com">https://ctlachance.com</a></dd>
-                            <dd><a href="https://github.com/CTLaChance/Portfolio">https://github.com/CTLaChance/Portfolio</a></dd>
-
+                            {this.projects[this.state.projectIndex].links.map((element) => {
+                                return <dd><a href={element}>{element}</a></dd>
+                            })}
+                            
                             <dt>COLLABORATORS:</dt>
                             <dd>NULL</dd>
                         </div>
