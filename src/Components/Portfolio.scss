@@ -64,6 +64,22 @@ $text-color: #ba1f33;
 
     overflow-y: none;
     
+    #details-close-button {
+        position: absolute;
+        width: 50px;
+        font-size: 70px;
+        fill: $text-color;
+
+        text-align: center;
+
+        transition: ease-in-out;
+        transition-duration: .25s;
+
+        &:hover {
+            fill: white;
+        }
+    }
+
     #details-info {
         margin: 0 auto;
         padding: 1%;

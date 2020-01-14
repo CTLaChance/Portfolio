@@ -8,7 +8,7 @@ import 'swiper/swiper.scss'
 class Portfolio extends React.Component {
     state = {
         opened: false,
-        detailsOpened: false
+        detailsOpened: true
     }
 
     private projects = [
@@ -42,6 +42,16 @@ class Portfolio extends React.Component {
         }
     }
 
+    openDetails(project : string) {
+        this.setState({opened: false, detailsOpened: true });
+        console.log(`PROJECT NAME: ${project}`)
+    }
+
+    closeDetails() {
+        this.setState({detailsOpened: false});
+        this.openPortfolio();
+    }
+
     render() {
 
         let swiper;
@@ -53,7 +63,7 @@ class Portfolio extends React.Component {
             <div id="project-swiper" className="swiper-container">
                 <div className="swiper-wrapper">
                     {this.projects.map((element, index) => {
-                        return <div key={index}className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                        return <div key={index} onClick={() => {this.openDetails(element.name)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
@@ -93,6 +103,10 @@ class Portfolio extends React.Component {
             details =
             <div id="details-page">
                 <div id="scroll-wrapper">
+                    <svg id="details-close-button" onClick={() => {this.closeDetails()}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                        <path d="M0 0h24v24H0z" fill="none" />
+                    </svg>
                     <dl id="details-info">
                         <dt>PROJECT NAME:</dt>
                         <dd>Lorem Ipsum</dd>
