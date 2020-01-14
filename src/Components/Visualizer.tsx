@@ -30,6 +30,9 @@ class Visualizer extends React.Component {
             camera.autoRotationBehavior.idleRotationSpeed = 0.1;
             camera.autoRotationBehavior.idleRotationWaitTime = 5000;
             camera.autoRotationBehavior.idleRotationSpinupTime = 2500;
+            camera.lowerRadiusLimit = 0.1;
+            camera.upperRadiusLimit = 25;
+            camera.wheelPrecision = 10;
             camera.minZ = 0;
 
             // Light Properties //
