@@ -31,7 +31,7 @@ class Portfolio extends React.Component {
         },
         {
             name: "Pharaoh Sun",
-            date: "00NUL0000",
+            date: "01MAR2018",
             links: ["https://playags.com/portfolio/pharaoh-sun/"],
             summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
             media_folder: "/assets/projects/pharaohsun",
@@ -39,7 +39,7 @@ class Portfolio extends React.Component {
         },
         {
             name: "Wild Tiki",
-            date: "00NUL0000",
+            date: "01OCT2018",
             links: ["https://playags.com/portfolio/wild-tiki/"],
             summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
             media_folder: "/assets/projects/wildtiki",
