@@ -4,6 +4,7 @@ import Swiper from 'swiper';
 import ScrollBooster from 'scrollbooster';
 import './Portfolio.scss';
 import 'swiper/swiper.scss'
+import { projects } from "./projects";
 
 class Portfolio extends React.Component {
     state = {
@@ -11,41 +12,6 @@ class Portfolio extends React.Component {
         detailsOpened: true,
         projectIndex: 0,
     }
-
-    private projects = [
-        {
-            name: "Portfolio",
-            date: "13JAN2020",
-            links: ["https://ctlachance.com","https://github.com/CTLaChance/Portfolio"],
-            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-            media_folder: "/assets/projects/portfolio",
-            card: "/assets/projects/portfolio/card.png",
-        },
-        {
-            name: "ARE Website",
-            date: "24DEC2016",
-            links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
-            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-            media_folder: "/assets/projects/arewebsite",
-            card: "/assets/projects/arewebsite/card.png"
-        },
-        {
-            name: "Pharaoh Sun",
-            date: "01MAR2018",
-            links: ["https://playags.com/portfolio/pharaoh-sun/"],
-            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-            media_folder: "/assets/projects/pharaohsun",
-            card: "/assets/projects/pharaohsun/card.jpg"
-        },
-        {
-            name: "Wild Tiki",
-            date: "01OCT2018",
-            links: ["https://playags.com/portfolio/wild-tiki/"],
-            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-            media_folder: "/assets/projects/wildtiki",
-            card: "/assets/projects/wildtiki/card.jpg"
-        }
-    ];
 
     openPortfolio() {
         let name = document.getElementById("name");
@@ -66,10 +32,9 @@ class Portfolio extends React.Component {
     closeDetails() {
         this.setState({detailsOpened: false, openedProject: -1});
         this.openPortfolio();
-    }
+    }    
 
     render() {
-
         let swiper;
         let details;
 
@@ -78,7 +43,7 @@ class Portfolio extends React.Component {
             swiper =
             <div id="project-swiper" className="swiper-container">
                 <div className="swiper-wrapper">
-                    {this.projects.map((element, index) => {
+                    {projects.map((element, index) => {
                         return <div key={index} onClick={() => {this.openDetails(index)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
@@ -116,8 +81,6 @@ class Portfolio extends React.Component {
                 });
             }, 1);
 
-            // let project_pictures = fs.readdirSync(this.projects[this.state.projectIndex].media_folder);
-
             details =
             <div id="details-page">
                 <div id="scroll-wrapper">
@@ -128,25 +91,25 @@ class Portfolio extends React.Component {
                     <dl id="details-info">
                         <div>
                             <dt>PROJECT NAME:</dt>
-                            <dd>{this.projects[this.state.projectIndex].name}</dd>
+                            <dd>{projects[this.state.projectIndex].name}</dd>
                             
                             <dt>DATE:</dt>
-                            <dd>{this.projects[this.state.projectIndex].date}</dd>
+                            <dd>{projects[this.state.projectIndex].date}</dd>
 
                             <dt>LINK:</dt>
-                            {this.projects[this.state.projectIndex].links.map((element, index) => {
+                            {projects[this.state.projectIndex].links.map((element, index) => {
                                 return <dd key={index}><a href={element}>{element}</a></dd>
                             })}
                         </div>
                         <div>
                             <dt>SUMMARY:</dt>
-                            <dd>{this.projects[this.state.projectIndex].summary}</dd>
+                            <dd>{projects[this.state.projectIndex].summary}</dd>
                         </div>
                     </dl>
                     <div id="details-pictures">
-                        {/* {project_pictures.map((element: string, index: number) => {
-                            return <img key={index} src={element} alt="Project Media"></img>
-                        })} */}
+                        {projects[this.state.projectIndex].media.map((element, index) => {
+                            return <img key={index} src={"/assets/projects/portfolio/" + element} alt="Project Media"></img>
+                        })}
                     </div>
                 </div>
             </div>;
