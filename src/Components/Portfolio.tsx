@@ -108,7 +108,7 @@ class Portfolio extends React.Component {
                     </dl>
                     <div id="details-pictures">
                         {projects[this.state.projectIndex].media.map((element, index) => {
-                            return <img key={index} src={"/assets/projects/portfolio/" + element} alt="Project Media"></img>
+                            return <img key={index} src={projects[this.state.projectIndex].media_folder + element.substr(1)} alt="Project Media"></img>
                         })}
                     </div>
                 </div>
