@@ -17,26 +17,33 @@ class Portfolio extends React.Component {
             name: "Portfolio",
             date: "13JAN2020",
             links: ["https://ctlachance.com","https://github.com/CTLaChance/Portfolio"],
-
-            card: "/assets/projects/portfolio_card.png",
+            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            media_folder: "/assets/projects/portfolio",
+            card: "/assets/projects/portfolio/card.png",
         },
         {
             name: "ARE Website",
             date: "24DEC2016",
             links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
-            card: "/assets/projects/arewebsite_card.png"
+            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            media_folder: "/assets/projects/arewebsite",
+            card: "/assets/projects/arewebsite/card.png"
         },
         {
             name: "Pharaoh Sun",
             date: "00NUL0000",
             links: ["https://playags.com/portfolio/pharaoh-sun/"],
-            card: "/assets/projects/pharaohsun_card.jpg"
+            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            media_folder: "/assets/projects/pharaohsun",
+            card: "/assets/projects/pharaohsun/card.jpg"
         },
         {
             name: "Wild Tiki",
             date: "00NUL0000",
             links: ["https://playags.com/portfolio/wild-tiki/"],
-            card: "/assets/projects/wildtiki_card.jpg"
+            summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+            media_folder: "/assets/projects/wildtiki",
+            card: "/assets/projects/wildtiki/card.jpg"
         }
     ];
 
@@ -109,6 +116,8 @@ class Portfolio extends React.Component {
                 });
             }, 1);
 
+            // let project_pictures = fs.readdirSync(this.projects[this.state.projectIndex].media_folder);
+
             details =
             <div id="details-page">
                 <div id="scroll-wrapper">
@@ -125,25 +134,19 @@ class Portfolio extends React.Component {
                             <dd>{this.projects[this.state.projectIndex].date}</dd>
 
                             <dt>LINK:</dt>
-                            {this.projects[this.state.projectIndex].links.map((element) => {
-                                return <dd><a href={element}>{element}</a></dd>
+                            {this.projects[this.state.projectIndex].links.map((element, index) => {
+                                return <dd key={index}><a href={element}>{element}</a></dd>
                             })}
-                            
-                            <dt>COLLABORATORS:</dt>
-                            <dd>NULL</dd>
                         </div>
                         <div>
                             <dt>SUMMARY:</dt>
-                            <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima at nesciunt omnis a itaque dolores unde ut officia facere soluta aliquid provident tempora, illo assumenda quas ducimus sapiente non.</dd>
+                            <dd>{this.projects[this.state.projectIndex].summary}</dd>
                         </div>
                     </dl>
                     <div id="details-pictures">
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
-                        <img src={this.projects[this.state.projectIndex].card} alt="Project Media"></img>
+                        {/* {project_pictures.map((element: string, index: number) => {
+                            return <img key={index} src={element} alt="Project Media"></img>
+                        })} */}
                     </div>
                 </div>
             </div>;

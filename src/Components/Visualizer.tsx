@@ -41,7 +41,7 @@ class Visualizer extends React.Component {
             light.intensity = 2;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/reso-echoloss.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/music/reso-echoloss.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
