@@ -96,7 +96,7 @@ class Portfolio extends React.Component {
                             <dt>DATE:</dt>
                             <dd>{projects[this.state.projectIndex].date}</dd>
 
-                            <dt>LINK:</dt>
+                            <dt>LINKS:</dt>
                             {projects[this.state.projectIndex].links.map((element, index) => {
                                 return <dd key={index}><a href={element}>{element}</a></dd>
                             })}
