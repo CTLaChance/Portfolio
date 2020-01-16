@@ -4,31 +4,14 @@ import Swiper from 'swiper';
 import ScrollBooster from 'scrollbooster';
 import './Portfolio.scss';
 import 'swiper/swiper.scss'
+import { projects } from "./projects";
 
 class Portfolio extends React.Component {
     state = {
         opened: false,
-        detailsOpened: false
+        detailsOpened: false,
+        projectIndex: 0,
     }
-
-    private projects = [
-        {
-            name: "Portfolio",
-            card: "/assets/projects/portfolio_card.png",
-        },
-        {
-            name: "ARE Website",
-            card: "/assets/projects/arewebsite_card.png"
-        },
-        {
-            name: "Pharaoh Sun",
-            card: "/assets/projects/pharaohsun_card.jpg"
-        },
-        {
-            name: "Wild Tiki",
-            card: "/assets/projects/wildtiki_card.jpg"
-        }
-    ];
 
     openPortfolio() {
         let name = document.getElementById("name");
@@ -37,13 +20,21 @@ class Portfolio extends React.Component {
             name?.classList.add("opened");
         }
         else {
-            this.setState({ opened: false});
+            this.setState({opened: false});
             name?.classList.remove("opened");
         }
     }
 
-    render() {
+    openDetails(index : number) {
+        this.setState({opened: false, projectIndex: index, detailsOpened: true});
+    }
 
+    closeDetails() {
+        this.setState({detailsOpened: false, openedProject: -1});
+        this.openPortfolio();
+    }    
+
+    render() {
         let swiper;
         let details;
 
@@ -52,8 +43,8 @@ class Portfolio extends React.Component {
             swiper =
             <div id="project-swiper" className="swiper-container">
                 <div className="swiper-wrapper">
-                    {this.projects.map((element, index) => {
-                        return <div key={index}className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                    {projects.map((element, index) => {
+                        return <div key={index} onClick={() => {this.openDetails(index)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
@@ -92,30 +83,32 @@ class Portfolio extends React.Component {
 
             details =
             <div id="details-page">
+                <svg id="details-close-button" onClick={() => {this.closeDetails()}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
                 <div id="scroll-wrapper">
-                    <dl id="details-info">
-                        <dt>PROJECT NAME:</dt>
-                        <dd>Lorem Ipsum</dd>
-                        
-                        <dt>DATE:</dt>
-                        <dd>06JAN2020</dd>
+                    <div id="details-info">
+                        <div>
+                            <dt>[PROJECT NAME]</dt>
+                            <dd>{projects[this.state.projectIndex].name}</dd>
+                            
+                            <dt>[DATE]</dt>
+                            <dd>{projects[this.state.projectIndex].date}</dd>
 
-                        <dt>LINK:</dt>
-                        <dd><a href="https://ctlachance.com">https://ctlachance.com</a></dd>
-
-                        <dt>COLLABORATORS:</dt>
-                        <dd>NULL</dd>
-
-                        <dt>SUMMARY:</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minima at nesciunt omnis a itaque dolores unde ut officia facere soluta aliquid provident tempora, illo assumenda quas ducimus sapiente non.</dd>
-                    </dl>
+                            <dt>[LINKS]</dt>
+                            {projects[this.state.projectIndex].links.map((element, index) => {
+                                return <dd key={index}><a href={element}>{element}</a></dd>
+                            })}
+                        </div>
+                        <div>
+                            {projects[this.state.projectIndex].summary}
+                        </div>
+                    </div>
                     <div id="details-pictures">
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
-                        <img src={this.projects[0].card} alt="Project Media"></img>
+                        {projects[this.state.projectIndex].media.map((element, index) => {
+                            return <img key={index} src={projects[this.state.projectIndex].media_folder + element.substr(1)} alt="Project Media"></img>
+                        })}
                     </div>
                 </div>
             </div>;

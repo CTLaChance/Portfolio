@@ -29,7 +29,7 @@ $text-color: #ba1f33;
     //Font
     font-family: 'Tomorrow', sans-serif;
     color: $text-color;
-    text-shadow: 0px 0px 5px $text-color;
+    // text-shadow: 0px 0px 5px $text-color;
     font-weight: 100;
     font-size: 70px;
     letter-spacing: 5px;
@@ -64,20 +64,48 @@ $text-color: #ba1f33;
 
     overflow-y: none;
     
+    #details-close-button {
+        position: absolute;
+        z-index: 10;
+        right: 0%;
+
+        width: 50px;
+        font-size: 70px;
+        fill: $text-color;
+
+        text-align: center;
+
+        transition: ease-in-out;
+        transition-duration: .25s;
+
+        &:hover {
+            fill: white;
+        }
+    }
+
     #details-info {
         margin: 0 auto;
         padding: 1%;
         width: 75%;
         font-size: 1.25vw;
+        display: flex;
+        justify-content: space-between;
+        flex: 1 1 100%;
+        align-items: center;
 
         a {
             color: white;
             text-decoration: none;
             transition: color .25s cubic-bezier(0.8,0,.2,1);
+            cursor: none;
 
             &:hover {
                 color: $text-color;
             }
+        }
+
+        div {
+            width: 50%;
         }
     }
 
@@ -105,7 +133,7 @@ $text-color: #ba1f33;
     animation: none !important; //Prevent the pageload animation from firing.
 
     .swiper-wrapper {
-        @for $i from 1 through 10 {
+        @for $i from 1 through 20 {
             // > selects only direct children. Otherwise nth-child would run recursively.
             > :nth-child(#{$i}) {
                 animation: .4s linear #{.25 + ($i * .2)}s 1 component-load-flicker !important;
@@ -115,7 +143,7 @@ $text-color: #ba1f33;
     }
 
     .swiper-slide {
-        background-color: white;
+        background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
