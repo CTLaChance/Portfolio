@@ -83,29 +83,28 @@ class Portfolio extends React.Component {
 
             details =
             <div id="details-page">
+                <svg id="details-close-button" onClick={() => {this.closeDetails()}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
                 <div id="scroll-wrapper">
-                    <svg id="details-close-button" onClick={() => {this.closeDetails()}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                        <path d="M0 0h24v24H0z" fill="none" />
-                    </svg>
-                    <dl id="details-info">
+                    <div id="details-info">
                         <div>
-                            <dt>PROJECT NAME:</dt>
+                            <dt>[PROJECT NAME]</dt>
                             <dd>{projects[this.state.projectIndex].name}</dd>
                             
-                            <dt>DATE:</dt>
+                            <dt>[DATE]</dt>
                             <dd>{projects[this.state.projectIndex].date}</dd>
 
-                            <dt>LINKS:</dt>
+                            <dt>[LINKS]</dt>
                             {projects[this.state.projectIndex].links.map((element, index) => {
                                 return <dd key={index}><a href={element}>{element}</a></dd>
                             })}
                         </div>
                         <div>
-                            <dt>SUMMARY:</dt>
-                            <dd>{projects[this.state.projectIndex].summary}</dd>
+                            {projects[this.state.projectIndex].summary}
                         </div>
-                    </dl>
+                    </div>
                     <div id="details-pictures">
                         {projects[this.state.projectIndex].media.map((element, index) => {
                             return <img key={index} src={projects[this.state.projectIndex].media_folder + element.substr(1)} alt="Project Media"></img>

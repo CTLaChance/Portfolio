@@ -66,6 +66,9 @@ $text-color: #ba1f33;
     
     #details-close-button {
         position: absolute;
+        z-index: 10;
+        right: 0%;
+
         width: 50px;
         font-size: 70px;
         fill: $text-color;
@@ -85,6 +88,10 @@ $text-color: #ba1f33;
         padding: 1%;
         width: 75%;
         font-size: 1.25vw;
+        display: flex;
+        justify-content: space-between;
+        flex: 1 1 100%;
+        align-items: center;
 
         a {
             color: white;
@@ -95,6 +102,10 @@ $text-color: #ba1f33;
             &:hover {
                 color: $text-color;
             }
+        }
+
+        div {
+            width: 50%;
         }
     }
 

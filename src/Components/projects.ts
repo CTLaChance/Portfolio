@@ -3,7 +3,7 @@ export const projects = [
         name: "Portfolio",
         date: "January 2020",
         links: ["https://ctlachance.com", "https://github.com/CTLaChance/Portfolio"],
-        summary: "I created this portfolio site primarily as a way to learn React and Typescript. I intend to keep it up to date and plan on using it as a testbed for learning various web technologies.",
+        summary: "I decided to create a portfolio site as a way to practice my front-end development skills, particularly React and JS/Typescript. The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.",
 
         card: "/assets/projects/portfolio/card.png",
         media_folder: "/assets/projects/portfolio",
