@@ -5,7 +5,7 @@ export const projects = [
         links: ["https://ctlachance.com", "https://github.com/CTLaChance/Portfolio"],
         summary: "I decided to create a portfolio site as a way to practice my front-end development skills, particularly React and JS/Typescript. The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.",
 
-        card: "/assets/projects/portfolio/card.png",
+        card: "/assets/projects/portfolio/0.png",
         media_folder: "/assets/projects/portfolio",
         media: require.context('../../public/assets/projects/portfolio', false, /\.jpg|png/).keys(),
     },
