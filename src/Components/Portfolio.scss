@@ -133,7 +133,7 @@ $text-color: #ba1f33;
     animation: none !important; //Prevent the pageload animation from firing.
 
     .swiper-wrapper {
-        @for $i from 1 through 10 {
+        @for $i from 1 through 20 {
             // > selects only direct children. Otherwise nth-child would run recursively.
             > :nth-child(#{$i}) {
                 animation: .4s linear #{.25 + ($i * .2)}s 1 component-load-flicker !important;

@@ -9,7 +9,7 @@ import { projects } from "./projects";
 class Portfolio extends React.Component {
     state = {
         opened: false,
-        detailsOpened: true,
+        detailsOpened: false,
         projectIndex: 0,
     }
 
