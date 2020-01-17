@@ -1,9 +1,7 @@
 import React from 'react';
-import Swiper from 'swiper';
 // @ts-ignore
 import ScrollBooster from 'scrollbooster';
 import './Portfolio.scss';
-import 'swiper/swiper.scss'
 import { projects } from "./projects";
 
 class Portfolio extends React.Component {
@@ -37,7 +35,6 @@ class Portfolio extends React.Component {
     render() {
         let projectsScroller;
         let details;
-
         let mouseDownPosition = {x: 0, y: 0};
 
         if(this.state.opened)
