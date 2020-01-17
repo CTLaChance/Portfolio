@@ -38,11 +38,13 @@ class Portfolio extends React.Component {
         let projectsScroller;
         let details;
 
+        let mouseDownPosition = {x: 0, y: 0};
+
         if(this.state.opened)
         {
             projectsScroller =
             <div id="projects-scroller" >
-                <div id="projects-wrapper">
+                <div id="projects-wrapper" onMouseDown={(event) => {mouseDownPosition.x = event.clientX; mouseDownPosition.y = event.clientY}}>
                     {projects.map((element, index) => {
                         return <div key={index} className="project-slide" onClick={() => {this.openDetails(index)}} augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
@@ -62,6 +64,12 @@ class Portfolio extends React.Component {
                             ${-state.position.x}px,
                             ${-state.position.y}px
                         )`;
+                    },
+                    onClick: (state: any, event: MouseEvent) => {
+                        // Prevent accidental link following when scrolling.
+                        if (Math.abs(mouseDownPosition.x - event.clientX) > 5 || Math.abs(mouseDownPosition.y - event.clientY) > 5) {
+                            event.stopPropagation();
+                        }
                     }
                 });
             }, 1);
