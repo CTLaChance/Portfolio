@@ -35,29 +35,34 @@ class Portfolio extends React.Component {
     }    
 
     render() {
-        let swiper;
+        let projectsScroller;
         let details;
 
         if(this.state.opened)
         {
-            swiper =
-            <div id="project-swiper" className="swiper-container">
-                <div className="swiper-wrapper">
+            projectsScroller =
+            <div id="projects-scroller" >
+                <div id="projects-wrapper">
                     {projects.map((element, index) => {
-                        return <div key={index} onClick={() => {this.openDetails(index)}} className="swiper-slide" augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
+                        return <div key={index} className="project-slide" onClick={() => {this.openDetails(index)}} augmented-ui="br-clip-x tl-clip-x bl-clip exe" style={{ backgroundImage: `url(${element.card})`, backgroundSize: "cover", backgroundPosition: "center"}}><h1>{element.name}</h1></div>
                     })}
                 </div>
             </div>;
 
             setTimeout(function () {
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                let mySwiper = new Swiper('#project-swiper', {
-                    init: true,
-                    freeMode: true,
-                    initialSlide: 1,
-                    slidesPerView: "auto",
-                    spaceBetween: 50,
-                    centeredSlides: true,
+                const viewport = document.getElementById('projects-scroller');
+                const content = document.getElementById('projects-wrapper')
+
+                new ScrollBooster({
+                    viewport,
+                    content,
+                    direction: "horizontal",
+                    onUpdate: (state: { position: { x: number; y: number; }; }) => {
+                        content.style.transform = `translate(
+                            ${-state.position.x}px,
+                            ${-state.position.y}px
+                        )`;
+                    }
                 });
             }, 1);
         }
@@ -117,7 +122,7 @@ class Portfolio extends React.Component {
         return (
             <React.Fragment>
                 <div id="name" onClick={() => {this.openPortfolio()}}>CHRISTOPHER LACHANCE</div>
-                {swiper}
+                {projectsScroller}
                 {details}
             </React.Fragment>
         )
