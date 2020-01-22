@@ -13,7 +13,7 @@ export const projects = [
         name: "ARE Website",
         date: "December 2016",
         links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
-        summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        summary: "This is the 2nd version of the Algebra Readiness Educator, LLC website. This redesign was a significant overhaul of the first revision of the website which was originally created using Adobe Dreamweaver. I am currently in the process of updating once more using the lessons and technology I've acquired since then.",
 
         card: "/assets/projects/arewebsite/card.png",
         media_folder: "/assets/projects/arewebsite",
@@ -23,7 +23,7 @@ export const projects = [
         name: "Pharaoh Sun",
         date: "March 2018",
         links: ["https://playags.com/portfolio/pharaoh-sun/"],
-        summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        summary: "Pharaoh Sun was the 1st game I worked on at AGS. This game features expanding reels in the freespin games, a 'pick 3' progressive pick game, and a PowerXStream payout evaluation.",
 
         card: "/assets/projects/pharaohsun/card.jpg",
         media_folder: "/assets/projects/pharaohsun",
@@ -33,7 +33,7 @@ export const projects = [
         name: "Wild Tiki",
         date: "October 2018",
         links: ["https://playags.com/portfolio/wild-tiki/"],
-        summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        summary: "Wild Tiki was the 2nd game I worked on at AGS. This game features expanding wilds in the freespin games, a 'pick 3' progressive pick game, and a PowerXStream payout evaluation.",
         
         card: "/assets/projects/wildtiki/card.jpg",
         media_folder: "/assets/projects/wildtiki",
