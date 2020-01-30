@@ -81,6 +81,7 @@ class Portfolio extends React.Component {
                 new ScrollBooster({
                     viewport,
                     content,
+                    emulateScroll: true,
                     direction: "vertical",
                     onUpdate: (state: { position: { x: number; y: number; }; }) => {
                         content.style.transform = `translate(

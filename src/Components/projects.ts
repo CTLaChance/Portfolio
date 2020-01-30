@@ -15,7 +15,7 @@ export const projects = [
         links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
         summary: "This is the 2nd version of the Algebra Readiness Educator, LLC website. This redesign was a significant overhaul of the first revision of the website which was originally created using Adobe Dreamweaver. I am currently in the process of updating once more using the lessons and technology I've acquired since then.",
 
-        card: "/assets/projects/arewebsite/card.png",
+        card: "/assets/projects/arewebsite/0.png",
         media_folder: "/assets/projects/arewebsite",
         media: require.context('../../public/assets/projects/arewebsite', false, /\.jpg|png/).keys(),
     },
@@ -25,7 +25,7 @@ export const projects = [
         links: ["https://playags.com/portfolio/pharaoh-sun/"],
         summary: "Pharaoh Sun was the 1st game I worked on at AGS. This game features expanding reels in the freespin games, a 'pick 3' progressive pick game, and a PowerXStream payout evaluation.",
 
-        card: "/assets/projects/pharaohsun/card.jpg",
+        card: "/assets/projects/pharaohsun/0.png",
         media_folder: "/assets/projects/pharaohsun",
         media: require.context('../../public/assets/projects/pharaohsun', false, /\.jpg|png/).keys(),
     },
@@ -35,7 +35,7 @@ export const projects = [
         links: ["https://playags.com/portfolio/wild-tiki/"],
         summary: "Wild Tiki was the 2nd game I worked on at AGS. This game features expanding wilds in the freespin games, a 'pick 3' progressive pick game, and a PowerXStream payout evaluation.",
         
-        card: "/assets/projects/wildtiki/card.jpg",
+        card: "/assets/projects/wildtiki/0.png",
         media_folder: "/assets/projects/wildtiki",
         media: require.context('../../public/assets/projects/wildtiki', false, /\.jpg|png/).keys(),
     },
