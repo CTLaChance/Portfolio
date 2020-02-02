@@ -10,7 +10,7 @@ export const projects = [
         media: require.context('../../public/assets/projects/portfolio', false, /\.jpg|png/).keys(),
     },
     {
-        name: "ARE Website",
+        name: "A.R.E Website",
         date: "December 2016",
         links: ["https://areducators.com", "https://github.com/CTLaChance/AREWebsite"],
         summary: "This is the 2nd version of the Algebra Readiness Educator, LLC website. This redesign was a significant overhaul of the first revision of the website which was originally created using Adobe Dreamweaver. I am currently in the process of updating once more using the lessons and technology I've acquired since then.",
