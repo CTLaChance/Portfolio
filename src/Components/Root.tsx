@@ -10,7 +10,7 @@ const Root: React.FC = () => {
     <React.Fragment>
       <Visualizer />
       <Portfolio />
-      <Cursor />
+      {/* <Cursor /> */}
     </React.Fragment>
   );
 }

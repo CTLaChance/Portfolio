@@ -17,31 +17,31 @@ class Visualizer extends React.Component {
         let createScene = () => {
             // Scene Properties //
             let scene = new BABYLON.Scene(this.engine);
-            scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
+            scene.clearColor = new BABYLON.Color4(1, 1, 1, 1);
 
             // Camera Properties //
-            // let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -10), scene);
+            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(-10, 0, -15), scene);
             // camera.setTarget(BABYLON.Vector3.Zero());
-            let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI / 2, 15, new BABYLON.Vector3(0, 0, 0), scene);
-            camera.attachControl(this.canvas, true);
-            camera.panningSensibility = 0;  // Disable panning.
+            // let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI / 2, 15, new BABYLON.Vector3(0, 0, -10), scene);
+            // camera.attachControl(this.canvas, true);
+            // camera.panningSensibility = 0;  // Disable panning.
             // camera.inputs.remove(camera.inputs.attached.mousewheel); // Disable zooming.
-            camera.useAutoRotationBehavior = true;
-            camera.autoRotationBehavior.idleRotationSpeed = 0.25;
-            camera.autoRotationBehavior.idleRotationWaitTime = 5000;
-            camera.autoRotationBehavior.idleRotationSpinupTime = 2500;
-            camera.lowerRadiusLimit = 0.1;
-            camera.upperRadiusLimit = 25;
-            camera.wheelPrecision = 10;
-            camera.minZ = 0;
+            // camera.useAutoRotationBehavior = true;
+            // camera.autoRotationBehavior.idleRotationSpeed = 0.05;
+            // camera.autoRotationBehavior.idleRotationWaitTime = 5000;
+            // camera.autoRotationBehavior.idleRotationSpinupTime = 2500;
+            // camera.lowerRadiusLimit = 0.1;
+            // camera.upperRadiusLimit = 25;
+            // camera.wheelPrecision = 10;
+            // camera.minZ = 0;
 
             // Light Properties //
             // let light = new BABYLON.DirectionalLight("Omni", new BABYLON.Vector3(0, 0, 1), scene);
-            let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
-            light.intensity = 2;
+            // let light = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
+            // light.intensity = 0;
 
             // Audio Properties //
-            this.music = new BABYLON.Sound("music", "/assets/music/reso-echoloss.mp3", scene, null, { loop: true, autoplay: false, streaming: true });
+            this.music = new BABYLON.Sound("music", "/assets/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
@@ -188,7 +188,7 @@ class Visualizer extends React.Component {
                 {/* Group together the visualizer and media buttons so they appear together. */}
                 <div id="visualizer-wrapper">
                     <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
-                    <div id="media-buttons">
+                    {/* <div id="media-buttons">
                         <div id="info">Reso - Echo Loss - Richochet</div>
                         <svg id="toggle-music" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g id="play-button">
@@ -201,7 +201,7 @@ class Visualizer extends React.Component {
                                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                             </g>
                         </svg>
-                    </div>
+                    </div> */}
                 </div>
             </React.Fragment>
         );
