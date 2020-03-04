@@ -170,15 +170,15 @@ class Visualizer extends React.Component {
         if (this.music.isPlaying && !this.music.isPaused) {
             this.music.pause();
 
-            document.getElementById("play-button")?.setAttribute("style", "opacity: 1");
-            document.getElementById("pause-button")?.setAttribute("style", "opacity: 0");
+            // document.getElementById("play-button")?.setAttribute("style", "opacity: 1");
+            // document.getElementById("pause-button")?.setAttribute("style", "opacity: 0");
         }
         else {
             BABYLON.Engine.audioEngine.unlock();
             this.music.play();
 
-            document.getElementById("play-button")?.setAttribute("style", "opacity: 0");
-            document.getElementById("pause-button")?.setAttribute("style", "opacity: 1");
+            // document.getElementById("play-button")?.setAttribute("style", "opacity: 0");
+            // document.getElementById("pause-button")?.setAttribute("style", "opacity: 1");
         }
     }
 

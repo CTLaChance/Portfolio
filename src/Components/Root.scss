@@ -4,32 +4,6 @@
     height: 100vh;
     top: 0;
     left: 0;
-
-    // // Cyberpunk Flicker Animation //
-    // @keyframes pageload-opacity {
-    //     0%,
-    //     30%,
-    //     36%,
-    //     63%,
-    //     69%,
-    //     99%{
-    //         opacity: 0;
-    //     }
-    //     33%,
-    //     66%,
-    //     100% {
-    //         opacity: 1;
-    //     }
-    // }
-
-    // // Stagger pageload animations for a more organic feel.
-    // @for $i from 2 through 4 {
-    //     // > selects only direct children. Otherwise nth-child would run recursively.
-    //     > :nth-last-child(#{$i}) {
-    //         animation: .30s linear #{$i * .25}s 1 pageload-opacity;
-    //         animation-fill-mode: both;
-    //     }
-    // }
 }
 
 #content {
@@ -57,5 +31,12 @@
         font-size: 70px;
         letter-spacing: 5px;
         text-align: center;
+    }
+
+    #chevron-down {
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, -50%);
     }
 }
