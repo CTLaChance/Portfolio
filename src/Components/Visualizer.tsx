@@ -20,7 +20,7 @@ class Visualizer extends React.Component {
             scene.clearColor = new BABYLON.Color4(1, 1, 1, 1);
 
             // Camera Properties //
-            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(-10, 0, -15), scene);
+            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(-5, 0, -15), scene);
             // camera.setTarget(BABYLON.Vector3.Zero());
             // let camera = new BABYLON.ArcRotateCamera('camera', 0, Math.PI / 2, 15, new BABYLON.Vector3(0, 0, -10), scene);
             // camera.attachControl(this.canvas, true);
@@ -184,26 +184,7 @@ class Visualizer extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                {/* Group together the visualizer and media buttons so they appear together. */}
-                <div id="visualizer-wrapper">
-                    <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
-                    {/* <div id="media-buttons">
-                        <div id="info">Reso - Echo Loss - Richochet</div>
-                        <svg id="toggle-music" onClick={this.toggleMusic} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <g id="play-button">
-                                <path fill="none" d="M0 0h24v24H0V0z" />
-                                <path d="M8 5v14l11-7L8 5z" />
-                            </g>
-
-                            <g id="pause-button" style={{ opacity: 0 }}>
-                                <path fill="none" d="M0 0h24v24H0V0z" />
-                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                            </g>
-                        </svg>
-                    </div> */}
-                </div>
-            </React.Fragment>
+            <canvas id="visualizer" ref={(element: HTMLCanvasElement) => this.canvas = element} />
         );
     }
 }

@@ -5,29 +5,60 @@
     top: 0;
     left: 0;
 
-    // Cyberpunk Flicker Animation //
-    @keyframes pageload-opacity {
-        0%,
-        30%,
-        36%,
-        63%,
-        69%,
-        99%{
-            opacity: 0;
-        }
-        33%,
-        66%,
-        100% {
-            opacity: 1;
-        }
-    }
+    // // Cyberpunk Flicker Animation //
+    // @keyframes pageload-opacity {
+    //     0%,
+    //     30%,
+    //     36%,
+    //     63%,
+    //     69%,
+    //     99%{
+    //         opacity: 0;
+    //     }
+    //     33%,
+    //     66%,
+    //     100% {
+    //         opacity: 1;
+    //     }
+    // }
 
-    // Stagger pageload animations for a more organic feel.
-    @for $i from 2 through 4 {
-        // > selects only direct children. Otherwise nth-child would run recursively.
-        > :nth-last-child(#{$i}) {
-            animation: .30s linear #{$i * .25}s 1 pageload-opacity;
-            animation-fill-mode: both;
-        }
+    // // Stagger pageload animations for a more organic feel.
+    // @for $i from 2 through 4 {
+    //     // > selects only direct children. Otherwise nth-child would run recursively.
+    //     > :nth-last-child(#{$i}) {
+    //         animation: .30s linear #{$i * .25}s 1 pageload-opacity;
+    //         animation-fill-mode: both;
+    //     }
+    // }
+}
+
+#menu {
+    height: 100vh;
+    width: 50vw;
+    min-width: 1000px;
+    position: relative;
+
+    background-color: rgba(#ffffff, 0.75);
+    backdrop-filter: blur(5px);
+
+    #name {
+        position: fixed;
+        left: 0%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        margin: 0;
+        margin-left: 10px;
+        
+        //Font
+        font-family: 'Tomorrow', sans-serif;
+        color: black;
+        font-weight: 100;
+        font-size: 70px;
+        letter-spacing: 5px;
+        // font-style: italic;
+        text-align: center;
+        // user-select: none;
+        // backdrop-filter: blur(10px);
+        transition: left 1s cubic-bezier(0.8,0,.2,1), color 0.25s linear;
     }
 }
