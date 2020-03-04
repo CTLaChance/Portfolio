@@ -9,7 +9,7 @@ const Root: React.FC = () => {
     // Stack items from furthest to closest.
     <React.Fragment>
       <Visualizer />
-      <div id="menu">
+      <div id="content">
         <h1 id="name">CHRISTOPHER LACHANCE</h1>
       </div>
     </React.Fragment>
