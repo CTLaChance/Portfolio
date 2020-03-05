@@ -55,7 +55,7 @@ class Content extends React.Component {
                             ];
 
             element.animate(keyframes, {
-                delay: 1000 + (Math.random() * 500),
+                delay: 500 + (Math.random() * 500),
                 duration: 500,
                 iterations: 1,
                 fill: "both",
@@ -181,7 +181,7 @@ class Content extends React.Component {
                         <span>C</span>
                         <span>E</span>
                     </h1>
-                    <svg id="chevron-down" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg id="chevron-down" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </div>
