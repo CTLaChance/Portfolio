@@ -39,10 +39,23 @@ class Content extends React.Component {
         console.table(nameChars);
 
         for (let element of nameChars){
-            let keyframes = [{ opacity: '0' }, { opacity: '1' }];
+            let keyframes = [
+                            { opacity: 0 },
+                            { opacity: 0, offset: 0.24 },
+                            { opacity: 1, offset: 0.25 },
+                            { opacity: 0, offset: 0.26 },
+                            { opacity: 0, offset: 0.49 },
+                            { opacity: 1, offset: 0.50 },
+                            { opacity: 0, offset: 0.51 },
+                            { opacity: 0, offset: 0.74 },
+                            { opacity: 1, offset: 0.75 },
+                            { opacity: 0, offset: 0.76 },
+                            { opacity: 0, offset: 0.99 },
+                            { opacity: 1 }
+                            ];
 
             element.animate(keyframes, {
-                delay: 1000 + (Math.random() * 1000),
+                delay: 1000 + (Math.random() * 500),
                 duration: 500,
                 iterations: 1,
                 fill: "both",
