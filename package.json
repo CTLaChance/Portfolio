@@ -18,6 +18,7 @@
     "dev": "webpack-dev-server --content-base public"
   },
   "dependencies": {
+    "babylonjs": "^4.1.0",
     "node-sass": "^4.13.1",
     "svelte-preprocess": "^3.4.0"
   }

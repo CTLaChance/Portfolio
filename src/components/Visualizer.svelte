@@ -3,21 +3,15 @@
 </script>
 
 <style lang="scss">
-    $text-color: red;
-
-    #id1 {
-        color: $text-color;
-        border: 1px solid black;
-
-        #id2 {
-            color: #1c1c1c;
-        }
+    #visualizer {
+        height: 100vh;
+        width: 50vw;
+        max-width: 800px;
+        min-width: 800px;
+        right: 0;
+        position: absolute;
+        pointer-events: none;
     }
 </style>
 
-<div id="id1">
-    TEXT 1
-    <div id="id2">
-        TEXT 2
-    </div>
-</div>
+<canvas id="visualizer"/>
