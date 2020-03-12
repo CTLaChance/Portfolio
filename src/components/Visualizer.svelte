@@ -8,7 +8,7 @@
 
     onMount(async () => {
         engine = new BABYLON.Engine(canvas, true);
-        BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
+        // BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
 
         let createScene = () => {
             // Scene Properties //
@@ -19,7 +19,7 @@
             let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(-5, 0, -15), scene);
 
             // Audio Properties //
-            music = new BABYLON.Sound("music", "/assets/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: false, streaming: true });
+            music = new BABYLON.Sound("music", "/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: true, streaming: true });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
