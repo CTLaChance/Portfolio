@@ -34,20 +34,16 @@
 <style lang="scss">
     #content {
         height: 100vh;
-        width: 1000px;
-        min-width: 50vw;
-        max-width: 100vw;
-        position: relative;
+        width: 100vw;
+        position: absolute;
 
-        background-color: rgba(#ffffff, 0.75);
-        backdrop-filter: blur(5px);
 
         #name {
             position: fixed;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
+            width: 55%;
             margin: 0;
             
             //Font
@@ -57,41 +53,35 @@
             font-size: 70px;
             letter-spacing: -5px;
             text-align: center;
-        }
+            word-wrap: break-word;
 
-        #chevron-down {
-            position: fixed;
-            left: 50%;
-            bottom: 0;
-            transform: translate(-50%, -50%);
+            background-color: rgba(#ffffff, 0.75);
+            backdrop-filter: blur(5px);
         }
     }
 </style>
 
 <div id="content">
-    <h1 bind:this={name} id="name">
-        <span>C</span>
-        <span>H</span>
-        <span>R</span>
-        <span>I</span>
-        <span>S</span>
-        <span>T</span>
-        <span>O</span>
-        <span>P</span>
-        <span>H</span>
-        <span>E</span>
-        <span>R</span>
-        <span>&nbsp;</span>
-        <span>L</span>
-        <span>A</span>
-        <span>C</span>
-        <span>H</span>
-        <span>A</span>
-        <span>N</span>
-        <span>C</span>
-        <span>E</span>
+    <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">R</span>
+        <span aria-hidden="true">I</span>
+        <span aria-hidden="true">S</span>
+        <span aria-hidden="true">T</span>
+        <span aria-hidden="true">O</span>
+        <span aria-hidden="true">P</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">E</span>
+        <span aria-hidden="true">R</span>
+        <span aria-hidden="true">&nbsp;</span>
+        <span aria-hidden="true">L</span>
+        <span aria-hidden="true">A</span>
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">A</span>
+        <span aria-hidden="true">N</span>
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">E</span>
     </h1>
-    <svg id="chevron-down" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
 </div>

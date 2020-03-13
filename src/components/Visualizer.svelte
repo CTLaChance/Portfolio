@@ -8,7 +8,7 @@
 
     onMount(async () => {
         engine = new BABYLON.Engine(canvas, true);
-        // BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
+        BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
 
         let createScene = () => {
             // Scene Properties //
@@ -16,7 +16,7 @@
             scene.clearColor = new BABYLON.Color4(1, 1, 1, 1);
 
             // Camera Properties //
-            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(-5, 0, -15), scene);
+            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -15), scene);
 
             // Audio Properties //
             music = new BABYLON.Sound("music", "/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: true, streaming: true });
@@ -51,15 +51,15 @@
             torus.material = new BABYLON.StandardMaterial("torus_mat", scene);
             torus.material.pointsCloud = true;
             torus.material.pointSize = 5;
-            torus.rotate(BABYLON.Vector3.Right(), Math.PI / 6, BABYLON.Space.WORLD);
+            torus.rotate(BABYLON.Vector3.Forward(), Math.PI / 6, BABYLON.Space.WORLD);
 
             let torus2 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus2.material = torus.material;
-            torus2.rotate(BABYLON.Vector3.Right(), -Math.PI / 6, BABYLON.Space.WORLD);
+            torus2.rotate(BABYLON.Vector3.Forward(), -Math.PI / 6, BABYLON.Space.WORLD);
 
             let torus3 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus3.material = torus.material;
-            torus3.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
+            torus3.rotate(BABYLON.Vector3.Forward(), Math.PI / 2, BABYLON.Space.WORLD);
 
             scene.registerBeforeRender(() => {
                 frequencyArray = analyser.getByteFrequencyData();
@@ -143,18 +143,20 @@
             engine.resize();
         }
     }
+
+    window.addEventListener('mousedown', () => {
+        BABYLON.Engine.audioEngine.unlock();
+        music.play();
+    });
 </script>
 
 <style lang="scss">
     #visualizer {
         height: 100vh;
-        width: 50vw;
-        max-width: 800px;
-        min-width: 800px;
-        right: 0;
+        width: 100vw;
         position: absolute;
         pointer-events: none;
     }
 </style>
 
-<canvas bind:this={canvas} id="visualizer"/>
+<canvas id="visualizer" bind:this={canvas} on:/>
