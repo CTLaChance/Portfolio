@@ -100,13 +100,13 @@
                     torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
 
                     // torus.scaling.x = torus.scaling.y = torus.scaling.z = midValueScaled;
-                    torus.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
+                    torus.rotate(BABYLON.Vector3.Up(), -0.001 + (0.01 * highValueScaled), BABYLON.Space.LOCAL);
 
                     // torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = highValueScaled;
-                    torus2.rotate(BABYLON.Vector3.Up(), -0.0001 + (-0.01 * midValueScaled), BABYLON.Space.LOCAL);
+                    torus2.rotate(BABYLON.Vector3.Up(), 0.001 + (-0.01 * midValueScaled), BABYLON.Space.LOCAL);
 
                     // torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = midValueScaled + highValueScaled;
-                    torus3.rotate(BABYLON.Vector3.Up(), 0.0001 + (0.01 * bassValueScaled), BABYLON.Space.LOCAL);
+                    torus3.rotate(BABYLON.Vector3.Up(), -0.001 + (0.01 * bassValueScaled), BABYLON.Space.LOCAL);
                 }
                 else {
                     mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
