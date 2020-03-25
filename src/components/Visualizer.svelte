@@ -10,6 +10,7 @@
         engine = new BABYLON.Engine(canvas, true);
         BABYLON.Engine.audioEngine.useCustomUnlockedButton = true;
 
+        //Scene 1
         let createScene = () => {
             // Scene Properties //
             let scene = new BABYLON.Scene(engine);
@@ -125,6 +126,62 @@
             return scene;
         }
 
+        //Scene 2
+        let createScene2 = () => {
+            // Scene Properties //
+            let scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color4(1, 1, 1, 1);
+
+            // Camera Properties //
+            let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -15), scene);
+
+            // Audio Properties //
+            music = new BABYLON.Sound("music", "/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: true, streaming: true });
+            let analyser = new BABYLON.Analyser(scene);
+            BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
+            analyser.FFT_SIZE = 32;
+            analyser.SMOOTHING = 0.90;
+
+            let bassFreqMin = 200;
+            let bassFreqMax = 220;
+            let midFreqMin = 150;
+            let midFreqMax = 230;
+            let highFreqMin = 60;
+            let highFreqMax = 130;
+            let bassValue = 0;
+            let midValue = 0;
+            let highValue = 0;
+            let bassValueScaled, midValueScaled, highValueScaled = 0;
+            let scaleMin = 0, scaleMax = 1; // Value range we're converting the above ranges to.
+            let frequencyArray;
+
+            scene.registerBeforeRender(() => {
+                frequencyArray = analyser.getByteFrequencyData();
+
+                for (let i = 0; i < analyser.getFrequencyBinCount(); i++) {
+                    if (i > (analyser.getFrequencyBinCount() - Math.floor(analyser.getFrequencyBinCount() / 3))) {
+                        highValue += frequencyArray[i];
+                    }
+                    else if (i >= 3) {
+                        midValue += frequencyArray[i];
+                    }
+                }
+
+                bassValue = (frequencyArray[0] + frequencyArray[1] + frequencyArray[2]) / 3;
+                midValue /= Math.floor((analyser.getFrequencyBinCount() / 3) + (analyser.getFrequencyBinCount() % 3) + 2);
+                highValue /= Math.floor((analyser.getFrequencyBinCount() / 3));
+                
+                // Affine transformations of various frequency ranges to [0,1] scalar range.
+                bassValueScaled = (Math.min(Math.max(bassValue, bassFreqMin), bassFreqMax) - bassFreqMin) * ((scaleMax - scaleMin) / (bassFreqMax - bassFreqMin)) + scaleMin;
+                midValueScaled = (Math.min(Math.max(midValue, midFreqMin), midFreqMax) - midFreqMin) * ((scaleMax - scaleMin) / (midFreqMax - midFreqMin)) + scaleMin;
+                highValueScaled = (Math.min(Math.max(highValue, highFreqMin), highFreqMax) - highFreqMin) * ((scaleMax - scaleMin) / (highFreqMax - highFreqMin)) + scaleMin;
+
+                if (music.isPlaying && !music.isPaused) {
+                    // Do stuff.
+                }
+            });
+        }
+
         let scene = createScene();
 
         engine.runRenderLoop(function () {
@@ -153,8 +210,8 @@
 <style lang="scss">
     #visualizer {
         height: 100vh;
-        width: 100vw;
-        position: absolute;
+        width: 100%;
+        // position: absolute;
         pointer-events: none;
     }
 </style>

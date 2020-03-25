@@ -1,7 +1,9 @@
 <script>
 	import Visualizer from './Visualizer.svelte';
-	import Content from './Content.svelte';
+	import Name from './Name.svelte';
+	import Profile from './Profile.svelte';
 </script>
 
 <Visualizer />
-<Content />
+<Name />
+<Profile />
