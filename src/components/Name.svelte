@@ -33,7 +33,7 @@
 
 <style lang="scss">
     #name {
-        position: fixed;
+        position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);

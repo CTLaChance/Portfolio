@@ -10,6 +10,9 @@
         display: flex;
         justify-content: space-evenly;
 
+        padding-top: 16px;
+        margin: 0 auto;
+
         img {
             width: 256px;
             height: 256px;
@@ -42,7 +45,7 @@
 </style>
 
 <div id="profile">
-    <img src="profile.jpg">
+    <img src="profile.jpg" alt="Christopher LaChance - Profile Picture">
     <div id="profile-info">
         <h1>CHRISTOPHER LACHANCE</h1>
         <a href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
