@@ -8,7 +8,7 @@
         font-family: 'Tomorrow', sans-serif;
 
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-end;
 
         padding: 16px;
         margin: 0 auto;
@@ -26,6 +26,8 @@
             flex-direction: column;
             justify-content: center;
 
+            margin-left: 16px;
+
             h1 {
                 font-size: 36pt;
                 font-weight: 100;
@@ -33,7 +35,7 @@
             }
 
             a {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto', sans-serif;
                 text-decoration: none;
                 color: black;
 
@@ -49,8 +51,9 @@
     <img src="profile.jpg" alt="Christopher LaChance - Profile Picture">
     <div id="profile-info">
         <h1>CHRISTOPHER LACHANCE</h1>
-        <a href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
-        <a href="https://github.com/CTLaChance">https://github.com/CTLaChance</a>
-        <a href="https://linkedin.com/in/ctlachance">https://linkedin.com/in/ctlachance</a>
+        <a href="https://github.com/CTLaChance">GitHub</a>
+        <a href="https://linkedin.com/in/ctlachance">LinkedIn</a>
+        <a href="mailto:christopher.t.lachance@gmail.com">Email</a>
+        <a href="./resume.pdf">Résumé</a>
     </div>
 </div>
