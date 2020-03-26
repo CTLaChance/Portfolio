@@ -1,9 +1,14 @@
 <script>
     import Profile from './Profile.svelte';
+    import Details from './Details.svelte';
     import data from '../data.json';
 </script>
 
 <style lang="scss">
+    #header {
+        display: flex;
+    }
+
     #projects {
         min-height: 100vh;
     }
@@ -15,7 +20,8 @@
 
         width: 98%;
         margin: 0 auto;
-        min-height: 700px;
+        padding: 16px;
+        min-height: 1000px;
         
         @for $i from 0 to 20 {
             :nth-child(#{$i}) {
@@ -26,7 +32,10 @@
 </style>
 
 <div id="projects">
-    <Profile />
+    <div id="header">
+        <Profile />
+        <Details />
+    </div>
     <div id="project-array">
         {#each data as element}
             <div id={element.name} class="project-card"></div>

@@ -4,14 +4,15 @@
 <style lang="scss">
     #profile {
         width: 50vw;
-        height: 330px;
+        height: 362px;
         font-family: 'Tomorrow', sans-serif;
 
         display: flex;
         justify-content: space-evenly;
 
-        padding-top: 16px;
+        padding: 16px;
         margin: 0 auto;
+        box-sizing: border-box;
 
         img {
             width: 256px;
@@ -50,6 +51,6 @@
         <h1>CHRISTOPHER LACHANCE</h1>
         <a href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
         <a href="https://github.com/CTLaChance">https://github.com/CTLaChance</a>
-        <a href="https://www.linkedin.com/in/ctlachance">https://www.linkedin.com/in/ctlachance</a>
+        <a href="https://linkedin.com/in/ctlachance">https://linkedin.com/in/ctlachance</a>
     </div>
 </div>

@@ -4,7 +4,7 @@
     let name;
 
     onMount(async() => {
-        let nameChars = name.children;
+        let nameChars = [...name.children[0].children,...name.children[1].children];
         for (let element of nameChars){
             let keyframes = [
                             { opacity: 0 },
@@ -51,28 +51,45 @@
 
         background-color: rgba(#ffffff, 0.75);
         backdrop-filter: blur(5px);
+
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .span-wrapper {
+            margin-left: 8px;
+            margin-right: 8px;
+            display: inline-flex;
+
+            span {
+                margin: 0px 4px;
+            }
+        }
     }
 </style>
 
 <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
-    <span aria-hidden="true">C</span>
-    <span aria-hidden="true">H</span>
-    <span aria-hidden="true">R</span>
-    <span aria-hidden="true">I</span>
-    <span aria-hidden="true">S</span>
-    <span aria-hidden="true">T</span>
-    <span aria-hidden="true">O</span>
-    <span aria-hidden="true">P</span>
-    <span aria-hidden="true">H</span>
-    <span aria-hidden="true">E</span>
-    <span aria-hidden="true">R</span>
-    <span aria-hidden="true">&nbsp;</span>
-    <span aria-hidden="true">L</span>
-    <span aria-hidden="true">A</span>
-    <span aria-hidden="true">C</span>
-    <span aria-hidden="true">H</span>
-    <span aria-hidden="true">A</span>
-    <span aria-hidden="true">N</span>
-    <span aria-hidden="true">C</span>
-    <span aria-hidden="true">E</span>
+    <div class="span-wrapper">
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">R</span>
+        <span aria-hidden="true">I</span>
+        <span aria-hidden="true">S</span>
+        <span aria-hidden="true">T</span>
+        <span aria-hidden="true">O</span>
+        <span aria-hidden="true">P</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">E</span>
+        <span aria-hidden="true">R</span>
+    </div>
+    <div class="span-wrapper">
+        <span aria-hidden="true">L</span>
+        <span aria-hidden="true">A</span>
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">H</span>
+        <span aria-hidden="true">A</span>
+        <span aria-hidden="true">N</span>
+        <span aria-hidden="true">C</span>
+        <span aria-hidden="true">E</span>
+    </div>
 </h1>
