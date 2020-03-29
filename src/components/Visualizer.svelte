@@ -211,8 +211,11 @@
     #visualizer {
         height: 100vh;
         width: 100%;
-        // position: absolute;
+        margin: 0;
+        padding: 0;
+        border: 0;
         pointer-events: none;
+        display: block;
     }
 </style>
 

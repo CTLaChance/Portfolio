@@ -23,10 +23,15 @@
         padding: 16px;
         min-height: 1000px;
         
-        @for $i from 0 to 20 {
-            :nth-child(#{$i}) {
-                background: rgb(random(255), random(255), random(255));
-            }
+        // @for $i from 0 to 20 {
+        //     :nth-child(#{$i}) {
+        //         background: rgb(random(255), random(255), random(255));
+        //     }
+        // }
+
+        .project-card {
+            background-size: cover;
+            background-position: center;
         }
     }
 </style>
@@ -38,7 +43,7 @@
     </div>
     <div id="project-array">
         {#each data as element}
-            <div id={element.name} class="project-card"></div>
+            <div id={element.name} class="project-card" style="background-image: url({element.card})"></div>
         {/each}
     </div>
 </div>

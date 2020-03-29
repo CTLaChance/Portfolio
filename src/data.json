@@ -1,212 +1,75 @@
 [
   {
-    "name": "Test 1",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Pharaoh Sun",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "Pharaoh Sun was the first game I worked on at AGS. The base game is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The freespins can expand from 3x5 reels to 4x5 or 5x5 reels.",
+    "links": ["https://playags.com/portfolio/pharaoh-sun/"],
+    "card": "/projects/pharaohsun/0.png",
+    "media": ""
   },
   {
-    "name": "Test 2",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Wild Tiki",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["https://playags.com/portfolio/wild-tiki/"],
+    "card": "/projects/wildtiki/0.png"
   },
   {
-    "name": "Test 3",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Dragon Blast",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["https://playags.com/portfolio/wild-tiki/"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 4",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Freedom 7",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["NULL"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 5",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "8 Riches",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["NULL"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 6",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Shining Dragon",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["https://playags.com/portfolio/shining-dragon/"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 7",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Burning Tiger",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["https://playags.com/portfolio/burning-tiger/"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 8",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Bao Bei Cash",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["NULL"],
+    "card": "/projects/REDACTED.jpg"
   },
   {
-    "name": "Test 9",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
-  },
-  {
-    "name": "Test 10",
-    "company": "CTL, LLC",
-    "date": "24MAR2020",
-    "about": "Non dolor sint exercitation cupidatat id elit nostrud amet culpa tempor. Occaecat do ut voluptate in ad adipisicing pariatur nostrud laboris dolor. Pariatur elit dolor commodo consequat nisi reprehenderit. Deserunt magna ex id sit ipsum. Nisi voluptate laboris in irure sit fugiat anim deserunt enim qui. Incididunt cillum non sint Lorem non mollit veniam incididunt laborum duis voluptate ullamco exercitation. Ea in est id quis et aute consequat anim ex.",
-    "tags": [
-      "Tag 1",
-      "Tag 2",
-      "Tag 3",
-      "Tag 4",
-      "Another Tag",
-      "A Longer Tag",
-      "A Really Really Long Tag"
-    ],
-    "links": ["https://google.com", "https://ctlachance.com"],
-    "collaborators": [
-      "John Doe - Artist",
-      "Jane Doe - Musician",
-      "Jack Johnson - Psychic"
-    ]
+    "name": "Temple Cash",
+    "company": "AGS, LLC",
+    "date": "",
+    "about": "",
+    "links": ["NULL"],
+    "card": "/projects/REDACTED.jpg"
   }
 ]
