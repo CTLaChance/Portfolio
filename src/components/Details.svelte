@@ -40,7 +40,6 @@
             font-family: 'Roboto';
         }
 
-
         #details-links {
             grid-area: links;
             display: flex;

@@ -1,75 +1,91 @@
 [
   {
-    "name": "Pharaoh Sun",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "Pharaoh Sun was the first game I worked on at AGS. The base game is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The freespins can expand from 3x5 reels to 4x5 or 5x5 reels.",
-    "links": ["https://playags.com/portfolio/pharaoh-sun/"],
-    "card": "/projects/pharaohsun/0.png",
-    "media": ""
+    "name": "AGS, LLC",
+    "card": "/projects/REDACTED.jpg",
+    "projects": [
+      {
+        "name": "Pharaoh Sun",
+        "date": "",
+        "about": "Pharaoh Sun was the first game I worked on at AGS. The base game is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The freespins can expand from 3x5 reels to 4x5 or 5x5 reels.",
+        "links": ["https://playags.com/portfolio/pharaoh-sun/"],
+        "card": "/projects/ags/pharaohsun/0.png"
+      },
+      {
+        "name": "Wild Tiki",
+        "date": "",
+        "about": "",
+        "links": ["https://playags.com/portfolio/wild-tiki/"],
+        "card": "/projects/ags/wildtiki/0.png"
+      },
+      {
+        "name": "Dragon Blast",
+        "date": "",
+        "about": "",
+        "links": ["https://playags.com/portfolio/wild-tiki/"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "Freedom 7",
+        "date": "",
+        "about": "",
+        "links": ["NULL"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "8 Riches",
+        "date": "",
+        "about": "",
+        "links": ["NULL"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "Shining Dragon",
+        "date": "",
+        "about": "",
+        "links": ["https://playags.com/portfolio/shining-dragon/"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "Burning Tiger",
+        "date": "",
+        "about": "",
+        "links": ["https://playags.com/portfolio/burning-tiger/"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "Bao Bei Cash",
+        "date": "",
+        "about": "",
+        "links": ["NULL"],
+        "card": "/projects/REDACTED.jpg"
+      },
+      {
+        "name": "Temple Cash",
+        "date": "",
+        "about": "",
+        "links": ["NULL"],
+        "card": "/projects/REDACTED.jpg"
+      }
+    ]
   },
   {
-    "name": "Wild Tiki",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["https://playags.com/portfolio/wild-tiki/"],
-    "card": "/projects/wildtiki/0.png"
-  },
-  {
-    "name": "Dragon Blast",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["https://playags.com/portfolio/wild-tiki/"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "Freedom 7",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["NULL"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "8 Riches",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["NULL"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "Shining Dragon",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["https://playags.com/portfolio/shining-dragon/"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "Burning Tiger",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["https://playags.com/portfolio/burning-tiger/"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "Bao Bei Cash",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["NULL"],
-    "card": "/projects/REDACTED.jpg"
-  },
-  {
-    "name": "Temple Cash",
-    "company": "AGS, LLC",
-    "date": "",
-    "about": "",
-    "links": ["NULL"],
-    "card": "/projects/REDACTED.jpg"
+    "name": "ARE, LLC",
+    "card": "/projects/REDACTED.jpg",
+    "projects": [
+      {
+        "name": "Website",
+        "date": "17-JUN-2017",
+        "about": "Lorem ipsum. . .",
+        "links": ["http://www.algebrareadinesseducators.com/"],
+        "card": "/projects/are/website/0.png"
+      },
+      {
+        "name": "Book Covers",
+        "date": "01-JUN-2011",
+        "about": "Lorem ipsum. . .",
+        "links": ["http://www.algebrareadinesseducators.com/"],
+        "card": "/projects/are/website/0.png"
+      }
+    ]
   }
 ]
