@@ -8,14 +8,29 @@
         "date": "",
         "about": "Pharaoh Sun was the first game I worked on at AGS. The base game is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The freespins can expand from 3x5 reels to 4x5 or 5x5 reels.",
         "links": ["https://playags.com/portfolio/pharaoh-sun/"],
-        "card": "/projects/ags/pharaohsun/0.png"
+        "card": "/projects/ags/pharaohsun/0.png",
+        "media": ["/projects/ags/pharaohsun/0.png",
+                  "/projects/ags/pharaohsun/1.png",
+                  "/projects/ags/pharaohsun/2.png",
+                  "/projects/ags/pharaohsun/3.png",
+                  "/projects/ags/pharaohsun/4.png",
+                  "/projects/ags/pharaohsun/5.png",
+                  "/projects/ags/pharaohsun/6.png",
+                  "/projects/ags/pharaohsun/7.png"
+                ]
       },
       {
         "name": "Wild Tiki",
         "date": "",
         "about": "",
         "links": ["https://playags.com/portfolio/wild-tiki/"],
-        "card": "/projects/ags/wildtiki/0.png"
+        "card": "/projects/ags/wildtiki/0.png",
+        "media": ["/projects/ags/wildtiki/0.png",
+                  "/projects/ags/wildtiki/1.png",
+                  "/projects/ags/wildtiki/2.png",
+                  "/projects/ags/wildtiki/3.png",
+                  "/projects/ags/wildtiki/4.png"
+                ]
       },
       {
         "name": "Dragon Blast",
