@@ -4,15 +4,22 @@
     import data from '../data.json';
 
     let folderIndex = null;
+    let projectIndex = null;
 
     function openFolder(index) {
         folderIndex = index;
-        console.log(`Opening folder: ${folderIndex}`);
+    }
+
+    function openProject(index) {
+        projectIndex = index;
     }
 
     function leaveFolder() {
         folderIndex = null;
-        console.log("LEAVE FOLDER");
+    }
+
+    function leaveProject() {
+        projectIndex = null;
     }
 </script>
 
@@ -27,45 +34,24 @@
 
     #project-array {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
         grid-gap: 16px 16px;
 
         width: 98%;
         margin: 0 auto;
         padding: 16px;
-        min-height: 50vh;
 
         .project-card {
             background-size: cover;
             background-position: center;
             transition: transform .2s ease-in-out;
 
-            // Cyberpunk Flicker Animation //
-            @keyframes opacity-flicker {
-                0%,
-                24%,
-                26%,
-                49%,
-                51%,
-                74%,
-                76%,
-                99%{
-                    opacity: 0;
-                }
-                25%,
-                50%,
-                75%,
-                100% {
-                    opacity: 1;
-                }
-            }
-
-            // Stagger grid item animations for a more organic feel.
-            @for $i from 0 through 20 {
-                &:nth-child(#{$i}) {
-                    animation: .50s linear #{random(10) * .05}s 1 opacity-flicker;
-                    animation-fill-mode: both;
-                }
+            &:before {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                padding-bottom: calc(9/16 * 100%);
             }
 
             &:hover {
@@ -88,7 +74,7 @@
             {/each}
         {:else}
             {#each data[folderIndex].projects as element, i}
-                <div id={element.name} class="project-card" style="background-image: url({element.card})" on:click={() => openFolder(i)}></div>
+                <div id={element.name} class="project-card" style="background-image: url({element.card})" on:click={() => openProject(i)}></div>
             {/each}
         {/if}
     </div>
