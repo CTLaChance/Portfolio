@@ -1,7 +1,7 @@
 [
   {
     "name": "AGS, LLC",
-    "card": "/projects/REDACTED.jpg",
+    "card": "/projects/ags-card.jpg",
     "projects": [
       {
         "name": "Pharaoh Sun",
@@ -85,7 +85,7 @@
   },
   {
     "name": "ARE, LLC",
-    "card": "/projects/REDACTED.jpg",
+    "card": "/projects/are-card.jpg",
     "projects": [
       {
         "name": "Website",

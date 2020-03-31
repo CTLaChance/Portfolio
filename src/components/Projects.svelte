@@ -45,6 +45,7 @@
             background-size: cover;
             background-position: center;
             transition: transform .2s ease-in-out;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
             
             &:before {
                 content: "";
@@ -56,7 +57,7 @@
 
             &:hover {
                 cursor: pointer;
-                transform: scale(1.05, 1.05);
+                transform: translate(0px, -5px);
             }
         }
 
