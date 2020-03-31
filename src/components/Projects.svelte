@@ -1,8 +1,12 @@
 <script>
-    import Profile from './Profile.svelte';
-    import Details from './Details.svelte';
+    import {onMount, onDestroy} from 'svelte';
+    import * as SimpleLightbox from 'simple-lightbox';
     import data from '../data.json';
 
+    import Profile from './Profile.svelte';
+    import Details from './Details.svelte';
+
+    let lightbox;
     let folderIndex = null;
     let projectIndex = null;
 
@@ -12,6 +16,9 @@
 
     function openProject(index) {
         projectIndex = index;
+        setTimeout(function() {
+            lightbox = new SimpleLightbox({elements: document.querySelectorAll('.media-card')});
+        }, 1);
     }
 
     function leaveFolder() {
@@ -98,8 +105,8 @@
                 <div id={element.name} class="grid-card" style="background-image: url({element.card})" on:click={() => openProject(i)}></div>
             {/each}
         {:else}
-            {#each data[folderIndex].projects[projectIndex].media as element}
-                <div id={element.name} class="media-card" style="background-image: url({element})"></div>
+            {#each data[folderIndex].projects[projectIndex].media as element, i}
+                <a class="media-card" href="{element}" style="background-image: url({element})" on:click={() => lightbox.show()}></a>
             {/each}
         {/if}
     </div>

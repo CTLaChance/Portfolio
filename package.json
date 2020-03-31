@@ -20,6 +20,7 @@
   "dependencies": {
     "babylonjs": "^4.1.0",
     "node-sass": "^4.13.1",
+    "simple-lightbox": "^2.1.0",
     "svelte-preprocess": "^3.4.0"
   }
 }
