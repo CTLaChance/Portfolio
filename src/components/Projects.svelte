@@ -51,6 +51,7 @@
         .grid-card {
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             transition: transform .2s ease-in-out;
             box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
             
@@ -69,22 +70,9 @@
         }
 
         .media-card {
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            transition: transform .2s ease-in-out;
             
             &:before {
-                content: "";
-                display: block;
-                height: 0;
-                width: 0;
-                padding-bottom: 100%;
-            }
-
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.05, 1.05);
+                padding-bottom: 112.5%;
             }
         }
     }
@@ -106,7 +94,7 @@
             {/each}
         {:else}
             {#each data[folderIndex].projects[projectIndex].media as element, i}
-                <a class="media-card" href="{element}" style="background-image: url({element})" on:click={() => lightbox.show()}></a>
+                <a class="grid-card media-card" href="{element}" style="background-image: url({element})" on:click={() => lightbox.show()}></a>
             {/each}
         {/if}
     </div>
