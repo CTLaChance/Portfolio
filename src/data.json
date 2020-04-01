@@ -8,8 +8,8 @@
     "projects": [
       {
         "name": "Pharaoh Sun",
-        "date": "",
-        "about": "Pharaoh Sun was the first game I worked on at AGS. The base game is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The freespins can expand from 3x5 reels to 4x5 or 5x5 reels.",
+        "date": "24-AUG-2018",
+        "about": "Pharaoh Sun was the first title I worked on at AGS. The basegame is a standard 3x5 reel configuration with bonus symbols that award freespins and a wild symbol that randomly awards progressives. The glyphs on the sandstone columns have a chance to light up when the wild symbol lands on the reels. The freespins allow the player to select alternative reel configurations like 4x5 or 5x5.",
         "links": ["https://playags.com/portfolio/pharaoh-sun/"],
         "card": "/projects/ags/pharaohsun/0.png",
         "media": ["/projects/ags/pharaohsun/0.png",
@@ -24,8 +24,8 @@
       },
       {
         "name": "Wild Tiki",
-        "date": "",
-        "about": "",
+        "date": "04-DEC-2018",
+        "about": "Wild Tiki was the second title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus drum symbol that awards 8 freespins and a wild tiki symbol that awards progressives. The tiki torches have a chance to light when a wild symbol lands on the reels. In the freespins, wild symbols expand vertically, horizontally, or both simultaneously to fill the middle 9 symbol stops.",
         "links": ["https://playags.com/portfolio/wild-tiki/"],
         "card": "/projects/ags/wildtiki/0.png",
         "media": ["/projects/ags/wildtiki/0.png",
@@ -37,49 +37,49 @@
       },
       {
         "name": "Dragon Blast",
-        "date": "",
+        "date": "25-MAR-2019",
         "about": "",
         "links": ["https://playags.com/portfolio/wild-tiki/"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Freedom 7",
-        "date": "",
+        "date": "21-MAY-2019",
         "about": "",
         "links": ["NULL"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "8 Riches",
-        "date": "",
+        "date": "21-MAY-2019",
         "about": "",
         "links": ["NULL"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Shining Dragon",
-        "date": "",
+        "date": "27-NOV-2019",
         "about": "",
         "links": ["https://playags.com/portfolio/shining-dragon/"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Burning Tiger",
-        "date": "",
+        "date": "27-NOV-2019",
         "about": "",
         "links": ["https://playags.com/portfolio/burning-tiger/"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Bao Bei Cash",
-        "date": "",
+        "date": "19-MAR-2020",
         "about": "",
         "links": ["NULL"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Temple Cash",
-        "date": "",
+        "date": "19-MAR-2020",
         "about": "",
         "links": ["NULL"],
         "card": "/projects/REDACTED.jpg"
@@ -98,14 +98,16 @@
         "date": "17-JUN-2017",
         "about": "Lorem ipsum. . .",
         "links": ["http://www.algebrareadinesseducators.com/"],
-        "card": "/projects/are/website/0.png"
+        "card": "/projects/are/website/0.png",
+        "media": []
       },
       {
         "name": "Book Covers",
         "date": "01-JUN-2011",
         "about": "Lorem ipsum. . .",
         "links": ["http://www.algebrareadinesseducators.com/"],
-        "card": "/projects/are/website/0.png"
+        "card": "/projects/are/website/0.png",
+        "media": []
       }
     ]
   }

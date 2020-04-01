@@ -136,7 +136,7 @@
             let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -15), scene);
 
             // Audio Properties //
-            music = new BABYLON.Sound("music", "/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: true, streaming: true });
+            music = new BABYLON.Sound("music", "/music/jh-openeyesignallive.mp3", scene, null, { loop: false, autoplay: false, streaming: false });
             let analyser = new BABYLON.Analyser(scene);
             BABYLON.Engine.audioEngine.connectToAnalyser(analyser);
             analyser.FFT_SIZE = 32;
@@ -202,8 +202,8 @@
     }
 
     window.addEventListener('mousedown', () => {
-        BABYLON.Engine.audioEngine.unlock();
-        music.play();
+        // BABYLON.Engine.audioEngine.unlock();
+        // music.play();
     });
 </script>
 
