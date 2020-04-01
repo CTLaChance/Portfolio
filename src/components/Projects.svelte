@@ -53,7 +53,7 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: transform .2s ease-in-out;
-            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
             
             &:before {
                 content: "";
@@ -81,7 +81,13 @@
 <div id="projects">
     <div id="header">
         <Profile />
-        <Details />
+        {#if folderIndex == null}
+            <Details />
+        {:else if projectIndex == null}
+            <Details projectName={data[folderIndex].name} projectDate={data[folderIndex].date} projectAbout={data[folderIndex].about} projectLinks={data[folderIndex].links}/>
+        {:else}
+            <Details projectName={data[folderIndex].projects[projectIndex].name} projectDate={data[folderIndex].projects[projectIndex].date} projectAbout={data[folderIndex].projects[projectIndex].about} projectLinks={data[folderIndex].projects[projectIndex].links}/>
+        {/if}           
     </div>
     <div id="project-array">
         {#if folderIndex == null}

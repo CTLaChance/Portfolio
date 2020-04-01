@@ -1,7 +1,10 @@
 [
   {
     "name": "AGS, LLC",
+    "date": "02-JAN-2018",
+    "about": "Lorem ipsum. . .",
     "card": "/projects/ags-card.jpg",
+    "links": ["https://playags.com"],
     "projects": [
       {
         "name": "Pharaoh Sun",
@@ -85,7 +88,10 @@
   },
   {
     "name": "ARE, LLC",
+    "date": "01-JUN-2011",
+    "about": "Lorem ipsum. . .",
     "card": "/projects/are-card.jpg",
+    "links": ["http://www.algebrareadinesseducators.com/"],
     "projects": [
       {
         "name": "Website",

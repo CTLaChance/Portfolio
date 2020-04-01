@@ -1,4 +1,8 @@
 <script>
+    export let projectName = "Portfolio";
+    export let projectDate = "01-JAN-2020";
+    export let projectAbout = "This site is the second revision of my portfolio and contains projects both personal and professional. The current revision was made using Svelte, SCSS, and Javascript. The source code can be found at the repository below.";
+    export let projectLinks = ['https://github.com/CTLaChance/Portfolio'];
 </script>
 
 <style lang="scss">
@@ -61,10 +65,12 @@
 </style>
 
 <div id="details">
-    <h1 id="details-name">Portfolio</h1>
-    <h2 id="details-date">26-MAR-2020</h2>
-    <p id="details-about">This site is the second revision of my portfolio and contains projects both personal and professional. The current revision was made using Svelte, SCSS, and Javascript. The source code can be found at the repository below.</p>
+    <h1 id="details-name">{projectName}</h1>
+    <h2 id="details-date">{projectDate}</h2>
+    <p id="details-about">{projectAbout}</p>
     <div id="details-links">
-        <a href="https://github.com/CTLaChance/Portfolio">https://github.com/CTLaChance/Portfolio</a>
+        {#each projectLinks as link}
+            <a href="{link}">{link}</a>
+        {/each}
     </div>
 </div>
