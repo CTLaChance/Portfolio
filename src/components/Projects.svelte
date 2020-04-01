@@ -21,22 +21,30 @@
         }, 1);
     }
 
-    function leaveFolder() {
+    function closeFolder() {
         folderIndex = null;
     }
 
-    function leaveProject() {
+    function closeProject() {
         projectIndex = null;
     }
 </script>
 
 <style lang="scss">
-    #header {
-        display: flex;
-    }
-
     #projects {
         min-height: 100vh;
+    }
+
+    #header {
+        display: flex;
+
+        #return-button {
+            position: absolute;
+            right: 0;
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+        }
     }
 
     #project-array {
@@ -70,7 +78,6 @@
         }
 
         .media-card {
-            
             &:before {
                 padding-bottom: 112.5%;
             }
@@ -85,9 +92,11 @@
             <Details />
         {:else if projectIndex == null}
             <Details projectName={data[folderIndex].name} projectDate={data[folderIndex].date} projectAbout={data[folderIndex].about} projectLinks={data[folderIndex].links}/>
+            <div id="return-button" on:click={() => closeFolder()}><span class="iconify" data-icon="mdi-light:arrow-left" data-inline="false" data-width="64" data-height="64"></span></div>
         {:else}
             <Details projectName={data[folderIndex].projects[projectIndex].name} projectDate={data[folderIndex].projects[projectIndex].date} projectAbout={data[folderIndex].projects[projectIndex].about} projectLinks={data[folderIndex].projects[projectIndex].links}/>
-        {/if}           
+            <div id="return-button" on:click={() => closeProject()}><span class="iconify" data-icon="mdi-light:arrow-left" data-inline="false" data-width="64" data-height="64"></span></div>
+        {/if}        
     </div>
     <div id="project-array">
         {#if folderIndex == null}
