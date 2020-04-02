@@ -1,64 +1,24 @@
-# svelte app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template-webpack.
+# About
+https://ctlachance.com
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+I decided to create a portfolio site as a way to practice my front-end development skills. This site was initially created using React and Typescript, but after working in React I realized it was overkill for a simple static site like this. The current build is made with Svelte, SCSS, and JavaScript.
 
-```bash
-npx degit sveltejs/template-webpack svelte-app
-cd svelte-app
-```
+The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.
 
+This site will remain in flux as a testbed for learning new web-tech. Let me know if you want to hire me. I'm always learning new stuff.
+
+---
+This project was bootstrapped with the Svelte webpack template located here: https://github.com/sveltejs/template-webpack.
+
+## Running Locally
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
+Install the dependencies and start webpack:
 
 ```bash
-cd svelte-app
 npm install
-```
-
-...then start webpack:
-
-```bash
 npm run dev
 ```
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and the page should reload with your changes.
+This project should open in your default browser automatically. If not, navigate to [localhost:8080](http://localhost:8080).
 
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```

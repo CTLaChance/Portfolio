@@ -89,8 +89,8 @@
   {
     "name": "Personal",
     "date": "06-DEC-1994",
-    "about": "Lorem ipsum. . .",
-    "links": ["https://playags.com"],
+    "about": "This is a collection of interesting projects and designs that I've made in my personal time, ocassionally alongside friends.",
+    "links": ["https://github.com/CTLaChance"],
     "projects": []
   }
 ]
