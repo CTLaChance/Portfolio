@@ -128,7 +128,7 @@
             {/each}
         {:else}
             {#each data[folderIndex].projects[projectIndex].media as element, i}
-                <a class="grid-card media-card" href="{element}" style="background-image: url({element})" on:click={() => lightbox.show()}></a>
+                <a class="grid-card media-card" href="{element}" style="background-image: url({element})" on:click={() => lightbox.show()}><!--PICTURE--></a>
             {/each}
         {/if}
     </div>

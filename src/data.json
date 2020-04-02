@@ -38,50 +38,50 @@
       {
         "name": "Dragon Blast",
         "date": "25-MAR-2019",
-        "about": "",
-        "links": ["https://playags.com/portfolio/wild-tiki/"],
+        "about": "Dragon Blast was the third title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a random chance to expand up to a 6x5 configuration. The freespins can expand up to a 7x5 configuration.",
+        "links": [],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Freedom 7",
         "date": "21-MAY-2019",
-        "about": "",
-        "links": ["NULL"],
+        "about": "Freedom 7s was the fourth title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards 8 freespins and a 'QuickScore' symbol that awards varying tiers of progressive wins. In the freespins, some symbols land and reveal to be an H1 - H4 or 'QuickScore' symbol.",
+        "links": [],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "8 Riches",
         "date": "21-MAY-2019",
-        "about": "",
-        "links": ["NULL"],
+        "about": "8 Riches was the fifth title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards 8 freespins and a 'QuickScore' symbol that awards varying tiers of progressive wins. In the freespins, some symbols land and reveal to be an H1 - H4 or 'QuickScore' symbol.",
+        "links": [],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Shining Dragon",
         "date": "27-NOV-2019",
-        "about": "",
+        "about": "Shining Dragon was the sixth title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards a freespin pick game and a wild symbol that awards a progressive pick game. The freespin pick game lets players choose between additional wild symbols or additional H1 symbols in the freespin games. The progressive pick game lets players choose between 5 firecrackers that reveal an award.",
         "links": ["https://playags.com/portfolio/shining-dragon/"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Burning Tiger",
         "date": "27-NOV-2019",
-        "about": "",
+        "about": "Burning Tiger was the seventh title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards a freespin pick game and a wild symbol that awards a progressive pick game. The freespin pick game lets players choose between additional wild symbols or additional H1 symbols in the freespin games. The progressive pick game lets players choose between 5 firecrackers that reveal an award.",
         "links": ["https://playags.com/portfolio/burning-tiger/"],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Bao Bei Cash",
         "date": "19-MAR-2020",
-        "about": "",
-        "links": ["NULL"],
+        "about": "Bao Bei Cash was the eighth title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards a freespin pick game. In the freespin pick game, players can choose between additional wild stacks or additional H1 symbols. In both the basegame and freespin games, golden wild stacks can land sequentially and award the player with a progressive depending on the number of full stacks won.",
+        "links": [],
         "card": "/projects/REDACTED.jpg"
       },
       {
         "name": "Temple Cash",
         "date": "19-MAR-2020",
-        "about": "",
-        "links": ["NULL"],
+        "about": "Temple Cash was the ninth title I worked on at AGS. The basegame is a standard 3x5 reel configuration with a bonus symbol that awards a freespin pick game. In the freespin pick game, players can choose between additional wild stacks or additional H1 symbols. In both the basegame and freespin games, golden wild stacks can land sequentially and award the player with a progressive depending on the number of full stacks won.",
+        "links": [],
         "card": "/projects/REDACTED.jpg"
       }
     ]
@@ -91,6 +91,15 @@
     "date": "06-DEC-1994",
     "about": "This is a collection of interesting projects and designs that I've made in my personal time, ocassionally alongside friends.",
     "links": ["https://github.com/CTLaChance"],
-    "projects": []
+    "projects": [
+      {
+        "name": "Project Loki",
+        "date": "22-OCT-2017",
+        "about": "Project Loki was a simple Unity 3D game I worked on with a friend. We ported it over to GitHub after working with Unity Collab. Player's are launched into a randomly generated map with small red pads that bounce the player forward. Touching the ground resets the player to the beginning.",
+        "links": ["https://github.com/CTLaChance/Loki"],
+        "card": "",
+        "media": []
+      }
+    ]
   }
 ]
