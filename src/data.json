@@ -87,40 +87,10 @@
     ]
   },
   {
-    "name": "ARE, LLC",
-    "date": "01-JUN-2011",
+    "name": "Personal",
+    "date": "06-DEC-1994",
     "about": "Lorem ipsum. . .",
-    "card": "/projects/are-card.jpg",
-    "links": ["http://www.algebrareadinesseducators.com/"],
-    "projects": [
-      {
-        "name": "Website",
-        "date": "17-JUN-2017",
-        "about": "Lorem ipsum. . .",
-        "links": ["http://www.algebrareadinesseducators.com/"],
-        "card": "/projects/are/website/0.png",
-        "media": []
-      },
-      {
-        "name": "Book Covers",
-        "date": "01-JUN-2011",
-        "about": "Lorem ipsum. . .",
-        "links": ["http://www.algebrareadinesseducators.com/"],
-        "card": "/projects/are/bookcovers/algebra1.jpg",
-        "media": ["/projects/are/bookcovers/algebra2.jpg",
-                  "/projects/are/bookcovers/geometry.jpg",
-                  "/projects/are/bookcovers/algebra1.jpg",
-                  "/projects/are/bookcovers/prealgebra.jpg",
-                  "/projects/are/bookcovers/7thgrade.jpg",
-                  "/projects/are/bookcovers/6thgrade.jpg",
-                  "/projects/are/bookcovers/5thgrade.jpg",
-                  "/projects/are/bookcovers/4thgrade.jpg",
-                  "/projects/are/bookcovers/3rdgrade.jpg",
-                  "/projects/are/bookcovers/5thgradespanish.jpg",
-                  "/projects/are/bookcovers/4thgradespanish.jpg",
-                  "/projects/are/bookcovers/3rdgradespanish.jpg"
-                ]
-      }
-    ]
+    "links": ["https://playags.com"],
+    "projects": []
   }
 ]

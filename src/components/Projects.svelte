@@ -74,13 +74,26 @@
                 display: block;
                 height: 0;
                 width: 0;
-                padding-bottom: calc(9/16 * 100%);
+                padding-bottom: calc(9/16 * 42.5%);
+            }
+            &:after {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                padding-bottom: calc(9/16 * 42.5%);
             }
 
             &:hover {
                 cursor: pointer;
                 transform: translate(0px, -5px);
             }
+
+            font-family: 'Tomorrow';
+            font-weight: 100;
+            font-size: 60px;
+            text-align: center;
+            vertical-align: middle;
         }
 
         .media-card {
@@ -107,7 +120,7 @@
     <div id="project-array">
         {#if folderIndex == null}
             {#each data as element, i}
-                <div id={element.name} class="grid-card" style="background-image: url({element.card})" on:click={() => openFolder(i)}></div>
+                <div id={element.name} class="grid-card" style="background-image: url({element.card})" on:click={() => openFolder(i)}>{#if element.card == null}{element.name}{/if}</div>
             {/each}
         {:else if projectIndex == null}
             {#each data[folderIndex].projects as element, i}
