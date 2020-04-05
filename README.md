@@ -21,4 +21,3 @@ npm run dev
 ```
 
 This project should open in your default browser automatically. If not, navigate to [localhost:8080](http://localhost:8080).
-
