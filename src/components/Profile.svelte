@@ -35,7 +35,6 @@
 
 <style lang="scss">
     #profile {
-        background-color: white;
         @keyframes pageload {
             0% {
                 box-shadow: none;
@@ -48,6 +47,7 @@
 
         animation: pageload 1s 2s both;
 
+        background-color: white;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -81,7 +81,6 @@
                 font-family: 'Tomorrow', sans-serif;
                 color: black;
                 font-weight: 100;
-                font-size: 70px;
                 letter-spacing: -5px;
                 text-align: center;
                 word-wrap: break-word;
@@ -117,6 +116,21 @@
                     }
                 }
             }
+        }
+    }
+
+    @media only screen and (max-width: 699px) {
+        #profile {
+            width: 100%;
+        }
+
+        #profile #profile-info #name .span-wrapper span {
+            font-size: 24pt;
+        }
+            
+        #profile img {
+            width: 100px;
+            height: 100px;
         }
     }
 </style>
