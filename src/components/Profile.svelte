@@ -122,6 +122,7 @@
     @media only screen and (max-width: 699px) {
         #profile {
             width: 100%;
+            justify-content: center;
         }
 
         #profile #profile-info #name .span-wrapper span {
