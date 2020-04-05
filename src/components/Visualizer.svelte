@@ -58,9 +58,9 @@
                     rotateAmount += 0.000001;
                 }
 
-                torus.rotate(BABYLON.Vector3.Up(),  rotateAmount, BABYLON.Space.LOCAL);
-                torus2.rotate(BABYLON.Vector3.Up(), rotateAmount, BABYLON.Space.LOCAL);
-                torus3.rotate(BABYLON.Vector3.Up(), rotateAmount, BABYLON.Space.LOCAL);
+                torus.rotate(BABYLON.Vector3.Up(),  -0.001, BABYLON.Space.LOCAL);
+                torus2.rotate(BABYLON.Vector3.Up(), -0.001, BABYLON.Space.LOCAL);
+                torus3.rotate(BABYLON.Vector3.Up(), -0.001, BABYLON.Space.LOCAL);
 
                 torus.rotate(BABYLON.Vector3.Right(),  rotateAmount, BABYLON.Space.LOCAL);
                 torus2.rotate(BABYLON.Vector3.Right(), rotateAmount, BABYLON.Space.LOCAL);
@@ -115,7 +115,7 @@
             }
         }
 
-        animation: pageload 1s 1.75s ease-in-out both;
+        animation: pageload 2s 1s ease-in-out both;
     }
 </style>
 
