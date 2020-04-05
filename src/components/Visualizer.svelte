@@ -40,9 +40,9 @@
             torus3.material = torus.material;
             torus3.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
 
-            let canRotate = false;
+            // let canRotate = false;
             let rotateAmount = 0;
-            setTimeout(() => {canRotate = true;}, 2000);
+            setTimeout(() => {rotateAmount = 0.001}, 2000);
 
             scene.registerBeforeRender(() => {
                 // mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
@@ -54,9 +54,9 @@
                 // mesh.rotation.y += 0.0005;
                 // mesh.rotation.z -= 0.0005;
 
-                if(canRotate && rotateAmount < 0.001) {
-                    rotateAmount += 0.000001;
-                }
+                // if(canRotate && rotateAmount < 0.001) {
+                //     rotateAmount += 0.000001;
+                // }
 
                 torus.rotate(BABYLON.Vector3.Up(),  -0.001, BABYLON.Space.LOCAL);
                 torus2.rotate(BABYLON.Vector3.Up(), -0.001, BABYLON.Space.LOCAL);

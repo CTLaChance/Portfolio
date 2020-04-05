@@ -1,27 +1,35 @@
 <script>
     import {onMount} from 'svelte';
 
-    let name;
+    let profile, name, links, picture;
 
     onMount(async() => {
 
-        let nameChars = [...name.children[0].children,...name.children[1].children];
-        for (let element of nameChars){
-            let keyframes = [
-                            { opacity: 0 },
-                            { opacity: 0, offset: 0.24 },
-                            { opacity: 1, offset: 0.25 },
-                            { opacity: 0, offset: 0.26 },
-                            { opacity: 0, offset: 0.49 },
-                            { opacity: 1, offset: 0.50 },
-                            { opacity: 0, offset: 0.51 },
-                            { opacity: 0, offset: 0.74 },
-                            { opacity: 1, offset: 0.75 },
-                            { opacity: 0, offset: 0.76 },
-                            { opacity: 0, offset: 0.99 },
-                            { opacity: 1 }
-                            ];
+        let profileElements = [...name.children[0].children,...name.children[1].children, ...links.children, picture];
 
+        let keyframes = [
+                { opacity: 0 },
+                { opacity: 0, offset: 0.24 },
+                { opacity: 1, offset: 0.25 },
+                { opacity: 0, offset: 0.26 },
+                { opacity: 0, offset: 0.49 },
+                { opacity: 1, offset: 0.50 },
+                { opacity: 0, offset: 0.51 },
+                { opacity: 0, offset: 0.74 },
+                { opacity: 1, offset: 0.75 },
+                { opacity: 0, offset: 0.76 },
+                { opacity: 0, offset: 0.99 },
+                { opacity: 1 }
+                ];
+
+        profile.animate(keyframes, {
+            delay: 250,
+            duration: 500,
+            iterations: 1,
+            fill: "both"
+        });
+
+        for (let element of profileElements){
             element.animate(keyframes, {
                 delay: 500 + (Math.random() * 500),
                 duration: 500,
@@ -36,8 +44,6 @@
     #profile {
         background-color: white;
         box-shadow: 0px 0px 10px rgba($color: black, $alpha: 0.25);
-
-        font-family: 'Tomorrow', sans-serif;
 
         position: absolute;
         top: 50%;
@@ -59,11 +65,10 @@
 
         #profile-info {
             user-select: none;
-            text-align: right;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
-
             margin-left: 16px;
 
             #name {
@@ -113,8 +118,8 @@
     }
 </style>
 
-<div id="profile">
-    <img src="profile.jpg" alt="Christopher LaChance - Profile Picture">
+<div bind:this={profile} id="profile">
+    <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance - Profile Picture">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
             <div class="span-wrapper">
@@ -141,10 +146,10 @@
                 <span aria-hidden="true">E</span>
             </div>
         </h1>
-        <div id="links">
-            <a href="https://github.com/CTLaChance">GitHub</a> -
-            <a href="https://linkedin.com/in/ctlachance">LinkedIn</a> -
-            <a href="mailto:christopher.t.lachance@gmail.com">Email</a> -
+        <div bind:this={links} id="links">
+            <a href="https://github.com/CTLaChance">GitHub</a>          <span>-</span>
+            <a href="https://linkedin.com/in/ctlachance">LinkedIn</a>   <span>-</span>
+            <a href="mailto:christopher.t.lachance@gmail.com">Email</a> <span>-</span>
             <a href="./resume.pdf">Résumé</a>
         </div>
     </div>
