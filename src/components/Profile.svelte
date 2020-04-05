@@ -132,7 +132,7 @@
         }
 
         #profile #profile-info #name .span-wrapper span {
-            font-size: 24pt;
+            font-size: 30pt;
         }
             
         #profile img {
