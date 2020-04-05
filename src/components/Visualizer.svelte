@@ -18,37 +18,57 @@
             let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -15), scene);
 
             // Mesh Properties //
-            let mesh = BABYLON.MeshBuilder.CreatePolyhedron("mesh", { type: 3, size: 5, flat: true}, scene);
-            mesh.material = new BABYLON.StandardMaterial("mat", scene);
-            mesh.position = new BABYLON.Vector3(0, 0, 0);
-            mesh.material.wireframe = true;
-            mesh.material.pointSize = 5;
+            // let mesh = BABYLON.MeshBuilder.CreatePolyhedron("mesh", { type: 3, size: 5, flat: true}, scene);
+            // mesh.material = new BABYLON.StandardMaterial("mat", scene);
+            // mesh.position = new BABYLON.Vector3(0, 0, 0);
+            // mesh.material.wireframe = true;
+            // mesh.material.pointSize = 5;
 
             let torus = BABYLON.MeshBuilder.CreateTorus("torus", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus.material = new BABYLON.StandardMaterial("torus_mat", scene);
             torus.material.pointsCloud = true;
             torus.material.pointSize = 5;
-            torus.rotate(BABYLON.Vector3.Forward(), Math.PI / 6, BABYLON.Space.WORLD);
+            torus.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
+            torus.rotate(BABYLON.Vector3.Forward(), -Math.PI / 3, BABYLON.Space.WORLD);
 
             let torus2 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus2.material = torus.material;
-            torus2.rotate(BABYLON.Vector3.Forward(), -Math.PI / 6, BABYLON.Space.WORLD);
+            torus2.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
+            torus2.rotate(BABYLON.Vector3.Forward(), Math.PI / 3, BABYLON.Space.WORLD);
 
             let torus3 = BABYLON.MeshBuilder.CreateTorus("torus2", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus3.material = torus.material;
-            torus3.rotate(BABYLON.Vector3.Forward(), Math.PI / 2, BABYLON.Space.WORLD);
+            torus3.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
+
+            let canRotate = false;
+            let rotateAmount = 0;
+            setTimeout(() => {canRotate = true;}, 2000);
 
             scene.registerBeforeRender(() => {
-                mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
+                // mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
                     torus.scaling.x = torus.scaling.y = torus.scaling.z =
                     torus2.scaling.x = torus2.scaling.y = torus2.scaling.z =
                     torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
 
-                mesh.rotation.x -= 0.0001;
-                mesh.rotation.y -= 0.0001;
-                torus.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.LOCAL);
-                torus2.rotate(BABYLON.Vector3.Up(), -0.0001, BABYLON.Space.LOCAL);
-                torus3.rotate(BABYLON.Vector3.Up(), 0.0001, BABYLON.Space.LOCAL);
+                // mesh.rotation.x -= 0.0005;
+                // mesh.rotation.y += 0.0005;
+                // mesh.rotation.z -= 0.0005;
+
+                if(canRotate && rotateAmount < 0.001) {
+                    rotateAmount += 0.000001;
+                }
+
+                torus.rotate(BABYLON.Vector3.Up(),  rotateAmount, BABYLON.Space.LOCAL);
+                torus2.rotate(BABYLON.Vector3.Up(), rotateAmount, BABYLON.Space.LOCAL);
+                torus3.rotate(BABYLON.Vector3.Up(), rotateAmount, BABYLON.Space.LOCAL);
+
+                torus.rotate(BABYLON.Vector3.Right(),  rotateAmount, BABYLON.Space.LOCAL);
+                torus2.rotate(BABYLON.Vector3.Right(), rotateAmount, BABYLON.Space.LOCAL);
+                torus3.rotate(BABYLON.Vector3.Right(), rotateAmount, BABYLON.Space.LOCAL);
+
+                torus.rotate(BABYLON.Vector3.Forward(),  rotateAmount, BABYLON.Space.LOCAL);
+                torus2.rotate(BABYLON.Vector3.Forward(), rotateAmount, BABYLON.Space.LOCAL);
+                torus3.rotate(BABYLON.Vector3.Forward(), rotateAmount, BABYLON.Space.LOCAL);
             });
 
             return scene;
