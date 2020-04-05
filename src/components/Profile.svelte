@@ -1,7 +1,7 @@
 <script>
     import {onMount} from 'svelte';
 
-    let profile, name, links, picture;
+    let name, links, picture;
 
     onMount(async() => {
 
@@ -22,13 +22,6 @@
                 { opacity: 1 }
                 ];
 
-        profile.animate(keyframes, {
-            delay: 250,
-            duration: 500,
-            iterations: 1,
-            fill: "both"
-        });
-
         for (let element of profileElements){
             element.animate(keyframes, {
                 delay: 500 + (Math.random() * 500),
@@ -43,7 +36,17 @@
 <style lang="scss">
     #profile {
         background-color: white;
-        box-shadow: 0px 0px 10px rgba($color: black, $alpha: 0.25);
+        @keyframes pageload {
+            0% {
+                box-shadow: none;
+            }
+
+            100% {
+                box-shadow: 0px 0px 10px rgba($color: black, $alpha: 0.25);
+            }
+        }
+
+        animation: pageload 1s 2s both;
 
         position: absolute;
         top: 50%;
@@ -118,7 +121,7 @@
     }
 </style>
 
-<div bind:this={profile} id="profile">
+<div id="profile">
     <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance - Profile Picture">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
