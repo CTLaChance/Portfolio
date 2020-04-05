@@ -1,44 +1,25 @@
 {
-    "name": "portfolio",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@types/jest": "24.0.23",
-        "@types/node": "12.12.14",
-        "@types/react": "16.9.13",
-        "@types/react-dom": "16.9.4",
-        "@types/swiper": "^5.2.0",
-        "babylonjs": "^4.0.3",
-        "moment": "^2.24.0",
-        "node-sass": "^4.13.0",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-scripts": "^3.3.0",
-        "scrollbooster": "^2.1.0",
-        "typescript": "3.7.2"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@types/webpack-env": "^1.15.0"
-    }
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "serve": "^11.0.0",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "2.13.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "webpack-dev-server --content-base public"
+  },
+  "dependencies": {
+    "babylonjs": "^4.1.0",
+    "node-sass": "^4.13.1",
+    "svelte-preprocess": "^3.4.0"
+  }
 }
