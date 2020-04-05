@@ -63,6 +63,7 @@
         img {
             width: 256px;
             height: 256px;
+            flex-basis: 256px;
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
 
@@ -123,6 +124,11 @@
         #profile {
             width: 100%;
             justify-content: center;
+            flex-direction: column;
+        }
+
+        #profile #profile-info {
+            margin: 0;
         }
 
         #profile #profile-info #name .span-wrapper span {
@@ -130,8 +136,7 @@
         }
             
         #profile img {
-            width: 100px;
-            height: 100px;
+            margin: auto;
         }
     }
 </style>
