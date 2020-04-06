@@ -41,7 +41,7 @@
             }
 
             100% {
-                box-shadow: 0px 0px 10px rgba($color: black, $alpha: 0.25);
+                box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
             }
         }
 
@@ -106,15 +106,27 @@
             #links {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-around;
+                justify-content: space-between;
+                margin-top: 16px;
+                margin-left: 16px;
+                margin-right: 8px;
+
                 a {
                     font-family: 'Roboto', sans-serif;
                     text-decoration: none;
                     color: black;
+                    border: 1px solid black;
+                    background: linear-gradient(to right, black 50%, white 50%);
+                    background-size: 201% 100%;
+                    background-position: right bottom;
+                    padding: 8px 16px;
 
-                    &:hover {
-                        color: red;
-                    }
+                    transition: all 0.15s ease-in-out;
+                }
+
+                a:hover {
+                    transform: translate(0px, -4px);
+                    box-shadow: 0px 4px 4px rgba($color: black, $alpha: 0.20);
                 }
             }
         }
@@ -170,9 +182,9 @@
             </div>
         </h1>
         <div bind:this={links} id="links">
-            <a href="https://github.com/CTLaChance">GitHub</a>          <span>-</span>
-            <a href="https://linkedin.com/in/ctlachance">LinkedIn</a>   <span>-</span>
-            <a href="mailto:christopher.t.lachance@gmail.com">Email</a> <span>-</span>
+            <a href="https://github.com/CTLaChance">GitHub</a>
+            <a href="https://linkedin.com/in/ctlachance">LinkedIn</a>
+            <a href="mailto:christopher.t.lachance@gmail.com">Email</a>
             <a href="./resume.pdf">Résumé</a>
         </div>
     </div>
