@@ -64,6 +64,7 @@
             width: 256px;
             height: 256px;
             flex-basis: 256px;
+            flex-shrink: 0;
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
 
