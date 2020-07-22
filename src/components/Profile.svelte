@@ -4,23 +4,29 @@
     let name, links, picture;
 
     onMount(async() => {
-
-        let profileElements = [...name.children[0].children,...name.children[1].children, ...links.children, picture];
+        let profileElements = [...name.children[0].children,...name.children[1].children, ...links.children];
 
         let keyframes = [
-                { opacity: 0 },
-                { opacity: 0, offset: 0.24 },
-                { opacity: 1, offset: 0.25 },
-                { opacity: 0, offset: 0.26 },
-                { opacity: 0, offset: 0.49 },
-                { opacity: 1, offset: 0.50 },
-                { opacity: 0, offset: 0.51 },
-                { opacity: 0, offset: 0.74 },
-                { opacity: 1, offset: 0.75 },
-                { opacity: 0, offset: 0.76 },
-                { opacity: 0, offset: 0.99 },
-                { opacity: 1 }
-                ];
+            { opacity: 0 },
+            { opacity: 0, offset: 0.24 },
+            { opacity: 1, offset: 0.25 },
+            { opacity: 0, offset: 0.26 },
+            { opacity: 0, offset: 0.49 },
+            { opacity: 1, offset: 0.50 },
+            { opacity: 0, offset: 0.51 },
+            { opacity: 0, offset: 0.74 },
+            { opacity: 1, offset: 0.75 },
+            { opacity: 0, offset: 0.76 },
+            { opacity: 0, offset: 0.99 },
+            { opacity: 1 }
+        ];
+
+        picture.animate(keyframes, {
+            delay: 500,
+            duration: 500,
+            iterations: 1,
+            fill: "both",
+        });
 
         for (let element of profileElements){
             element.animate(keyframes, {
@@ -45,7 +51,7 @@
             }
         }
 
-        animation: pageload 1s 2s both;
+        animation: pageload 3s 2s both;
 
         background-color: white;
         position: absolute;

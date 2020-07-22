@@ -9,7 +9,7 @@
     onMount(async () => {
         engine = new BABYLON.Engine(canvas, true);
 
-        let createScene = () => {
+        let scene = (() => {
             // Scene Properties //
             let scene = new BABYLON.Scene(engine);
             scene.clearColor = new BABYLON.Color4(1, 1, 1, 1);
@@ -18,16 +18,10 @@
             let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 0, -15), scene);
 
             // Mesh Properties //
-            // let mesh = BABYLON.MeshBuilder.CreatePolyhedron("mesh", { type: 3, size: 5, flat: true}, scene);
-            // mesh.material = new BABYLON.StandardMaterial("mat", scene);
-            // mesh.position = new BABYLON.Vector3(0, 0, 0);
-            // mesh.material.wireframe = true;
-            // mesh.material.pointSize = 5;
-
             let torus = BABYLON.MeshBuilder.CreateTorus("torus", { diameter: 15, thickness: 1, tessellation: 32 }, scene);
             torus.material = new BABYLON.StandardMaterial("torus_mat", scene);
             torus.material.pointsCloud = true;
-            torus.material.pointSize = 5;
+            torus.material.pointSize = 2.5;
             torus.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
             torus.rotate(BABYLON.Vector3.Forward(), -Math.PI / 3, BABYLON.Space.WORLD);
 
@@ -40,26 +34,21 @@
             torus3.material = torus.material;
             torus3.rotate(BABYLON.Vector3.Right(), Math.PI / 2, BABYLON.Space.WORLD);
 
-            // let canRotate = false;
+            let canRotate = false;
             let rotateAmount = 0;
-            setTimeout(() => {rotateAmount = 0.001}, 2000);
+            setTimeout(() => {canRotate = true}, 4000);
 
             scene.registerBeforeRender(() => {
-                // mesh.scaling.x = mesh.scaling.y = mesh.scaling.z =
-                    torus.scaling.x = torus.scaling.y = torus.scaling.z =
-                    torus2.scaling.x = torus2.scaling.y = torus2.scaling.z =
-                    torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 1;
+                if (canRotate && rotateAmount < 0.002) {
+                    rotateAmount += 0.000005;
+                }
 
-                // mesh.rotation.x -= 0.0005;
-                // mesh.rotation.y += 0.0005;
-                // mesh.rotation.z -= 0.0005;
-
-                // if(canRotate && rotateAmount < 0.001) {
-                //     rotateAmount += 0.000001;
-                // }
+                torus.scaling.x = torus.scaling.y = torus.scaling.z = 1;
+                torus2.scaling.x = torus2.scaling.y = torus2.scaling.z = 0.75;
+                torus3.scaling.x = torus3.scaling.y = torus3.scaling.z = 0.5;
 
                 torus.rotate(BABYLON.Vector3.Up(),  -0.001, BABYLON.Space.LOCAL);
-                torus2.rotate(BABYLON.Vector3.Up(), -0.001, BABYLON.Space.LOCAL);
+                torus2.rotate(BABYLON.Vector3.Up(), 0.001, BABYLON.Space.LOCAL);
                 torus3.rotate(BABYLON.Vector3.Up(), -0.001, BABYLON.Space.LOCAL);
 
                 torus.rotate(BABYLON.Vector3.Right(),  rotateAmount, BABYLON.Space.LOCAL);
@@ -72,9 +61,7 @@
             });
 
             return scene;
-        }
-
-        let scene = createScene();
+        })();
 
         engine.runRenderLoop(function () {
             scene.render();
@@ -115,7 +102,7 @@
             }
         }
 
-        animation: pageload 2s 1s ease-in-out both;
+        animation: pageload 3s 2s ease-in-out both;
     }
 </style>
 
