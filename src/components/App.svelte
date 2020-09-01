@@ -1,7 +1,15 @@
 <script>
-	import Visualizer from './Visualizer.svelte';
-	import Profile from './Profile.svelte';
+    import Visualizer from './Visualizer.svelte';
+    import Profile from './Profile.svelte';
+    import Resume from './Resume.svelte';
+
+    let resume_visible = true;
 </script>
 
 <Visualizer />
-<Profile />
+
+{#if resume_visible}
+    <Resume />
+{:else}
+    <Profile />
+{/if}

@@ -30,7 +30,7 @@ module.exports = {
 					options: {
 						emitCss: true,
 						hotReload: true,
-						preprocess: sveltePreprocess({})
+						preprocess: sveltePreprocess({}),
 					}
 				}
 			},

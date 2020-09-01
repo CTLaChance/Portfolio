@@ -64,7 +64,6 @@
 
         padding: 16px;
         margin: 0 auto;
-        box-sizing: border-box;
 
         img {
             width: 256px;
