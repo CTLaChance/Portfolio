@@ -24,25 +24,22 @@
         #ctl {
             padding: 16px;
 
-            background: black;
-            color: white;
+            background: linear-gradient(135deg, #ffffff 60%, #000000 60%);
+
 
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
-            #ctl-left {
-                font-family: 'Tomorrow';
+            >:first-child {
                 text-align: center;
-
+                font-family: 'Tomorrow';
+                font-size: 225%;
                 width: 100%;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
             }
 
             #ctl-right {
-                width: 100%;
+                color: white;
                 text-align: right;
 
                 ul {
@@ -55,15 +52,12 @@
 
 <div id="resume">
     <div id="ctl">
-        <div id="ctl-left">
-            <div>CHRISTOPHER LACHANCE</div>
-            <div>Software Engineer</div>
-        </div>
+        <div>CHRISTOPHER LACHANCE</div>
         <div id="ctl-right">
             <ul>
-                <a href="https://ctlachance.com"><li>https://ctlachance.com</li></a>
-                <a href="mailto:christopher.t.lachance@gmail.com"><li>christopher.t.lachance@gmail.com</li></a>
-                <a href="https://www.linkedin.com/in/ctlachance/"><li>https://www.linkedin.com/in/ctlachance/</li></a>
+                <a target="_blank" href="https://ctlachance.com"><li>https://ctlachance.com</li></a>
+                <a target="_blank" href="mailto:christopher.t.lachance@gmail.com"><li>christopher.t.lachance@gmail.com</li></a>
+                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/"><li>https://www.linkedin.com/in/ctlachance/</li></a>
             </ul>
         </div>
     </div>
