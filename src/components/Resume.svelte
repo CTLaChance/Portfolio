@@ -7,23 +7,65 @@
 
         width: 8.5in;
         height: 11in;
-        padding: 16px;
 
         font-family: 'Roboto';
         box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
         background-color: white;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        #ctl {
+            padding: 16px;
+
+            background: black;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+
+            #ctl-left {
+                font-family: 'Tomorrow';
+                text-align: center;
+
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #ctl-right {
+                width: 100%;
+                text-align: right;
+
+                ul {
+                    list-style: none;
+                }
+            }
+        }
     }
 </style>
 
 <div id="resume">
     <div id="ctl">
-        <div>CHRISTOPHER LACHANCE</div>
-        <div>Software Engineer</div>
-        <ul>
-            <li>https://ctlachance.com</li>
-            <li>christopher.t.lachance@gmail.com</li>
-            <li>https://www.linkedin.com/in/ctlachance/</li>
-        </ul>
+        <div id="ctl-left">
+            <div>CHRISTOPHER LACHANCE</div>
+            <div>Software Engineer</div>
+        </div>
+        <div id="ctl-right">
+            <ul>
+                <a href="https://ctlachance.com"><li>https://ctlachance.com</li></a>
+                <a href="mailto:christopher.t.lachance@gmail.com"><li>christopher.t.lachance@gmail.com</li></a>
+                <a href="https://www.linkedin.com/in/ctlachance/"><li>https://www.linkedin.com/in/ctlachance/</li></a>
+            </ul>
+        </div>
     </div>
 
     <div id="experience">
@@ -32,10 +74,9 @@
             <h2>AGS, LLC</h2>
             <h3>Software Engineer</h3>
             <ul>
-                <li>Designed and implemented critical game logic for complex math models</li>
-                <li>Worked collaboratively with contributors of multiple disciplines artists, musicians, and game designers</li>
-                <li>Handled various DevOps challenges that arose from working in a small team environment</li>
-                <li>Lead Engineer for the following 9 games:</li>
+                <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
+                <li>Refactored game logic to meet the demands of complex data models</li>
+                <li>Lead Engineer for the following 10 games:</li>
                 <ul>
                     <li>Pharaoh Sun</li>
                     <li>Wild Tiki</li>
@@ -46,6 +87,7 @@
                     <li>Burning Tiger</li>
                     <li>Bao Bei Cash</li>
                     <li>Temple Cash</li>
+                    <li>Lightning Wheel</li>
                 </ul>
             </ul>
         </div>
@@ -61,7 +103,24 @@
 
     <div id="skills">
         <h1>Skills</h1>
-        <p>JavaScript ES6+, C#, Lua, Java, TypeScript, C++, HTML5, CSS3, SCSS, XML, Markdown, JSON, NodeJS, Svelte, React, Git, GitHub, SVN, Linux, Bash, Unity 3D, Photoshop, Virtual Reality</p>
+        <ul>
+            <li>JavaScript ES6+</li>
+            <li>C#</li>
+            <li>NodeJS</li>
+            <li>Svelte</li>
+            <li>React</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>SVN</li>
+            <li>HTML5</li>
+            <li>SCSS</li>
+            <li>XML</li>
+            <li>Markdown</li>
+            <li>JSON</li>
+            <li>Linux</li>
+            <li>Bash</li>
+            <li>Unity3D</li>
+        </ul>
     </div>
 
     <div id="education">
