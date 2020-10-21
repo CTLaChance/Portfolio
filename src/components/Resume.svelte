@@ -73,7 +73,22 @@
             font-size: 16px;
 
             h2 {
+                margin: 16px 0;
                 border-bottom: 1px #000000 solid;
+                font-family: 'Tomorrow';
+            }
+
+            h3, ul{ 
+                margin: 0px 0;
+            }
+
+            h4 {
+                font-style: italic;
+                margin: 0 0 16px 0;
+            }
+
+            .experience-subsection {
+                margin-bottom: 32px;
             }
         }
     }
@@ -94,7 +109,7 @@
 
     <div id="experience" class="subsection">
         <h2>Experience</h2>
-        <div id="ags">
+        <div class="experience-subsection">
             <h3>AGS, LLC</h3>
             <h4>Software Engineer</h4>
             <ul>
@@ -115,7 +130,7 @@
                 </ul>
             </ul>
         </div>
-        <div id="miscellaneous">
+        <div class="experience-subsection">
             <h3>Freelance Software Engineering</h3>
             <h4>Front End Developer / Software Engineer / Graphic Designer</h4>
             <ul>
