@@ -65,6 +65,12 @@
                     border-radius: 5px;
                 }
             }
+
+            #freelance-list {
+                li {
+                    margin: 16px 0;
+                }
+            }
         }
 
         #skills {
@@ -152,9 +158,11 @@
         <div class="experience-subsection">
             <h3>Freelance Software Engineering</h3>
             <h4>Front End Developer / Software Engineer / Graphic Designer</h4>
-            <ul>
+            <ul id="freelance-list">
                 <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC</li>
-                <li>Contributed features and bugfixes to the open source NASA Trick Simulation Environment</li>
+                <a href="https://algebrareadinesseducators.com">https://algebrareadinesseducators.com</a>
+                <li>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</li>
+                <a href="https://github.com/nasa/trick">https://github.com/nasa/trick</a>
             </ul>
         </div>
     </div>
