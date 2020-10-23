@@ -47,6 +47,26 @@
             }
         }
 
+        #experience {
+            #games-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                padding: 0px;
+
+                list-style-type: none;
+                text-align: center;
+
+                li {
+                    padding: 8px;
+                    margin: 4px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                }
+            }
+        }
+
         #skills {
             ul {
                 display: flex;
@@ -63,7 +83,6 @@
                     margin: 4px;
                     border: 1px solid black;
                     border-radius: 5px;
-                    // box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.25);
                 }
             }
         }
@@ -116,7 +135,7 @@
                 <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
                 <li>Refactored game logic to meet the demands of complex data models</li>
                 <li>Lead Engineer for the following 10 games:</li>
-                <ul>
+                <ul id="games-list">
                     <li>Pharaoh Sun</li>
                     <li>Wild Tiki</li>
                     <li>Dragon Blast</li>

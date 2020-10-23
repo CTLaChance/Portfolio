@@ -160,7 +160,7 @@
 </style>
 
 <div id="profile">
-    <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance - Profile Picture">
+    <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
             <div class="span-wrapper">
