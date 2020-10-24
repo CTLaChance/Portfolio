@@ -30,21 +30,29 @@
             justify-content: space-between;
             align-items: center;
 
+            height: 95px;
+
             >:first-child {
-                text-align: center;
                 font-family: 'Tomorrow';
                 font-size: 225%;
                 width: 100%;
+                margin-left: 16px;
             }
 
             #header-right {
                 color: white;
                 text-align: right;
 
-                ul {
-                    list-style: none;
-                }
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                height: 100%;
             }
+        }
+
+        #about {
+            margin-top: 16px;
         }
 
         #experience {
@@ -101,6 +109,7 @@
                 margin: 16px 0;
                 border-bottom: 1px #000000 solid;
                 font-family: 'Tomorrow';
+                font-size: 20px;
             }
 
             h3, ul{ 
@@ -123,13 +132,14 @@
     <div id="header">
         <h1>CHRISTOPHER LACHANCE</h1>
         <div id="header-right">
-            <ul>
-                <a target="_blak" href="https://ctlachance.com"><li>https://ctlachance.com</li></a>
-                <a target="_blak" href="https://github.com/CTLaChance"><li>https://github.com/CTLaChance</li></a>
-                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/"><li>https://www.linkedin.com/in/ctlachance</li></a>
-                <a target="_blank" href="mailto:christopher.t.lachance@gmail.com"><li>christopher.t.lachance@gmail.com</li></a>
-            </ul>
+            <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
+            <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
+            <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
         </div>
+    </div>
+
+    <div id="about" class="subsection">
+        Experienced software engineer with a strong foundation in data structures, algorithms, and fundamental web technologies. Excellent communication skills, a strong team oriented work ethic, and fastidious attention to detail are some of my greatest strengths.
     </div>
 
     <div id="experience" class="subsection">
