@@ -61,16 +61,26 @@
                 flex-wrap: wrap;
                 justify-content: center;
 
-                padding: 0px;
-
                 list-style-type: none;
                 text-align: center;
 
-                li {
+                * {
                     padding: 8px;
                     margin: 4px;
                     border: 1px solid black;
                     border-radius: 5px;
+
+                    background: linear-gradient(to right, white 50%, black 50%);
+                    background-size: 205% 100%;
+                    background-position: left bottom;
+
+                    transition: all .1s linear 0s;
+                }
+
+                a:hover {
+                    cursor: pointer;
+                    color: white;
+                    background-position: right bottom;
                 }
             }
 
@@ -139,7 +149,7 @@
     </div>
 
     <div id="about" class="subsection">
-        Experienced software engineer with a strong foundation in data structures, algorithms, and fundamental web technologies. Excellent communication skills, a strong team oriented work ethic, and fastidious attention to detail are some of my greatest strengths.
+        Experienced software engineer with a strong foundation in data structures, algorithms, and core web technologies. My greatest strengths are my excellent verbal and written communication skills, a strong team oriented work ethic, and fastidious attention to detail.
     </div>
 
     <div id="experience" class="subsection">
@@ -151,23 +161,23 @@
                 <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
                 <li>Refactored game logic to meet the demands of complex data models</li>
                 <li>Lead Engineer for the following 10 games:</li>
-                <ul id="games-list">
-                    <li>Pharaoh Sun</li>
-                    <li>Wild Tiki</li>
-                    <li>Dragon Blast</li>
-                    <li>Freedom 7</li>
-                    <li>8 Riches</li>
-                    <li>Shining Dragon</li>
-                    <li>Burning Tiger</li>
-                    <li>Bao Bei Cash</li>
-                    <li>Temple Cash</li>
-                    <li>Lightning Wheel</li>
-                </ul>
+                <div id="games-list">
+                    <a href="https://playags.com/portfolio/pharaoh-sun/">Pharaoh Sun</a>
+                    <a href="https://playags.com/portfolio/wild-tiki/">Wild Tiki</a>
+                    <div>Dragon Blast</div>
+                    <div>Freedom 7</div>
+                    <div>8 Riches</div>
+                    <a href="https://playags.com/portfolio/shining-dragon/">Shining Dragon</a>
+                    <a href="https://playags.com/portfolio/burning-tiger/">Burning Tiger</a>
+                    <div>Bao Bei Cash</div>
+                    <div>Temple Cash</div>
+                    <div>Lightning Wheel</div>
+                </div>
             </ul>
         </div>
         <div class="experience-subsection">
             <h3>Freelance Software Engineering</h3>
-            <h4>Front End Developer / Software Engineer / Graphic Designer</h4>
+            <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
             <ul id="freelance-list">
                 <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC</li>
                 <a href="https://algebrareadinesseducators.com">https://algebrareadinesseducators.com</a>
