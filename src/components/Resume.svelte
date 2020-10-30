@@ -1,9 +1,15 @@
 <style lang="scss">
+    $mobile-width: 8.5in;
+    
     #resume {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @media screen and (max-width: $mobile-width) {
+            width: 100%;
+            height: fit-content;
+            padding-bottom: 32px;
+            margin: 0px;
+        }
+
+        margin: 100px auto;
 
         width: 8.5in;
         height: 11in;
@@ -22,6 +28,18 @@
         }
 
         #header {
+            @media screen and (max-width: $mobile-width) {
+                display: block;
+                background: white;
+                height: fit-content;
+
+                text-align: center;
+
+                > * {
+                    width: 100%;
+                }
+            }
+
             padding: 16px;
 
             background: linear-gradient(135deg, #ffffff 60%, #000000 60%);
@@ -37,9 +55,18 @@
                 font-size: 225%;
                 width: 100%;
                 margin-left: 16px;
+
+                @media screen and (max-width: $mobile-width) {
+                    margin: 16px auto;
+                }
             }
 
             #header-right {
+                @media screen and (max-width: $mobile-width) {
+                    color: black;
+                    text-align: center;
+                }
+
                 color: white;
                 text-align: right;
 
@@ -112,6 +139,12 @@
         }
 
         .subsection {
+            @media screen and (max-width: $mobile-width) {
+                h2, h3, h4, p{
+                    text-align: center;
+                }
+            }
+
             padding: 0px 32px;
             font-size: 16px;
 
@@ -122,7 +155,8 @@
                 font-size: 20px;
             }
 
-            h3, ul{ 
+
+            h3, ul, p{ 
                 margin: 0px 0;
             }
 
@@ -149,7 +183,7 @@
     </div>
 
     <div id="about" class="subsection">
-        Experienced software engineer with a strong foundation in data structures, algorithms, and core web technologies. My greatest strengths are my excellent verbal and written communication skills, a strong team oriented work ethic, and fastidious attention to detail.
+        Experienced software engineer with a strong foundation in data structures, algorithms, and core web technologies. I have excellent verbal and written communication skills, a strong team oriented work ethic, and an insatiable appetite for learning.
     </div>
 
     <div id="experience" class="subsection">
@@ -161,19 +195,19 @@
                 <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
                 <li>Refactored game logic to meet the demands of complex data models</li>
                 <li>Lead Engineer for the following 10 games:</li>
-                <div id="games-list">
-                    <a href="https://playags.com/portfolio/pharaoh-sun/">Pharaoh Sun</a>
-                    <a href="https://playags.com/portfolio/wild-tiki/">Wild Tiki</a>
-                    <div>Dragon Blast</div>
-                    <div>Freedom 7</div>
-                    <div>8 Riches</div>
-                    <a href="https://playags.com/portfolio/shining-dragon/">Shining Dragon</a>
-                    <a href="https://playags.com/portfolio/burning-tiger/">Burning Tiger</a>
-                    <div>Bao Bei Cash</div>
-                    <div>Temple Cash</div>
-                    <div>Lightning Wheel</div>
-                </div>
             </ul>
+            <div id="games-list">
+                <a href="https://playags.com/portfolio/pharaoh-sun/">Pharaoh Sun</a>
+                <a href="https://playags.com/portfolio/wild-tiki/">Wild Tiki</a>
+                <div>Dragon Blast</div>
+                <div>Freedom 7</div>
+                <div>8 Riches</div>
+                <a href="https://playags.com/portfolio/shining-dragon/">Shining Dragon</a>
+                <a href="https://playags.com/portfolio/burning-tiger/">Burning Tiger</a>
+                <div>Bao Bei Cash</div>
+                <div>Temple Cash</div>
+                <div>Lightning Wheel</div>
+            </div>
         </div>
         <div class="experience-subsection">
             <h3>Freelance Software Engineering</h3>
@@ -212,9 +246,9 @@
 
     <div id="education" class="subsection">
         <h2>Education</h2>
-        <div>B.S. Computer Science</div>
-        <div>Lamar University</div>
-        <div>Beaumont, TX</div>
-        <div>December 2016</div>
+        <p>B.S. Computer Science</p>
+        <p>Lamar University</p>
+        <p>Beaumont, TX</p>
+        <p>December 2016</p>
     </div>
 </div>
