@@ -2,11 +2,9 @@
 # About
 https://ctlachance.com
 
-I decided to create a portfolio site as a way to practice my front-end development skills. This site was initially created using React and Typescript, but after working in React I realized it was overkill for a simple static site like this. The current build is made with Svelte, SCSS, and JavaScript.
+This repository hosts the source code for my personal website. It currently serves as a simple landing page with a neat visualizer written in [BabylonJS](https://www.babylonjs.com/). This site was created with Svelte, SCSS, and JavaScript.
 
-The project auto-builds on and is hosted with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.
-
-This site will remain in flux as a testbed for learning new web-tech. Let me know if you want to hire me. I'm always learning new stuff.
+The project has a continuous deployment pipeline set up with Google Cloud. Commits to the master branch trigger the deployment of a production build of the site.
 
 ---
 This project was bootstrapped with the Svelte webpack template located here: https://github.com/sveltejs/template-webpack.

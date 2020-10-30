@@ -1,5 +1,6 @@
 <script>
     import {onMount} from 'svelte';
+    import {Link} from 'svelte-routing';
 
     let name, links, picture;
 
@@ -64,7 +65,6 @@
 
         padding: 16px;
         margin: 0 auto;
-        box-sizing: border-box;
 
         img {
             width: 256px;
@@ -114,11 +114,9 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin-top: 16px;
-                margin-left: 16px;
-                margin-right: 8px;
+                margin: 16px 8px 0 16px;
 
-                a {
+                .link-button {
                     font-family: 'Roboto', sans-serif;
                     text-decoration: none;
                     color: black;
@@ -129,11 +127,11 @@
                     padding: 8px 16px;
 
                     transition: all 0.15s ease-in-out;
-                }
 
-                a:hover {
-                    transform: translate(0px, -4px);
-                    box-shadow: 0px 4px 4px rgba($color: black, $alpha: 0.20);
+                    &:hover {
+                        transform: translate(0px, -4px);
+                        box-shadow: 0px 4px 4px rgba($color: black, $alpha: 0.20);
+                    }
                 }
             }
         }
@@ -161,7 +159,7 @@
 </style>
 
 <div id="profile">
-    <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance - Profile Picture">
+    <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
             <div class="span-wrapper">
@@ -189,10 +187,10 @@
             </div>
         </h1>
         <div bind:this={links} id="links">
-            <a href="https://github.com/CTLaChance">GitHub</a>
-            <a href="https://linkedin.com/in/ctlachance">LinkedIn</a>
-            <a href="mailto:christopher.t.lachance@gmail.com">Email</a>
-            <a href="./resume.pdf">Résumé</a>
+            <a class="link-button" href="https://github.com/CTLaChance">GitHub</a>
+            <a class="link-button" href="https://linkedin.com/in/ctlachance">LinkedIn</a>
+            <a class="link-button" href="mailto:christopher.t.lachance@gmail.com">Email</a>
+            <Link to="resume"><div class="link-button">Résumé</div></Link>
         </div>
     </div>
 </div>
