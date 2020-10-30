@@ -9,6 +9,10 @@
             margin: 0px;
         }
 
+        @media print {
+            margin: 0;
+        }
+
         margin: 100px auto;
 
         width: 8.5in;
