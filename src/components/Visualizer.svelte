@@ -89,8 +89,10 @@
         padding: 0;
         border: 0;
         pointer-events: none;
-        display: block;
         opacity: 0;
+
+        position: fixed;
+        z-index: -1000;
 
         @keyframes pageload {
             0% {
