@@ -48,7 +48,7 @@
             h2 {
                 margin: 16px 0;
                 border-bottom: 1px #000000 solid;
-                font-family: 'Nunita Sans', sans-serif;
+                font-family: 'Nunito Sans', monospace;
                 font-weight: 200;
                 font-size: 20px;
             }
@@ -215,8 +215,8 @@
         </div>
     </div>
 
-    <div id="skills" class="subsection">
-        <h2>Skills</h2>
+    <div id="skills" class="subsection"> 
+        <h2>Skills and Technology</h2>
         <ul>
             <li>JavaScript ES6+</li>
             <li>C#</li>
@@ -235,10 +235,11 @@
             <li>Linux</li>
             <li>BASH</li>
             <li>Unity3D</li>
+            <li>VR</li>
         </ul>
     </div>
 
-    <div id="bottom" >
+    <div id="bottom">
         <div id="education" class="subsection">
             <h2>Education</h2>
             <p>B.S. Computer Science</p>
