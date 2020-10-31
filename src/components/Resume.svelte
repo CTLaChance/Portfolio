@@ -111,11 +111,12 @@
                     border: 1px solid black;
                     border-radius: 5px;
 
-                    background: linear-gradient(to right, white 50%, black 50%);
-                    background-size: 205% 100%;
+
+                    background: linear-gradient(135deg, white 50%, black 50%);
+                    background-size: 250% 100%;
                     background-position: left bottom;
 
-                    transition: all .1s linear 0s;
+                    transition: all .2s linear 0s;
                 }
 
                 a:hover {
