@@ -161,7 +161,7 @@
         <h1><b>CHRISTOPHER</b> LACHANCE</h1>
     </div>
 
-    <p style="margin:auto 0 0; padding: 0 32px;">Id eu labore cupidatat ad deserunt officia enim pariatur aute veniam sunt. Fugiat eiusmod et excepteur fugiat cupidatat ea enim laboris dolore elit deserunt cillum nisi. In et sint exercitation ad magna exercitation mollit. Aute ex aliquip labore culpa aliquip ullamco ad nulla.</p>
+    <p style="margin:auto 0 0; padding: 0 32px;">Nisi esse velit cillum eiusmod do adipisicing ad.</p>
 
     <div id="experience" class="subsection">
         <h2>Experience</h2>
@@ -192,10 +192,17 @@
         <div class="experience-subsection">
             <h3>Freelance Software Engineer</h3>
             <h4>Algebra Readiness Educators, LLC    |    <a href="https://algebrareadinesseducators.com">https://algebrareadinesseducators.com</a></h4>
-            <p>Designed and developed the last 3 versions of the ARE website.</p>
+            <ul>
+                <li>Designed and developed the last 3 versions of the ARE website</li>
+                <li>Designed 12+ mathematic workbooks and various other advertising media</li>
+                <li>Served as an advisor for technical discussions and problems</li>
+            </ul>
             <br>
             <h4>NASA Trick Simulation Environment    |    <a href="https://github.com/nasa/trick">https://github.com/nasa/trick</a></h4>
-            <p>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</p>
+            <ul>
+                <li>Contributed features, bugfixes, and documentation to the open source GitHub repository</li>
+                <li>Designed a way to visualize simulation objects by sending updates over TCP to Unity3D</li>
+            </ul>
         </div>
     </div>
 
