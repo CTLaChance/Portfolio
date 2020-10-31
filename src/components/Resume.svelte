@@ -54,13 +54,12 @@
             }
 
 
-            h3, ul, p{ 
-                margin: 0px 0;
+            h3, h4, ul, p{ 
+                margin: 0;
             }
 
             h4 {
                 font-style: italic;
-                margin: 0 0 16px 0;
             }
 
             .experience-subsection {
@@ -91,12 +90,11 @@
             }
         }
 
-        #links {
-            display: flex;
-            justify-content: space-between;
-        }
-
         #experience {
+            li {
+                    margin: 8px 0;
+            }
+
             #games-list {
                 display: flex;
                 flex-wrap: wrap;
@@ -123,12 +121,6 @@
                     cursor: pointer;
                     color: white;
                     background-position: right bottom;
-                }
-            }
-
-            #freelance-list {
-                li {
-                    margin: 8px 0;
                 }
             }
         }
@@ -183,7 +175,7 @@
         <h2>Experience</h2>
         <div class="experience-subsection">
             <h3>AGS, LLC</h3>
-            <div>
+            <div style="display: flex; justify-content: space-between;">
                 <h4>Software Engineer</h4>
                 <h4>01JAN2018 - PRESENT</h4>
             </div>
@@ -206,7 +198,7 @@
             </div>
         </div>
         <div class="experience-subsection">
-            <h3>Freelance Software Engineering</h3>
+            <h3>Freelance</h3>
             <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
             <ul id="freelance-list">
                 <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC - <a href="https://algebrareadinesseducators.com"><em>https://algebrareadinesseducators.com</em></a></li>
