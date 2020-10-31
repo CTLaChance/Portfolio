@@ -19,6 +19,7 @@
         height: 11in;
 
         font-family: 'Roboto';
+        font-weight: 300;
         box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
         background-color: white;
 
@@ -45,6 +46,10 @@
             padding: 0px 32px;
             font-size: 16px;
 
+            h3, h4, ul, p{ 
+                margin: 0;
+            }
+
             h2 {
                 margin: 16px 0;
                 border-bottom: 1px #000000 solid;
@@ -53,13 +58,9 @@
                 font-size: 20px;
             }
 
-
-            h3, h4, h5, ul, p{ 
-                margin: 0;
-            }
-
-            h5 {
-                font-size: 12pt;
+            h4 {
+                font-weight: 100;
+                white-space: pre;
             }
         }
 
@@ -87,16 +88,10 @@
         }
 
         #experience {
-            li {
-                    margin: 8px 0;
-            }
-
             #games-list {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-
-                list-style-type: none;
                 text-align: center;
 
                 * {
@@ -122,6 +117,10 @@
 
             .experience-subsection {
                 margin-bottom: 16px;
+
+                p, ul {
+                    margin: 8px 0;
+                }
             }
         }
 
@@ -176,14 +175,13 @@
     <div id="experience" class="subsection">
         <h2>Experience</h2>
         <div class="experience-subsection">
-            <h3>AGS, LLC</h3>
-            <div style="display: flex; justify-content: space-between;">
-                <h4>Software Engineer</h4>
-                <h4>01JAN2018 - PRESENT</h4>
-            </div>
+            <h3>Software Engineer</h3>
+            <h4>AGS, LLC   |   January 2018  -  Present</h4>
+            <p>At AGS I've worked alongside an incredibly talented team of individual contributors to design, build, and test over 10 class 3 video slot games.</p>
             <ul>
-                <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
-                <li>Refactored game logic to meet the demands of complex data models</li>
+                <li>Nostrud proident irure sit qui minim et laboris.</li>
+                <li>Irure labore enim enim et quis exercitation excepteur ad culpa aliquip in eu.</li>
+                <li>Enim nostrud qui officia adipisicing.</li>
                 <li>Lead Engineer for the following 10 games:</li>
             </ul>
             <div id="games-list">
@@ -199,7 +197,7 @@
                 <div>Lightning Wheel</div>
             </div>
         </div>
-        <div class="experience-subsection">
+        <!-- <div class="experience-subsection">
             <h3>Freelance</h3>
             <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
             <div id="freelance-list">
@@ -215,7 +213,7 @@
                 </div>
                 <p>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</p>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div id="skills" class="subsection"> 
