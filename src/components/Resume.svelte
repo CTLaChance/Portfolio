@@ -74,12 +74,16 @@
 
             padding: 32px;
 
-            border: 1px solid black;
+            background: linear-gradient(135deg, white 50%, black 50%);
+
 
             h1 {
                 font-weight: 200;
                 font-size: 48px;
                 letter-spacing: 5px;
+
+                color: white;
+                mix-blend-mode: difference;
             }
 
             * {
