@@ -2,13 +2,6 @@
     $mobile-width: 8.5in;
     
     #resume {
-        @media screen and (max-width: $mobile-width) {
-            width: 100%;
-            height: fit-content;
-            padding-bottom: 32px;
-            margin: 0px;
-        }
-
         @media print {
             margin: 0;
         }
@@ -37,12 +30,6 @@
         }
 
         .subsection {
-            @media screen and (max-width: $mobile-width) {
-                h2, h3, h4, p{
-                    text-align: center;
-                }
-            }
-
             padding: 0px 32px;
             font-size: 16px;
 
@@ -116,7 +103,11 @@
             }
 
             .experience-subsection {
-                margin-bottom: 16px;
+                margin-top: 16px;
+
+                h3 {
+                    margin-bottom: 8px;
+                }
 
                 p, ul {
                     margin: 8px 0;
@@ -170,14 +161,14 @@
         <h1><b>CHRISTOPHER</b> LACHANCE</h1>
     </div>
 
-    <p style="margin:auto 0; padding: 0 32px;">Id eu labore cupidatat ad deserunt officia enim pariatur aute veniam sunt. Fugiat eiusmod et excepteur fugiat cupidatat ea enim laboris dolore elit deserunt cillum nisi. In et sint exercitation ad magna exercitation mollit. Aute ex aliquip labore culpa aliquip ullamco ad nulla. Lorem qui irure fugiat commodo est aliqua consequat aliqua duis velit. Anim est occaecat consequat incididunt do.</p>
+    <p style="margin:auto 0 0; padding: 0 32px;">Id eu labore cupidatat ad deserunt officia enim pariatur aute veniam sunt. Fugiat eiusmod et excepteur fugiat cupidatat ea enim laboris dolore elit deserunt cillum nisi. In et sint exercitation ad magna exercitation mollit. Aute ex aliquip labore culpa aliquip ullamco ad nulla.</p>
 
     <div id="experience" class="subsection">
         <h2>Experience</h2>
         <div class="experience-subsection">
             <h3>Software Engineer</h3>
-            <h4>AGS, LLC   |   January 2018  -  Present</h4>
-            <p>I work alongside an incredibly talented team of artists, musicians, and mathmeticians to design, build, test, and deploy video slot games in the US, Australia, Mexico, and Brazil.</p>
+            <h4>AGS, LLC    |    January 2018  -  Present</h4>
+            <p>I work alongside an incredibly talented team of artists, musicians, and mathemeticians to design, build, test, and deploy video slot games in the US, Australia, Mexico, and Brazil.</p>
             <ul>
                 <li>Front End Engineering for 10+ video slot games using Lua, C#, and Unity3D</li>
                 <li>Designed, implemented, and tested paytable source code in XML</li>
@@ -197,23 +188,15 @@
                 <div>Lightning Wheel</div>
             </div>
         </div>
-        <!-- <div class="experience-subsection">
-            <h3>Freelance</h3>
-            <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
-            <div id="freelance-list">
-                <div style="display: flex; justify-content: space-between;">
-                    <h5>Algebra Readiness Educators</h5>
-                    <h5><a href="https://algebrareadinesseducators.com"><em>https://algebrareadinesseducators.com</em></a></h5>
-                </div>
-                <p>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC</p>
-                
-                <div style="display: flex; justify-content: space-between;">
-                    <h5>NASA Trick Simulation Environment</h5>
-                    <h5><a href="https://github.com/nasa/trick"><em>https://github.com/nasa/trick</em></a></h5>
-                </div>
-                <p>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</p>
-            </div>
-        </div> -->
+
+        <div class="experience-subsection">
+            <h3>Freelance Software Engineer</h3>
+            <h4>Algebra Readiness Educators, LLC    |    <a href="https://algebrareadinesseducators.com">https://algebrareadinesseducators.com</a></h4>
+            <p>Designed and developed the last 3 versions of the ARE website.</p>
+            <br>
+            <h4>NASA Trick Simulation Environment    |    <a href="https://github.com/nasa/trick">https://github.com/nasa/trick</a></h4>
+            <p>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</p>
+        </div>
     </div>
 
     <div id="skills" class="subsection"> 
