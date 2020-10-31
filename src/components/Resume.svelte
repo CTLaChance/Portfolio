@@ -54,16 +54,12 @@
             }
 
 
-            h3, h4, ul, p{ 
+            h3, h4, h5, ul, p{ 
                 margin: 0;
             }
 
-            h4 {
-                font-style: italic;
-            }
-
-            .experience-subsection {
-                margin-bottom: 32px;
+            h5 {
+                font-size: 12pt;
             }
         }
 
@@ -123,6 +119,10 @@
                     background-position: right bottom;
                 }
             }
+
+            .experience-subsection {
+                margin-bottom: 16px;
+            }
         }
 
         #skills {
@@ -171,6 +171,8 @@
         <h1><b>CHRISTOPHER</b> LACHANCE</h1>
     </div>
 
+    <p style="margin:auto 0; padding: 0 32px;">Id eu labore cupidatat ad deserunt officia enim pariatur aute veniam sunt. Fugiat eiusmod et excepteur fugiat cupidatat ea enim laboris dolore elit deserunt cillum nisi. In et sint exercitation ad magna exercitation mollit. Aute ex aliquip labore culpa aliquip ullamco ad nulla. Lorem qui irure fugiat commodo est aliqua consequat aliqua duis velit. Anim est occaecat consequat incididunt do.</p>
+
     <div id="experience" class="subsection">
         <h2>Experience</h2>
         <div class="experience-subsection">
@@ -200,10 +202,19 @@
         <div class="experience-subsection">
             <h3>Freelance</h3>
             <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
-            <ul id="freelance-list">
-                <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC - <a href="https://algebrareadinesseducators.com"><em>https://algebrareadinesseducators.com</em></a></li>
-                <li>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment - <a href="https://github.com/nasa/trick"><em>https://github.com/nasa/trick</em></a></li>
-            </ul>
+            <div id="freelance-list">
+                <div style="display: flex; justify-content: space-between;">
+                    <h5>Algebra Readiness Educators</h5>
+                    <h5><a href="https://algebrareadinesseducators.com"><em>https://algebrareadinesseducators.com</em></a></h5>
+                </div>
+                <p>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC</p>
+                
+                <div style="display: flex; justify-content: space-between;">
+                    <h5>NASA Trick Simulation Environment</h5>
+                    <h5><a href="https://github.com/nasa/trick"><em>https://github.com/nasa/trick</em></a></h5>
+                </div>
+                <p>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</p>
+            </div>
         </div>
     </div>
 
