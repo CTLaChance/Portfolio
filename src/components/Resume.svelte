@@ -13,7 +13,7 @@
             margin: 0;
         }
 
-        margin: 100px auto;
+        margin: 75px auto;
 
         width: 8.5in;
         height: 11in;
@@ -21,6 +21,10 @@
         font-family: 'Roboto';
         box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
         background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         a {
             text-decoration: none;
@@ -31,59 +35,61 @@
             }
         }
 
-        #header {
+        .subsection {
             @media screen and (max-width: $mobile-width) {
-                display: block;
-                background: white;
-                height: fit-content;
-
-                text-align: center;
-
-                > * {
-                    width: 100%;
-                }
-            }
-
-            padding: 16px;
-
-            background: linear-gradient(135deg, #ffffff 60%, #000000 60%);
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            height: 95px;
-
-            >:first-child {
-                font-family: 'Tomorrow';
-                font-size: 225%;
-                width: 100%;
-                margin-left: 16px;
-
-                @media screen and (max-width: $mobile-width) {
-                    margin: 16px auto;
-                }
-            }
-
-            #header-right {
-                @media screen and (max-width: $mobile-width) {
-                    color: black;
+                h2, h3, h4, p{
                     text-align: center;
                 }
+            }
 
-                color: white;
-                text-align: right;
+            padding: 0px 32px;
+            font-size: 16px;
 
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
+            h2 {
+                margin: 16px 0;
+                border-bottom: 1px #000000 solid;
+                font-family: 'Nunita Sans', sans-serif;
+                font-weight: 200;
+                font-size: 20px;
+            }
 
-                height: 100%;
+
+            h3, ul, p{ 
+                margin: 0px 0;
+            }
+
+            h4 {
+                font-style: italic;
+                margin: 0 0 16px 0;
+            }
+
+            .experience-subsection {
+                margin-bottom: 32px;
             }
         }
 
-        #about {
-            margin-top: 16px;
+        #header {
+            text-align: center;
+            font-family: 'Nunito Sans';
+
+            padding: 32px;
+
+            border: 1px solid black;
+
+            h1 {
+                font-weight: 200;
+                font-size: 48px;
+                letter-spacing: 5px;
+            }
+
+            * {
+                margin: 0;
+            }
+        }
+
+        #links {
+            display: flex;
+            justify-content: space-between;
         }
 
         #experience {
@@ -117,7 +123,7 @@
 
             #freelance-list {
                 li {
-                    margin: 16px 0;
+                    margin: 8px 0;
                 }
             }
         }
@@ -142,59 +148,31 @@
             }
         }
 
-        .subsection {
-            @media screen and (max-width: $mobile-width) {
-                h2, h3, h4, p{
-                    text-align: center;
-                }
-            }
-
-            padding: 0px 32px;
-            font-size: 16px;
-
-            h2 {
-                margin: 16px 0;
-                border-bottom: 1px #000000 solid;
-                font-family: 'Tomorrow';
-                font-size: 20px;
-            }
-
-
-            h3, ul, p{ 
-                margin: 0px 0;
-            }
-
-            h4 {
-                font-style: italic;
-                margin: 0 0 16px 0;
-            }
-
-            .experience-subsection {
-                margin-bottom: 32px;
-            }
+        #education {
+            padding-bottom: 32px;
         }
     }
 </style>
 
 <div id="resume">
     <div id="header">
-        <h1>CHRISTOPHER LACHANCE</h1>
-        <div id="header-right">
-            <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
-            <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
-            <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
-        </div>
+        <h1><b>CHRISTOPHER</b> LACHANCE</h1>
     </div>
 
-    <div id="about" class="subsection">
-        Experienced software engineer with a strong foundation in data structures, algorithms, and core web technologies. I have excellent verbal and written communication skills, a strong team oriented work ethic, and an insatiable appetite for learning.
+    <div id="links" class="subsection">
+        <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
+        <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
+        <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
     </div>
 
     <div id="experience" class="subsection">
         <h2>Experience</h2>
         <div class="experience-subsection">
             <h3>AGS, LLC</h3>
-            <h4>Software Engineer</h4>
+            <div>
+                <h4>Software Engineer</h4>
+                <h4>01JAN2018 - PRESENT</h4>
+            </div>
             <ul>
                 <li>Developed front-end designs in conjunction with a cross disciplined team of contributors</li>
                 <li>Refactored game logic to meet the demands of complex data models</li>
@@ -217,10 +195,8 @@
             <h3>Freelance Software Engineering</h3>
             <h4>Front End Engineer / Software Engineer / Graphic Designer</h4>
             <ul id="freelance-list">
-                <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC</li>
-                <a href="https://algebrareadinesseducators.com">https://algebrareadinesseducators.com</a>
-                <li>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment</li>
-                <a href="https://github.com/nasa/trick">https://github.com/nasa/trick</a>
+                <li>Designed and developed the website, 12+ book covers, and various other branded materials for Algebra Readiness Educators, LLC - <a href="https://algebrareadinesseducators.com"><em>https://algebrareadinesseducators.com</em></a></li>
+                <li>Contributed features, bugfixes, and documentation to the open source NASA Trick Simulation Environment - <a href="https://github.com/nasa/trick"><em>https://github.com/nasa/trick</em></a></li>
             </ul>
         </div>
     </div>
@@ -253,6 +229,6 @@
         <p>B.S. Computer Science</p>
         <p>Lamar University</p>
         <p>Beaumont, TX</p>
-        <p>December 2016</p>
+        <p>August 2013 - December 2016</p>
     </div>
 </div>

@@ -86,7 +86,7 @@
                 margin: 0;
                 
                 //Font
-                font-family: 'Tomorrow', sans-serif;
+                font-family: 'Nunito Sans', sans-serif;
                 color: black;
                 font-weight: 100;
                 letter-spacing: -5px;
