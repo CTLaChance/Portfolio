@@ -153,8 +153,23 @@
             }
         }
 
-        #education {
+        #bottom {
             padding-bottom: 32px;
+
+            display: flex;
+            justify-content: space-between;
+
+            #education {
+                width: 50%;
+            }
+
+            #links {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: right;
+            }
         }
     }
 </style>
@@ -162,12 +177,6 @@
 <div id="resume">
     <div id="header">
         <h1><b>CHRISTOPHER</b> LACHANCE</h1>
-    </div>
-
-    <div id="links" class="subsection">
-        <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
-        <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
-        <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
     </div>
 
     <div id="experience" class="subsection">
@@ -229,11 +238,20 @@
         </ul>
     </div>
 
-    <div id="education" class="subsection">
-        <h2>Education</h2>
-        <p>B.S. Computer Science</p>
-        <p>Lamar University</p>
-        <p>Beaumont, TX</p>
-        <p>August 2013 - December 2016</p>
+    <div id="bottom" >
+        <div id="education" class="subsection">
+            <h2>Education</h2>
+            <p>B.S. Computer Science</p>
+            <p>Lamar University</p>
+            <p>Beaumont, TX</p>
+            <p>August 2013 - December 2016</p>
+        </div>
+
+        <div id="links" class="subsection">
+            <h2>Links</h2>
+            <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
+            <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
+            <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
+        </div>
     </div>
 </div>
