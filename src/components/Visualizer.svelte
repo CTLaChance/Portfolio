@@ -94,6 +94,10 @@
         position: fixed;
         z-index: -1000;
 
+        @media print {
+            display: none;
+        }
+
         @keyframes pageload {
             0% {
                 opacity: 0;
