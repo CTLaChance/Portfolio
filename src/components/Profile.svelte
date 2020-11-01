@@ -2,7 +2,7 @@
     import {onMount} from 'svelte';
     import {Link} from 'svelte-routing';
 
-    let name, links, picture;
+    let name, links, picture, profile;
 
     onMount(async() => {
         let profileElements = [...name.children[0].children,...name.children[1].children, ...links.children];
@@ -21,6 +21,13 @@
             { opacity: 0, offset: 0.99 },
             { opacity: 1 }
         ];
+
+        profile.animate(keyframes, {
+            delay: 250,
+            duration: 500,
+            iterations: 1,
+            fill: "both",
+        });
 
         picture.animate(keyframes, {
             delay: 500,
@@ -48,13 +55,14 @@
             }
 
             100% {
-                box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
+                box-shadow: 8px 8px 8px rgba($color: black, $alpha: 0.25);
             }
         }
 
-        animation: pageload 3s 2s both;
+        animation: pageload 3s 1s both;
 
-        background-color: white;
+        background: linear-gradient(135deg, white 60%, black 60%);
+        border: 1px solid black;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -97,15 +105,22 @@
                 justify-content: center;
                 flex-wrap: wrap;
 
+
                 .span-wrapper {
                     margin-left: 8px;
                     margin-right: 8px;
                     display: inline-flex;
 
+                    color: white;
+                    mix-blend-mode: difference;
+
                     span {
                         font-size: 36pt;
                         font-weight: 100;
                         margin: 0px 4px;
+                    }
+                    .bold-letter {
+                        font-weight: 700;
                     }
                 }
             }
@@ -158,22 +173,22 @@
     }
 </style>
 
-<div id="profile">
+<div id="profile" bind:this={profile}>
     <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
             <div class="span-wrapper">
-                <span aria-hidden="true">C</span>
-                <span aria-hidden="true">H</span>
-                <span aria-hidden="true">R</span>
-                <span aria-hidden="true">I</span>
-                <span aria-hidden="true">S</span>
-                <span aria-hidden="true">T</span>
-                <span aria-hidden="true">O</span>
-                <span aria-hidden="true">P</span>
-                <span aria-hidden="true">H</span>
-                <span aria-hidden="true">E</span>
-                <span aria-hidden="true">R</span>
+                <span aria-hidden="true" class="bold-letter">C</span>
+                <span aria-hidden="true" class="bold-letter">H</span>
+                <span aria-hidden="true" class="bold-letter">R</span>
+                <span aria-hidden="true" class="bold-letter">I</span>
+                <span aria-hidden="true" class="bold-letter">S</span>
+                <span aria-hidden="true" class="bold-letter">T</span>
+                <span aria-hidden="true" class="bold-letter">O</span>
+                <span aria-hidden="true" class="bold-letter">P</span>
+                <span aria-hidden="true" class="bold-letter">H</span>
+                <span aria-hidden="true" class="bold-letter">E</span>
+                <span aria-hidden="true" class="bold-letter">R</span>
             </div>
             <div class="span-wrapper">
                 <span aria-hidden="true">L</span>
