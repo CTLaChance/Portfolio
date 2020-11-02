@@ -210,11 +210,11 @@
             <div class="experience-subsection">
                 <h3>Software Engineer</h3>
                 <h4>AGS, LLC    |    January 2018  -  Present</h4>
-                <p>I work alongside an incredibly talented team of artists, musicians, and mathemeticians to design, build, test, and deploy video slot games in the US, Australia, Mexico, and Brazil.</p>
+                <p>I work alongside an incredibly talented team of artists, musicians, and mathematicians to design, build, test, and deploy video slot games in the US, Australia, Mexico, and Brazil.</p>
                 <ul>
                     <li>Front End Engineering for 10+ video slot games using Lua, C#, and Unity3D</li>
-                    <li>Designed, implemented, and tested paytable source code in XML</li>
-                    <li>Effectively handled a litany of DevOps issues involving proprietary toolchains and hardware</li>
+                    <li>Designed, implemented, and tested pay table source code in XML</li>
+                    <li>Effectively handled a litany of DevOps issues involving proprietary tool chains and hardware</li>
                     <li>Lead Engineer for the following 10 games:</li>
                 </ul>
                 <div id="games-list">
