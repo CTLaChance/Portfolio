@@ -59,7 +59,7 @@
             }
         }
 
-        animation: pageload .75s 1.25s cubic-bezier(.75,.25,.25,1) both;
+        animation: pageload 2s cubic-bezier(.9, 0, .10, 1) both;
 
         background: linear-gradient(135deg, white 60%, black 60%);
         background-size: 200% 100%;
