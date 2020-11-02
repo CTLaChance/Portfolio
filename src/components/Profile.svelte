@@ -59,9 +59,20 @@
             }
         }
 
-        animation: pageload 3s 1s both;
+        @keyframes pageload2 {
+            0% {
+                background-position: 5%;
+            }
+
+            100% {
+                background-position: 62%;
+            }
+        }
+
+        animation: pageload 3s 1s both, pageload2 .75s 1s cubic-bezier(.9,0,.2,1) both;
 
         background: linear-gradient(135deg, white 60%, black 60%);
+        background-size: 200% 100%;
         border: 1px solid black;
         position: absolute;
         top: 50%;
