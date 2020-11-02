@@ -284,7 +284,7 @@
             <div id="links" class="subsection">
                 <h2>Links</h2>
                 <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
-                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
+                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://linkedin.com/in/ctlachance</a>
                 <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
             </div>
         </div>
