@@ -2,7 +2,7 @@
     import {onMount} from 'svelte';
     import {Link} from 'svelte-routing';
 
-    let name, links, picture;
+    let name, links, picture, profile;
 
     onMount(async() => {
         let profileElements = [...name.children[0].children,...name.children[1].children, ...links.children];
@@ -21,6 +21,13 @@
             { opacity: 0, offset: 0.99 },
             { opacity: 1 }
         ];
+
+        profile.animate(keyframes, {
+            delay: 250,
+            duration: 500,
+            iterations: 1,
+            fill: "both",
+        });
 
         picture.animate(keyframes, {
             delay: 500,
@@ -44,17 +51,19 @@
     #profile {
         @keyframes pageload {
             0% {
-                box-shadow: none;
+                background-position: 5%;
             }
 
             100% {
-                box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
+                background-position: 62%;
             }
         }
 
-        animation: pageload 3s 2s both;
+        animation: pageload 2s cubic-bezier(.9, 0, .10, 1) both;
 
-        background-color: white;
+        background: linear-gradient(135deg, white 60%, black 60%);
+        background-size: 200% 100%;
+        border: 1px solid black;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -89,7 +98,7 @@
                 font-family: 'Nunito Sans', sans-serif;
                 color: black;
                 font-weight: 100;
-                letter-spacing: -5px;
+                letter-spacing: 5px;
                 text-align: center;
                 word-wrap: break-word;
 
@@ -97,15 +106,22 @@
                 justify-content: center;
                 flex-wrap: wrap;
 
+
                 .span-wrapper {
                     margin-left: 8px;
                     margin-right: 8px;
                     display: inline-flex;
 
+                    color: white;
+                    mix-blend-mode: difference;
+
                     span {
                         font-size: 36pt;
                         font-weight: 100;
-                        margin: 0px 4px;
+                        margin: 0px 2px;
+                    }
+                    .bold-letter {
+                        font-weight: 700;
                     }
                 }
             }
@@ -114,6 +130,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                text-align: center;
                 margin: 16px 8px 0 16px;
 
                 .link-button {
@@ -121,27 +138,30 @@
                     text-decoration: none;
                     color: black;
                     border: 1px solid black;
-                    background: linear-gradient(to right, black 50%, white 50%);
-                    background-size: 201% 100%;
-                    background-position: right bottom;
+                    background: linear-gradient(135deg, white 50%, black 50%);
+                    background-size: 250% 100%;
+                    background-position: left bottom;
                     padding: 8px 16px;
 
-                    transition: all 0.15s ease-in-out;
+                    transition: all 0.2s ease-in-out;
 
                     &:hover {
-                        transform: translate(0px, -4px);
-                        box-shadow: 0px 4px 4px rgba($color: black, $alpha: 0.20);
+                        cursor: pointer;
+                        color: white;
+                        border: 1px solid white;
+                        background-position: right bottom;
                     }
                 }
             }
         }
     }
 
-    @media only screen and (max-width: 699px) {
+    @media only screen and (max-width: 750px) {
         #profile {
-            width: 100%;
-            justify-content: center;
+            width: calc(100vw - 32px);
+            height: calc(100vh - 34px);
             flex-direction: column;
+            justify-content: center;
         }
 
         #profile #profile-info {
@@ -149,31 +169,36 @@
         }
 
         #profile #profile-info #name .span-wrapper span {
-            font-size: 30pt;
+            font-size: 8vw;
         }
             
         #profile img {
-            margin: auto;
+            margin: 0 auto;
+        }
+
+        #profile #profile-info #links {
+            flex-direction: column;
+            margin: 16px;
         }
     }
 </style>
 
-<div id="profile">
+<div id="profile" bind:this={profile}>
     <img bind:this={picture} src="profile.jpg" alt="Christopher LaChance">
     <div id="profile-info">
         <h1 bind:this={name} id="name" aria-label="Christopher LaChance">
             <div class="span-wrapper">
-                <span aria-hidden="true">C</span>
-                <span aria-hidden="true">H</span>
-                <span aria-hidden="true">R</span>
-                <span aria-hidden="true">I</span>
-                <span aria-hidden="true">S</span>
-                <span aria-hidden="true">T</span>
-                <span aria-hidden="true">O</span>
-                <span aria-hidden="true">P</span>
-                <span aria-hidden="true">H</span>
-                <span aria-hidden="true">E</span>
-                <span aria-hidden="true">R</span>
+                <span aria-hidden="true" class="bold-letter">C</span>
+                <span aria-hidden="true" class="bold-letter">H</span>
+                <span aria-hidden="true" class="bold-letter">R</span>
+                <span aria-hidden="true" class="bold-letter">I</span>
+                <span aria-hidden="true" class="bold-letter">S</span>
+                <span aria-hidden="true" class="bold-letter">T</span>
+                <span aria-hidden="true" class="bold-letter">O</span>
+                <span aria-hidden="true" class="bold-letter">P</span>
+                <span aria-hidden="true" class="bold-letter">H</span>
+                <span aria-hidden="true" class="bold-letter">E</span>
+                <span aria-hidden="true" class="bold-letter">R</span>
             </div>
             <div class="span-wrapper">
                 <span aria-hidden="true">L</span>

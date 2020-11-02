@@ -2,10 +2,6 @@
     $mobile-width: 8.5in;
     
     #resume {
-        @media print {
-            margin: 0;
-        }
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -19,6 +15,17 @@
         font-weight: 300;
         box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
         background-color: white;
+
+        @media print {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $mobile-width) {
+            margin: 0px;
+            width: 100%;
+            height: fit-content;
+            min-height: 100vh;
+        }
 
         #header {
             text-align: center;
@@ -35,6 +42,10 @@
 
                 color: white;
                 mix-blend-mode: difference;
+
+                @media screen and (max-width: $mobile-width) {
+                    font-size: 6vw;
+                }
             }
 
             * {
@@ -71,11 +82,15 @@
                     font-family: 'Nunito Sans', monospace;
                     font-weight: 200;
                     font-size: 20px;
+
+                    @media screen and (max-width: $mobile-width) {
+                        text-align: center;
+                    }
                 }
 
                 h4 {
                     font-weight: 100;
-                    white-space: pre;
+                    white-space: pre-wrap;
                 }
             }
 
@@ -117,6 +132,12 @@
                     p, ul {
                         margin: 8px 0;
                     }
+
+                    @media screen and (max-width: $mobile-width) {
+                        h4 {
+                            word-wrap: break-word;
+                        }
+                    }
                 }
             }
 
@@ -156,6 +177,20 @@
                     flex-direction: column;
                     justify-content: space-between;
                     text-align: right;
+                }
+
+                @media screen and (max-width: $mobile-width) {
+                    flex-direction: column;
+
+                    #education {
+                        width: initial;
+                        text-align: center;
+                    }
+
+                    #links {
+                        width: initial;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -249,7 +284,7 @@
             <div id="links" class="subsection">
                 <h2>Links</h2>
                 <a target="_blak" href="https://ctlachance.com">https://ctlachance.com</a>
-                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://www.linkedin.com/in/ctlachance</a>
+                <a target="_blank" href="https://www.linkedin.com/in/ctlachance/">https://linkedin.com/in/ctlachance</a>
                 <a target="_blank" href="mailto:christopher.t.lachance@gmail.com">christopher.t.lachance@gmail.com</a>
             </div>
         </div>
