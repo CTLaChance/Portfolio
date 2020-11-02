@@ -2,16 +2,6 @@
     $mobile-width: 8.5in;
     
     #resume {
-        @media print {
-            margin: 0;
-        }
-
-        @media screen and (max-width: $mobile-width) {
-            margin: 0px;
-            width: 100%;
-            height: fit-content;
-        }
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -25,6 +15,16 @@
         font-weight: 300;
         box-shadow: 0px 4px 8px rgba($color: black, $alpha: 0.25);
         background-color: white;
+
+        @media print {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $mobile-width) {
+            margin: 0px;
+            width: 100%;
+            height: fit-content;
+        }
 
         #header {
             text-align: center;
@@ -77,6 +77,10 @@
                     font-family: 'Nunito Sans', monospace;
                     font-weight: 200;
                     font-size: 20px;
+
+                    @media screen and (max-width: $mobile-width) {
+                        text-align: center;
+                    }
                 }
 
                 h4 {
@@ -162,6 +166,20 @@
                     flex-direction: column;
                     justify-content: space-between;
                     text-align: right;
+                }
+
+                @media screen and (max-width: $mobile-width) {
+                    flex-direction: column;
+
+                    #education {
+                        width: initial;
+                        text-align: center;
+                    }
+
+                    #links {
+                        width: initial;
+                        text-align: center;
+                    }
                 }
             }
         }
