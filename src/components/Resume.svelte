@@ -24,6 +24,7 @@
             margin: 0px;
             width: 100%;
             height: fit-content;
+            min-height: 100vh;
         }
 
         #header {
@@ -41,6 +42,10 @@
 
                 color: white;
                 mix-blend-mode: difference;
+
+                @media screen and (max-width: $mobile-width) {
+                    font-size: 6vw;
+                }
             }
 
             * {
@@ -85,7 +90,7 @@
 
                 h4 {
                     font-weight: 100;
-                    white-space: pre;
+                    white-space: pre-wrap;
                 }
             }
 
@@ -126,6 +131,12 @@
 
                     p, ul {
                         margin: 8px 0;
+                    }
+
+                    @media screen and (max-width: $mobile-width) {
+                        h4 {
+                            word-wrap: break-word;
+                        }
                     }
                 }
             }
